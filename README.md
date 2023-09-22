@@ -6,7 +6,7 @@ The scroll motif is ubiquitous in the decorative traditions all over the world. 
 
 <img width="434" alt="screenshot" src="https://github.com/annayudovin/ScrollPatternGen/assets/104697144/c8d3662f-f37c-4c03-951c-efee420ffff1">
 
-The interface is a bit cluttered and complicated at first glance. I recommend starting out by checking out the "leaf size variation" and "variation options" in the lower left.
+The interface is a bit cluttered and complicated at first glance. I recommend starting out by trying the "leaf size variation" and "variation options" in the lower left.
 
 The "leaf size variation" refers to the relative sizes of spirals that "grow" side-by-side from a single "parent" spiral. The default option selected when the app first loads starts by growing the smallest spirals first, progressing to the largest. If you want to see what they look like when the leaves are all the same size, uncheck the "dissimilar" option and press the "preview" button.
 
