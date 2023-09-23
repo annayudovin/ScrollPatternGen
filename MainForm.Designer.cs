@@ -30,6 +30,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             mainPanel = new Panel();
             btnPreview = new Button();
             splitContainer1 = new SplitContainer();
@@ -48,7 +49,6 @@
             btnCopy = new Button();
             btnSVG = new Button();
             grpBoxOrigin = new GroupBox();
-            chkTwin = new CheckBox();
             lblAngle = new Label();
             trkStrtAngle = new TrackBar();
             chkRandAngl = new CheckBox();
@@ -56,6 +56,7 @@
             label3 = new Label();
             lnkAddStrt = new LinkLabel();
             lnkSubStrt = new LinkLabel();
+            chkTwin = new CheckBox();
             colorBox = new GroupBox();
             btnBkgColor = new Button();
             btnScrollColor = new Button();
@@ -118,40 +119,29 @@
             // 
             // mainPanel
             // 
-            mainPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            mainPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            resources.ApplyResources(mainPanel, "mainPanel");
             mainPanel.BackColor = Color.White;
-            mainPanel.Font = new Font("Segoe UI Light", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            mainPanel.Location = new Point(129, 3);
-            mainPanel.MinimumSize = new Size(500, 500);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(600, 601);
-            mainPanel.TabIndex = 1;
+            toolTip1.SetToolTip(mainPanel, resources.GetString("mainPanel.ToolTip"));
             mainPanel.Paint += MainPanel_Paint;
             // 
             // btnPreview
             // 
-            btnPreview.Location = new Point(708, 199);
+            resources.ApplyResources(btnPreview, "btnPreview");
             btnPreview.Name = "btnPreview";
-            btnPreview.Size = new Size(132, 34);
-            btnPreview.TabIndex = 8;
-            btnPreview.Text = "preview";
-            toolTip1.SetToolTip(btnPreview, "refresh image with new options");
+            toolTip1.SetToolTip(btnPreview, resources.GetString("btnPreview.ToolTip"));
             btnPreview.UseVisualStyleBackColor = true;
             btnPreview.Click += BtnPreview_Click;
             // 
             // splitContainer1
             // 
-            splitContainer1.Dock = DockStyle.Fill;
+            resources.ApplyResources(splitContainer1, "splitContainer1");
             splitContainer1.FixedPanel = FixedPanel.Panel1;
-            splitContainer1.IsSplitterFixed = true;
-            splitContainer1.Location = new Point(0, 0);
-            splitContainer1.MinimumSize = new Size(850, 850);
             splitContainer1.Name = "splitContainer1";
-            splitContainer1.Orientation = Orientation.Horizontal;
             // 
             // splitContainer1.Panel1
             // 
+            resources.ApplyResources(splitContainer1.Panel1, "splitContainer1.Panel1");
             splitContainer1.Panel1.Controls.Add(grpAdjustCurls);
             splitContainer1.Panel1.Controls.Add(groupBox9);
             splitContainer1.Panel1.Controls.Add(grpBoxOrigin);
@@ -163,19 +153,21 @@
             splitContainer1.Panel1.Controls.Add(groupBox2);
             splitContainer1.Panel1.Controls.Add(groupBox3);
             splitContainer1.Panel1.Controls.Add(groupBox6);
+            toolTip1.SetToolTip(splitContainer1.Panel1, resources.GetString("splitContainer1.Panel1.ToolTip"));
             // 
             // splitContainer1.Panel2
             // 
+            resources.ApplyResources(splitContainer1.Panel2, "splitContainer1.Panel2");
             splitContainer1.Panel2.Controls.Add(lnkIDs);
             splitContainer1.Panel2.Controls.Add(lnkLog);
             splitContainer1.Panel2.Controls.Add(mainPanel);
+            toolTip1.SetToolTip(splitContainer1.Panel2, resources.GetString("splitContainer1.Panel2.ToolTip"));
             splitContainer1.Panel2.Resize += SplitContainer1_Panel2_Resize;
-            splitContainer1.Size = new Size(859, 852);
-            splitContainer1.SplitterDistance = 241;
-            splitContainer1.TabIndex = 0;
+            toolTip1.SetToolTip(splitContainer1, resources.GetString("splitContainer1.ToolTip"));
             // 
             // grpAdjustCurls
             // 
+            resources.ApplyResources(grpAdjustCurls, "grpAdjustCurls");
             grpAdjustCurls.Controls.Add(lblSpread);
             grpAdjustCurls.Controls.Add(lblShift);
             grpAdjustCurls.Controls.Add(trkSpread);
@@ -186,190 +178,138 @@
             grpAdjustCurls.Controls.Add(lnkSubShift);
             grpAdjustCurls.Controls.Add(lnkSubSprd);
             grpAdjustCurls.Controls.Add(lnkAddSprd);
-            grpAdjustCurls.Location = new Point(619, 1);
             grpAdjustCurls.Name = "grpAdjustCurls";
-            grpAdjustCurls.Size = new Size(224, 131);
-            grpAdjustCurls.TabIndex = 34;
             grpAdjustCurls.TabStop = false;
-            grpAdjustCurls.Text = "adjust look:";
+            toolTip1.SetToolTip(grpAdjustCurls, resources.GetString("grpAdjustCurls.ToolTip"));
             // 
             // lblSpread
             // 
-            lblSpread.AutoSize = true;
+            resources.ApplyResources(lblSpread, "lblSpread");
             lblSpread.BackColor = Color.Transparent;
-            lblSpread.Location = new Point(61, 82);
             lblSpread.Name = "lblSpread";
-            lblSpread.Size = new Size(34, 25);
-            lblSpread.TabIndex = 1;
-            lblSpread.Text = "+0";
+            toolTip1.SetToolTip(lblSpread, resources.GetString("lblSpread.ToolTip"));
             // 
             // lblShift
             // 
-            lblShift.AutoSize = true;
+            resources.ApplyResources(lblShift, "lblShift");
             lblShift.BackColor = Color.Transparent;
-            lblShift.Location = new Point(59, 31);
             lblShift.Name = "lblShift";
-            lblShift.Size = new Size(34, 25);
-            lblShift.TabIndex = 0;
-            lblShift.Text = "+0";
+            toolTip1.SetToolTip(lblShift, resources.GetString("lblShift.ToolTip"));
             // 
             // trkSpread
             // 
-            trkSpread.Location = new Point(111, 85);
+            resources.ApplyResources(trkSpread, "trkSpread");
             trkSpread.Maximum = 50;
-            trkSpread.MaximumSize = new Size(300, 30);
             trkSpread.Minimum = -50;
             trkSpread.Name = "trkSpread";
-            trkSpread.RightToLeftLayout = true;
-            trkSpread.Size = new Size(110, 30);
-            trkSpread.TabIndex = 36;
             trkSpread.TickFrequency = 10;
-            toolTip1.SetToolTip(trkSpread, "change the size and spacing of leaf curls");
+            toolTip1.SetToolTip(trkSpread, resources.GetString("trkSpread.ToolTip"));
             trkSpread.ValueChanged += TrkSpread_ValueChanged;
             // 
             // trkShift
             // 
-            trkShift.Location = new Point(111, 36);
+            resources.ApplyResources(trkShift, "trkShift");
             trkShift.Maximum = 100;
-            trkShift.MaximumSize = new Size(300, 30);
             trkShift.Minimum = -100;
             trkShift.Name = "trkShift";
-            trkShift.RightToLeftLayout = true;
-            trkShift.Size = new Size(109, 30);
-            trkShift.TabIndex = 35;
             trkShift.TickFrequency = 20;
-            toolTip1.SetToolTip(trkShift, "adjust location of leaf curls on parent");
+            toolTip1.SetToolTip(trkShift, resources.GetString("trkShift.ToolTip"));
             trkShift.ValueChanged += TrkShift_ValueChanged;
             // 
             // lnkSpread
             // 
+            resources.ApplyResources(lnkSpread, "lnkSpread");
             lnkSpread.ActiveLinkColor = Color.Black;
-            lnkSpread.AutoSize = true;
             lnkSpread.LinkColor = Color.Black;
-            lnkSpread.Location = new Point(1, 81);
             lnkSpread.Name = "lnkSpread";
-            lnkSpread.Size = new Size(70, 25);
-            lnkSpread.TabIndex = 37;
             lnkSpread.TabStop = true;
-            lnkSpread.Text = "spread:";
-            toolTip1.SetToolTip(lnkSpread, "click to reset to 0");
+            toolTip1.SetToolTip(lnkSpread, resources.GetString("lnkSpread.ToolTip"));
             lnkSpread.VisitedLinkColor = Color.Black;
             lnkSpread.LinkClicked += LnkSpread_LinkClicked;
             // 
             // lnkShift
             // 
+            resources.ApplyResources(lnkShift, "lnkShift");
             lnkShift.ActiveLinkColor = Color.Black;
-            lnkShift.AutoSize = true;
             lnkShift.LinkColor = Color.Black;
-            lnkShift.Location = new Point(19, 31);
             lnkShift.Name = "lnkShift";
-            lnkShift.Size = new Size(50, 25);
-            lnkShift.TabIndex = 29;
             lnkShift.TabStop = true;
-            lnkShift.Text = "shift:";
-            toolTip1.SetToolTip(lnkShift, "click to reset to 0");
+            toolTip1.SetToolTip(lnkShift, resources.GetString("lnkShift.ToolTip"));
             lnkShift.VisitedLinkColor = Color.Black;
             lnkShift.LinkClicked += LnkShift_LinkClicked;
             // 
             // lnkAddShift
             // 
+            resources.ApplyResources(lnkAddShift, "lnkAddShift");
             lnkAddShift.ActiveLinkColor = Color.Blue;
-            lnkAddShift.AutoSize = true;
-            lnkAddShift.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
             lnkAddShift.LinkBehavior = LinkBehavior.NeverUnderline;
-            lnkAddShift.Location = new Point(194, 19);
             lnkAddShift.Name = "lnkAddShift";
-            lnkAddShift.Size = new Size(21, 21);
-            lnkAddShift.TabIndex = 32;
             lnkAddShift.TabStop = true;
-            lnkAddShift.Text = "+";
-            toolTip1.SetToolTip(lnkAddShift, "+1");
+            toolTip1.SetToolTip(lnkAddShift, resources.GetString("lnkAddShift.ToolTip"));
             lnkAddShift.VisitedLinkColor = Color.Blue;
             lnkAddShift.LinkClicked += LnkAddShift_LinkClicked;
             // 
             // lnkSubShift
             // 
+            resources.ApplyResources(lnkSubShift, "lnkSubShift");
             lnkSubShift.ActiveLinkColor = Color.Blue;
-            lnkSubShift.AutoSize = true;
-            lnkSubShift.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             lnkSubShift.LinkBehavior = LinkBehavior.NeverUnderline;
-            lnkSubShift.Location = new Point(116, 14);
             lnkSubShift.Name = "lnkSubShift";
-            lnkSubShift.Size = new Size(20, 28);
-            lnkSubShift.TabIndex = 31;
             lnkSubShift.TabStop = true;
-            lnkSubShift.Text = "-";
-            toolTip1.SetToolTip(lnkSubShift, "-1");
+            toolTip1.SetToolTip(lnkSubShift, resources.GetString("lnkSubShift.ToolTip"));
             lnkSubShift.VisitedLinkColor = Color.Blue;
             lnkSubShift.LinkClicked += LnkSubShift_LinkClicked;
             // 
             // lnkSubSprd
             // 
+            resources.ApplyResources(lnkSubSprd, "lnkSubSprd");
             lnkSubSprd.ActiveLinkColor = Color.Blue;
-            lnkSubSprd.AutoSize = true;
-            lnkSubSprd.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             lnkSubSprd.LinkBehavior = LinkBehavior.NeverUnderline;
-            lnkSubSprd.Location = new Point(116, 63);
             lnkSubSprd.Name = "lnkSubSprd";
-            lnkSubSprd.Size = new Size(20, 28);
-            lnkSubSprd.TabIndex = 38;
             lnkSubSprd.TabStop = true;
-            lnkSubSprd.Text = "-";
-            toolTip1.SetToolTip(lnkSubSprd, "-1");
+            toolTip1.SetToolTip(lnkSubSprd, resources.GetString("lnkSubSprd.ToolTip"));
             lnkSubSprd.VisitedLinkColor = Color.Blue;
             lnkSubSprd.LinkClicked += LnkSubSprd_LinkClicked;
             // 
             // lnkAddSprd
             // 
+            resources.ApplyResources(lnkAddSprd, "lnkAddSprd");
             lnkAddSprd.ActiveLinkColor = Color.Blue;
-            lnkAddSprd.AutoSize = true;
-            lnkAddSprd.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
             lnkAddSprd.LinkBehavior = LinkBehavior.NeverUnderline;
-            lnkAddSprd.Location = new Point(195, 69);
             lnkAddSprd.Name = "lnkAddSprd";
-            lnkAddSprd.Size = new Size(21, 21);
-            lnkAddSprd.TabIndex = 39;
             lnkAddSprd.TabStop = true;
-            lnkAddSprd.Text = "+";
-            toolTip1.SetToolTip(lnkAddSprd, "+1");
+            toolTip1.SetToolTip(lnkAddSprd, resources.GetString("lnkAddSprd.ToolTip"));
             lnkAddSprd.VisitedLinkColor = Color.Blue;
             lnkAddSprd.LinkClicked += LnkAddSprd_LinkClicked;
             // 
             // groupBox9
             // 
+            resources.ApplyResources(groupBox9, "groupBox9");
             groupBox9.Controls.Add(btnCopy);
             groupBox9.Controls.Add(btnSVG);
-            groupBox9.Location = new Point(704, 130);
             groupBox9.Name = "groupBox9";
-            groupBox9.Size = new Size(139, 65);
-            groupBox9.TabIndex = 33;
             groupBox9.TabStop = false;
-            groupBox9.Text = "image";
+            toolTip1.SetToolTip(groupBox9, resources.GetString("groupBox9.ToolTip"));
             // 
             // btnCopy
             // 
-            btnCopy.Location = new Point(6, 28);
+            resources.ApplyResources(btnCopy, "btnCopy");
             btnCopy.Name = "btnCopy";
-            btnCopy.Size = new Size(61, 34);
-            btnCopy.TabIndex = 29;
-            btnCopy.Text = "copy";
-            toolTip1.SetToolTip(btnCopy, "place current image on clipboard");
+            toolTip1.SetToolTip(btnCopy, resources.GetString("btnCopy.ToolTip"));
             btnCopy.UseVisualStyleBackColor = true;
             btnCopy.Click += BtnCopy_Click;
             // 
             // btnSVG
             // 
-            btnSVG.Location = new Point(71, 27);
+            resources.ApplyResources(btnSVG, "btnSVG");
             btnSVG.Name = "btnSVG";
-            btnSVG.Size = new Size(63, 34);
-            btnSVG.TabIndex = 30;
-            btnSVG.Text = "svg";
-            toolTip1.SetToolTip(btnSVG, "save a vector file of current image");
+            toolTip1.SetToolTip(btnSVG, resources.GetString("btnSVG.ToolTip"));
             btnSVG.UseVisualStyleBackColor = true;
             btnSVG.Click += BtnSVG_Click;
             // 
             // grpBoxOrigin
             // 
+            resources.ApplyResources(grpBoxOrigin, "grpBoxOrigin");
             grpBoxOrigin.Controls.Add(lblAngle);
             grpBoxOrigin.Controls.Add(trkStrtAngle);
             grpBoxOrigin.Controls.Add(chkRandAngl);
@@ -378,470 +318,343 @@
             grpBoxOrigin.Controls.Add(lnkAddStrt);
             grpBoxOrigin.Controls.Add(lnkSubStrt);
             grpBoxOrigin.Controls.Add(chkTwin);
-            grpBoxOrigin.Location = new Point(450, 1);
             grpBoxOrigin.Name = "grpBoxOrigin";
-            grpBoxOrigin.Size = new Size(165, 140);
-            grpBoxOrigin.TabIndex = 22;
             grpBoxOrigin.TabStop = false;
-            grpBoxOrigin.Text = "origin";
-            // 
-            // chkTwin
-            // 
-            chkTwin.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            chkTwin.AutoSize = true;
-            chkTwin.BackColor = Color.Transparent;
-            chkTwin.Checked = true;
-            chkTwin.CheckState = CheckState.Checked;
-            chkTwin.Location = new Point(57, 12);
-            chkTwin.Margin = new Padding(0);
-            chkTwin.Name = "chkTwin";
-            chkTwin.RightToLeft = RightToLeft.Yes;
-            chkTwin.Size = new Size(104, 29);
-            chkTwin.TabIndex = 6;
-            chkTwin.Text = "twin curl";
-            toolTip1.SetToolTip(chkTwin, "start curl: single or double");
-            chkTwin.UseVisualStyleBackColor = false;
-            chkTwin.CheckedChanged += ChkTwin_CheckedChanged;
+            toolTip1.SetToolTip(grpBoxOrigin, resources.GetString("grpBoxOrigin.ToolTip"));
             // 
             // lblAngle
             // 
-            lblAngle.AutoSize = true;
+            resources.ApplyResources(lblAngle, "lblAngle");
             lblAngle.BackColor = Color.Transparent;
-            lblAngle.Location = new Point(96, 44);
             lblAngle.Name = "lblAngle";
-            lblAngle.Size = new Size(46, 25);
-            lblAngle.TabIndex = 33;
-            lblAngle.Text = "0.00";
+            toolTip1.SetToolTip(lblAngle, resources.GetString("lblAngle.ToolTip"));
             // 
             // trkStrtAngle
             // 
-            trkStrtAngle.Location = new Point(1, 77);
+            resources.ApplyResources(trkStrtAngle, "trkStrtAngle");
             trkStrtAngle.Maximum = 200;
-            trkStrtAngle.MaximumSize = new Size(300, 30);
             trkStrtAngle.Name = "trkStrtAngle";
-            trkStrtAngle.RightToLeftLayout = true;
-            trkStrtAngle.Size = new Size(163, 30);
-            trkStrtAngle.TabIndex = 22;
             trkStrtAngle.TickFrequency = 25;
-            toolTip1.SetToolTip(trkStrtAngle, "adjust angle of first curl");
+            toolTip1.SetToolTip(trkStrtAngle, resources.GetString("trkStrtAngle.ToolTip"));
             trkStrtAngle.ValueChanged += TrkStrtAngle_ValueChanged;
             trkStrtAngle.EnabledChanged += TrkStrtAngle_EnabledChanged;
             // 
             // chkRandAngl
             // 
-            chkRandAngl.AutoSize = true;
-            chkRandAngl.Location = new Point(42, 109);
-            chkRandAngl.Margin = new Padding(0);
+            resources.ApplyResources(chkRandAngl, "chkRandAngl");
             chkRandAngl.Name = "chkRandAngl";
-            chkRandAngl.Size = new Size(101, 29);
-            chkRandAngl.TabIndex = 21;
-            chkRandAngl.Text = "random";
-            chkRandAngl.TextAlign = ContentAlignment.TopLeft;
+            toolTip1.SetToolTip(chkRandAngl, resources.GetString("chkRandAngl.ToolTip"));
             chkRandAngl.UseVisualStyleBackColor = true;
             chkRandAngl.CheckedChanged += ChkRandAngl_CheckedChanged;
             // 
             // lblStrtAngle
             // 
-            lblStrtAngle.AutoSize = true;
-            lblStrtAngle.Location = new Point(18, 43);
+            resources.ApplyResources(lblStrtAngle, "lblStrtAngle");
             lblStrtAngle.Name = "lblStrtAngle";
-            lblStrtAngle.Size = new Size(82, 25);
-            lblStrtAngle.TabIndex = 34;
-            lblStrtAngle.Text = "angle(* ):";
+            toolTip1.SetToolTip(lblStrtAngle, resources.GetString("lblStrtAngle.ToolTip"));
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(10, 110);
+            resources.ApplyResources(label3, "label3");
             label3.Name = "label3";
-            label3.Size = new Size(29, 25);
-            label3.TabIndex = 19;
-            label3.Text = "or";
+            toolTip1.SetToolTip(label3, resources.GetString("label3.ToolTip"));
             // 
             // lnkAddStrt
             // 
+            resources.ApplyResources(lnkAddStrt, "lnkAddStrt");
             lnkAddStrt.ActiveLinkColor = Color.Blue;
-            lnkAddStrt.AutoSize = true;
-            lnkAddStrt.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
             lnkAddStrt.LinkBehavior = LinkBehavior.NeverUnderline;
-            lnkAddStrt.Location = new Point(137, 60);
             lnkAddStrt.Name = "lnkAddStrt";
-            lnkAddStrt.Size = new Size(21, 21);
-            lnkAddStrt.TabIndex = 40;
             lnkAddStrt.TabStop = true;
-            lnkAddStrt.Text = "+";
-            toolTip1.SetToolTip(lnkAddStrt, "+1");
+            toolTip1.SetToolTip(lnkAddStrt, resources.GetString("lnkAddStrt.ToolTip"));
             lnkAddStrt.VisitedLinkColor = Color.Blue;
             lnkAddStrt.LinkClicked += LnkAddStrt_LinkClicked;
             // 
             // lnkSubStrt
             // 
+            resources.ApplyResources(lnkSubStrt, "lnkSubStrt");
             lnkSubStrt.ActiveLinkColor = Color.Blue;
-            lnkSubStrt.AutoSize = true;
             lnkSubStrt.BackColor = Color.Transparent;
-            lnkSubStrt.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             lnkSubStrt.LinkBehavior = LinkBehavior.NeverUnderline;
-            lnkSubStrt.Location = new Point(7, 53);
             lnkSubStrt.Name = "lnkSubStrt";
-            lnkSubStrt.Size = new Size(20, 28);
-            lnkSubStrt.TabIndex = 39;
             lnkSubStrt.TabStop = true;
-            lnkSubStrt.Text = "-";
-            toolTip1.SetToolTip(lnkSubStrt, "-1");
+            toolTip1.SetToolTip(lnkSubStrt, resources.GetString("lnkSubStrt.ToolTip"));
             lnkSubStrt.VisitedLinkColor = Color.Blue;
             lnkSubStrt.LinkClicked += LnkSubStrt_LinkClicked;
             // 
+            // chkTwin
+            // 
+            resources.ApplyResources(chkTwin, "chkTwin");
+            chkTwin.BackColor = Color.Transparent;
+            chkTwin.Checked = true;
+            chkTwin.CheckState = CheckState.Checked;
+            chkTwin.Name = "chkTwin";
+            toolTip1.SetToolTip(chkTwin, resources.GetString("chkTwin.ToolTip"));
+            chkTwin.UseVisualStyleBackColor = false;
+            chkTwin.CheckedChanged += ChkTwin_CheckedChanged;
+            // 
             // colorBox
             // 
+            resources.ApplyResources(colorBox, "colorBox");
             colorBox.Controls.Add(btnBkgColor);
             colorBox.Controls.Add(btnScrollColor);
-            colorBox.Location = new Point(620, 130);
             colorBox.Name = "colorBox";
-            colorBox.Size = new Size(79, 105);
-            colorBox.TabIndex = 26;
             colorBox.TabStop = false;
-            colorBox.Text = "colors";
+            toolTip1.SetToolTip(colorBox, resources.GetString("colorBox.ToolTip"));
             // 
             // btnBkgColor
             // 
-            btnBkgColor.Location = new Point(8, 29);
+            resources.ApplyResources(btnBkgColor, "btnBkgColor");
             btnBkgColor.Name = "btnBkgColor";
-            btnBkgColor.Size = new Size(63, 33);
-            btnBkgColor.TabIndex = 27;
-            btnBkgColor.Text = "panel";
-            toolTip1.SetToolTip(btnBkgColor, "change background color");
+            toolTip1.SetToolTip(btnBkgColor, resources.GetString("btnBkgColor.ToolTip"));
             btnBkgColor.UseVisualStyleBackColor = true;
             btnBkgColor.Click += BtnBkgColor_Click;
             // 
             // btnScrollColor
             // 
-            btnScrollColor.Location = new Point(8, 68);
+            resources.ApplyResources(btnScrollColor, "btnScrollColor");
             btnScrollColor.Name = "btnScrollColor";
-            btnScrollColor.Size = new Size(63, 33);
-            btnScrollColor.TabIndex = 26;
-            btnScrollColor.Text = "scroll";
-            toolTip1.SetToolTip(btnScrollColor, "change ornament color");
+            toolTip1.SetToolTip(btnScrollColor, resources.GetString("btnScrollColor.ToolTip"));
             btnScrollColor.UseVisualStyleBackColor = true;
             btnScrollColor.Click += BtnScrollColor_Click;
             // 
             // groupBox5
             // 
+            resources.ApplyResources(groupBox5, "groupBox5");
             groupBox5.Controls.Add(updownMaxLeaves);
             groupBox5.Controls.Add(label4);
             groupBox5.Controls.Add(chkRndLeaves);
-            groupBox5.Location = new Point(7, 68);
             groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(198, 59);
-            groupBox5.TabIndex = 20;
             groupBox5.TabStop = false;
-            groupBox5.Text = "leaf number";
+            toolTip1.SetToolTip(groupBox5, resources.GetString("groupBox5.ToolTip"));
             // 
             // updownMaxLeaves
             // 
-            updownMaxLeaves.Items.Add("7");
-            updownMaxLeaves.Items.Add("6");
-            updownMaxLeaves.Items.Add("5");
-            updownMaxLeaves.Items.Add("4");
-            updownMaxLeaves.Items.Add("3");
-            updownMaxLeaves.Items.Add("2");
-            updownMaxLeaves.Location = new Point(139, 22);
+            resources.ApplyResources(updownMaxLeaves, "updownMaxLeaves");
+            updownMaxLeaves.Items.Add(resources.GetString("updownMaxLeaves.Items"));
+            updownMaxLeaves.Items.Add(resources.GetString("updownMaxLeaves.Items1"));
+            updownMaxLeaves.Items.Add(resources.GetString("updownMaxLeaves.Items2"));
+            updownMaxLeaves.Items.Add(resources.GetString("updownMaxLeaves.Items3"));
+            updownMaxLeaves.Items.Add(resources.GetString("updownMaxLeaves.Items4"));
+            updownMaxLeaves.Items.Add(resources.GetString("updownMaxLeaves.Items5"));
             updownMaxLeaves.Name = "updownMaxLeaves";
             updownMaxLeaves.ReadOnly = true;
-            updownMaxLeaves.Size = new Size(48, 31);
-            updownMaxLeaves.TabIndex = 0;
-            updownMaxLeaves.TextAlign = HorizontalAlignment.Center;
-            toolTip1.SetToolTip(updownMaxLeaves, "maximum number of leaves on a node");
+            toolTip1.SetToolTip(updownMaxLeaves, resources.GetString("updownMaxLeaves.ToolTip"));
             updownMaxLeaves.SelectedItemChanged += UpdownMaxLeaves_SelectedItemChanged;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(106, 25);
+            resources.ApplyResources(label4, "label4");
             label4.Name = "label4";
-            label4.Size = new Size(29, 25);
-            label4.TabIndex = 18;
-            label4.Text = "or";
+            toolTip1.SetToolTip(label4, resources.GetString("label4.ToolTip"));
             // 
             // chkRndLeaves
             // 
-            chkRndLeaves.AutoSize = true;
-            chkRndLeaves.Location = new Point(10, 24);
+            resources.ApplyResources(chkRndLeaves, "chkRndLeaves");
             chkRndLeaves.Name = "chkRndLeaves";
-            chkRndLeaves.Size = new Size(101, 29);
-            chkRndLeaves.TabIndex = 17;
-            chkRndLeaves.Text = "random";
-            toolTip1.SetToolTip(chkRndLeaves, "randomly change maximum number of leaves on each node");
+            toolTip1.SetToolTip(chkRndLeaves, resources.GetString("chkRndLeaves.ToolTip"));
             chkRndLeaves.UseVisualStyleBackColor = true;
             chkRndLeaves.CheckedChanged += ChkRndLeaves_CheckedChanged;
             // 
             // groupBox1
             // 
+            resources.ApplyResources(groupBox1, "groupBox1");
             groupBox1.Controls.Add(rdioNoRnd);
             groupBox1.Controls.Add(rdioRndLrg);
             groupBox1.Controls.Add(rdioRndSz);
-            groupBox1.Location = new Point(211, 68);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(235, 59);
-            groupBox1.TabIndex = 5;
             groupBox1.TabStop = false;
-            groupBox1.Text = "leaf size randomness";
+            toolTip1.SetToolTip(groupBox1, resources.GetString("groupBox1.ToolTip"));
             // 
             // rdioNoRnd
             // 
-            rdioNoRnd.AutoSize = true;
+            resources.ApplyResources(rdioNoRnd, "rdioNoRnd");
             rdioNoRnd.Checked = true;
-            rdioNoRnd.Location = new Point(6, 26);
             rdioNoRnd.Name = "rdioNoRnd";
-            rdioNoRnd.Size = new Size(77, 29);
-            rdioNoRnd.TabIndex = 0;
             rdioNoRnd.TabStop = true;
-            rdioNoRnd.Text = "none";
+            toolTip1.SetToolTip(rdioNoRnd, resources.GetString("rdioNoRnd.ToolTip"));
             rdioNoRnd.UseVisualStyleBackColor = true;
             rdioNoRnd.CheckedChanged += RdioNoRnd_CheckedChanged;
             // 
             // rdioRndLrg
             // 
-            rdioRndLrg.AutoSize = true;
-            rdioRndLrg.Location = new Point(83, 26);
+            resources.ApplyResources(rdioRndLrg, "rdioRndLrg");
             rdioRndLrg.Name = "rdioRndLrg";
-            rdioRndLrg.Size = new Size(81, 29);
-            rdioRndLrg.TabIndex = 1;
-            rdioRndLrg.Text = "some";
-            toolTip1.SetToolTip(rdioRndLrg, "larger than normal leaves will sometimes be drawn");
+            toolTip1.SetToolTip(rdioRndLrg, resources.GetString("rdioRndLrg.ToolTip"));
             rdioRndLrg.UseVisualStyleBackColor = true;
             rdioRndLrg.CheckedChanged += RdioRndLrg_CheckedChanged;
             // 
             // rdioRndSz
             // 
-            rdioRndSz.AutoSize = true;
-            rdioRndSz.Location = new Point(167, 26);
+            resources.ApplyResources(rdioRndSz, "rdioRndSz");
             rdioRndSz.Name = "rdioRndSz";
-            rdioRndSz.Size = new Size(66, 29);
-            rdioRndSz.TabIndex = 2;
-            rdioRndSz.Text = "lots";
-            toolTip1.SetToolTip(rdioRndSz, "made to look as random as possible");
+            toolTip1.SetToolTip(rdioRndSz, resources.GetString("rdioRndSz.ToolTip"));
             rdioRndSz.UseVisualStyleBackColor = true;
             rdioRndSz.CheckedChanged += RdioRndSz_CheckedChanged;
             // 
             // groupBox4
             // 
+            resources.ApplyResources(groupBox4, "groupBox4");
             groupBox4.Controls.Add(txtMaxNodes);
             groupBox4.Controls.Add(label2);
             groupBox4.Controls.Add(trkMaxTotal);
             groupBox4.Controls.Add(lnkSubNodes);
             groupBox4.Controls.Add(lnkAddNodes);
-            groupBox4.Location = new Point(7, 2);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(439, 66);
-            groupBox4.TabIndex = 19;
             groupBox4.TabStop = false;
-            groupBox4.Text = "overall number of nodes";
+            toolTip1.SetToolTip(groupBox4, resources.GetString("groupBox4.ToolTip"));
             // 
             // txtMaxNodes
             // 
-            txtMaxNodes.Location = new Point(64, 25);
-            txtMaxNodes.MaxLength = 3;
+            resources.ApplyResources(txtMaxNodes, "txtMaxNodes");
             txtMaxNodes.Name = "txtMaxNodes";
             txtMaxNodes.ReadOnly = true;
-            txtMaxNodes.Size = new Size(38, 31);
-            txtMaxNodes.TabIndex = 17;
+            toolTip1.SetToolTip(txtMaxNodes, resources.GetString("txtMaxNodes.ToolTip"));
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(8, 28);
+            resources.ApplyResources(label2, "label2");
             label2.Name = "label2";
-            label2.Size = new Size(55, 25);
-            label2.TabIndex = 11;
-            label2.Text = "MAX:";
+            toolTip1.SetToolTip(label2, resources.GetString("label2.ToolTip"));
             // 
             // trkMaxTotal
             // 
+            resources.ApplyResources(trkMaxTotal, "trkMaxTotal");
             trkMaxTotal.LargeChange = 10;
-            trkMaxTotal.Location = new Point(108, 29);
             trkMaxTotal.Maximum = 200;
-            trkMaxTotal.MaximumSize = new Size(400, 30);
             trkMaxTotal.Name = "trkMaxTotal";
-            trkMaxTotal.Size = new Size(319, 30);
-            trkMaxTotal.TabIndex = 18;
             trkMaxTotal.TickFrequency = 5;
-            toolTip1.SetToolTip(trkMaxTotal, "change total number of nodes/curls");
+            toolTip1.SetToolTip(trkMaxTotal, resources.GetString("trkMaxTotal.ToolTip"));
             trkMaxTotal.ValueChanged += TrkMaxTotal_ValueChanged;
             // 
             // lnkSubNodes
             // 
+            resources.ApplyResources(lnkSubNodes, "lnkSubNodes");
             lnkSubNodes.ActiveLinkColor = Color.Blue;
-            lnkSubNodes.AutoSize = true;
             lnkSubNodes.BackColor = Color.Transparent;
-            lnkSubNodes.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             lnkSubNodes.LinkBehavior = LinkBehavior.NeverUnderline;
-            lnkSubNodes.Location = new Point(115, 8);
             lnkSubNodes.Name = "lnkSubNodes";
-            lnkSubNodes.Size = new Size(20, 28);
-            lnkSubNodes.TabIndex = 39;
             lnkSubNodes.TabStop = true;
-            lnkSubNodes.Text = "-";
-            toolTip1.SetToolTip(lnkSubNodes, "-1");
+            toolTip1.SetToolTip(lnkSubNodes, resources.GetString("lnkSubNodes.ToolTip"));
             lnkSubNodes.VisitedLinkColor = Color.Blue;
             lnkSubNodes.LinkClicked += LnkSubNodes_LinkClicked;
             // 
             // lnkAddNodes
             // 
+            resources.ApplyResources(lnkAddNodes, "lnkAddNodes");
             lnkAddNodes.ActiveLinkColor = Color.Blue;
-            lnkAddNodes.AutoSize = true;
             lnkAddNodes.BackColor = Color.Transparent;
-            lnkAddNodes.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
             lnkAddNodes.LinkBehavior = LinkBehavior.NeverUnderline;
-            lnkAddNodes.Location = new Point(402, 13);
             lnkAddNodes.Name = "lnkAddNodes";
-            lnkAddNodes.Size = new Size(21, 21);
-            lnkAddNodes.TabIndex = 40;
             lnkAddNodes.TabStop = true;
-            lnkAddNodes.Text = "+";
-            toolTip1.SetToolTip(lnkAddNodes, "+1");
+            toolTip1.SetToolTip(lnkAddNodes, resources.GetString("lnkAddNodes.ToolTip"));
             lnkAddNodes.VisitedLinkColor = Color.Blue;
             lnkAddNodes.LinkClicked += LnkAddNodes_LinkClicked;
             // 
             // groupBox2
             // 
+            resources.ApplyResources(groupBox2, "groupBox2");
             groupBox2.Controls.Add(rdioGradStoL);
             groupBox2.Controls.Add(rdioGradLtoS);
             groupBox2.Controls.Add(chkGradSz);
-            groupBox2.Location = new Point(7, 123);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(439, 59);
-            groupBox2.TabIndex = 4;
             groupBox2.TabStop = false;
-            groupBox2.Text = "leaf size variation";
+            toolTip1.SetToolTip(groupBox2, resources.GetString("groupBox2.ToolTip"));
             // 
             // rdioGradStoL
             // 
-            rdioGradStoL.AutoSize = true;
-            rdioGradStoL.Enabled = false;
-            rdioGradStoL.Location = new Point(281, 25);
+            resources.ApplyResources(rdioGradStoL, "rdioGradStoL");
             rdioGradStoL.Name = "rdioGradStoL";
-            rdioGradStoL.Size = new Size(148, 29);
-            rdioGradStoL.TabIndex = 5;
             rdioGradStoL.TabStop = true;
-            rdioGradStoL.Text = "small-to-large";
-            toolTip1.SetToolTip(rdioGradStoL, "start growing with smallest leaf");
+            toolTip1.SetToolTip(rdioGradStoL, resources.GetString("rdioGradStoL.ToolTip"));
             rdioGradStoL.UseVisualStyleBackColor = true;
             rdioGradStoL.CheckedChanged += RdioGradStoL_CheckedChanged;
             // 
             // rdioGradLtoS
             // 
-            rdioGradLtoS.AutoSize = true;
-            rdioGradLtoS.Enabled = false;
-            rdioGradLtoS.Location = new Point(125, 24);
+            resources.ApplyResources(rdioGradLtoS, "rdioGradLtoS");
             rdioGradLtoS.Name = "rdioGradLtoS";
-            rdioGradLtoS.Size = new Size(148, 29);
-            rdioGradLtoS.TabIndex = 4;
             rdioGradLtoS.TabStop = true;
-            rdioGradLtoS.Text = "large-to-small";
-            toolTip1.SetToolTip(rdioGradLtoS, "start growing with largest leaf");
+            toolTip1.SetToolTip(rdioGradLtoS, resources.GetString("rdioGradLtoS.ToolTip"));
             rdioGradLtoS.UseVisualStyleBackColor = true;
             // 
             // chkGradSz
             // 
-            chkGradSz.AutoSize = true;
-            chkGradSz.Location = new Point(8, 24);
+            resources.ApplyResources(chkGradSz, "chkGradSz");
             chkGradSz.Name = "chkGradSz";
-            chkGradSz.Size = new Size(112, 29);
-            chkGradSz.TabIndex = 3;
-            chkGradSz.Text = "dissimilar";
-            toolTip1.SetToolTip(chkGradSz, "same size leaves on each node");
+            toolTip1.SetToolTip(chkGradSz, resources.GetString("chkGradSz.ToolTip"));
             chkGradSz.UseVisualStyleBackColor = true;
             chkGradSz.CheckedChanged += ChkGradSz_CheckedChanged;
             // 
             // groupBox3
             // 
+            resources.ApplyResources(groupBox3, "groupBox3");
             groupBox3.Controls.Add(ChkLgMax);
             groupBox3.Controls.Add(rdioOpt5);
             groupBox3.Controls.Add(rdioOpt4);
             groupBox3.Controls.Add(rdioOpt3);
             groupBox3.Controls.Add(rdioOpt2);
             groupBox3.Controls.Add(rdioOpt1);
-            groupBox3.Location = new Point(7, 176);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(439, 59);
-            groupBox3.TabIndex = 10;
             groupBox3.TabStop = false;
-            groupBox3.Text = "variation options";
+            toolTip1.SetToolTip(groupBox3, resources.GetString("groupBox3.ToolTip"));
             // 
             // ChkLgMax
             // 
-            ChkLgMax.AutoSize = true;
-            ChkLgMax.Location = new Point(308, 25);
+            resources.ApplyResources(ChkLgMax, "ChkLgMax");
             ChkLgMax.Name = "ChkLgMax";
-            ChkLgMax.Size = new Size(121, 29);
-            ChkLgMax.TabIndex = 23;
-            ChkLgMax.Text = "larger max";
-            toolTip1.SetToolTip(ChkLgMax, "draw fewer, but larger leaves");
+            toolTip1.SetToolTip(ChkLgMax, resources.GetString("ChkLgMax.ToolTip"));
             ChkLgMax.UseVisualStyleBackColor = true;
             ChkLgMax.CheckedChanged += ChkLgMax_CheckedChanged;
             // 
             // rdioOpt5
             // 
-            rdioOpt5.AutoSize = true;
-            rdioOpt5.Location = new Point(240, 24);
+            resources.ApplyResources(rdioOpt5, "rdioOpt5");
             rdioOpt5.Name = "rdioOpt5";
-            rdioOpt5.Size = new Size(47, 29);
-            rdioOpt5.TabIndex = 4;
             rdioOpt5.TabStop = true;
-            rdioOpt5.Text = "5";
+            toolTip1.SetToolTip(rdioOpt5, resources.GetString("rdioOpt5.ToolTip"));
             rdioOpt5.UseVisualStyleBackColor = true;
             rdioOpt5.CheckedChanged += RdioOpt5_CheckedChanged;
             // 
             // rdioOpt4
             // 
-            rdioOpt4.AutoSize = true;
-            rdioOpt4.Location = new Point(180, 24);
+            resources.ApplyResources(rdioOpt4, "rdioOpt4");
             rdioOpt4.Name = "rdioOpt4";
-            rdioOpt4.Size = new Size(47, 29);
-            rdioOpt4.TabIndex = 3;
             rdioOpt4.TabStop = true;
-            rdioOpt4.Text = "4";
+            toolTip1.SetToolTip(rdioOpt4, resources.GetString("rdioOpt4.ToolTip"));
             rdioOpt4.UseVisualStyleBackColor = true;
             rdioOpt4.CheckedChanged += RdioOpt4_CheckedChanged;
             // 
             // rdioOpt3
             // 
-            rdioOpt3.AutoSize = true;
-            rdioOpt3.Location = new Point(125, 24);
+            resources.ApplyResources(rdioOpt3, "rdioOpt3");
             rdioOpt3.Name = "rdioOpt3";
-            rdioOpt3.Size = new Size(47, 29);
-            rdioOpt3.TabIndex = 2;
             rdioOpt3.TabStop = true;
-            rdioOpt3.Text = "3";
+            toolTip1.SetToolTip(rdioOpt3, resources.GetString("rdioOpt3.ToolTip"));
             rdioOpt3.UseVisualStyleBackColor = true;
             rdioOpt3.CheckedChanged += RdioOpt3_CheckedChanged;
             // 
             // rdioOpt2
             // 
-            rdioOpt2.AutoSize = true;
-            rdioOpt2.Location = new Point(68, 24);
+            resources.ApplyResources(rdioOpt2, "rdioOpt2");
             rdioOpt2.Name = "rdioOpt2";
-            rdioOpt2.Size = new Size(47, 29);
-            rdioOpt2.TabIndex = 1;
             rdioOpt2.TabStop = true;
-            rdioOpt2.Text = "2";
+            toolTip1.SetToolTip(rdioOpt2, resources.GetString("rdioOpt2.ToolTip"));
             rdioOpt2.UseVisualStyleBackColor = true;
             rdioOpt2.CheckedChanged += RdioOpt2_CheckedChanged;
             // 
             // rdioOpt1
             // 
-            rdioOpt1.AutoSize = true;
-            rdioOpt1.Location = new Point(13, 24);
+            resources.ApplyResources(rdioOpt1, "rdioOpt1");
             rdioOpt1.Name = "rdioOpt1";
-            rdioOpt1.Size = new Size(47, 29);
-            rdioOpt1.TabIndex = 0;
             rdioOpt1.TabStop = true;
-            rdioOpt1.Text = "1";
+            toolTip1.SetToolTip(rdioOpt1, resources.GetString("rdioOpt1.ToolTip"));
             rdioOpt1.UseVisualStyleBackColor = true;
             rdioOpt1.CheckedChanged += RdioOpt1_CheckedChanged;
             // 
             // groupBox6
             // 
+            resources.ApplyResources(groupBox6, "groupBox6");
             groupBox6.Controls.Add(lnkSproutAngle);
             groupBox6.Controls.Add(lblSproutAngle);
             groupBox6.Controls.Add(trkSproutAngle);
@@ -849,143 +662,100 @@
             groupBox6.Controls.Add(lnkSubSprout);
             groupBox6.Controls.Add(lnkAddSprout);
             groupBox6.ForeColor = Color.Black;
-            groupBox6.Location = new Point(450, 137);
             groupBox6.Name = "groupBox6";
-            groupBox6.Size = new Size(165, 98);
-            groupBox6.TabIndex = 32;
             groupBox6.TabStop = false;
-            groupBox6.Text = "resprout";
+            toolTip1.SetToolTip(groupBox6, resources.GetString("groupBox6.ToolTip"));
             // 
             // lnkSproutAngle
             // 
+            resources.ApplyResources(lnkSproutAngle, "lnkSproutAngle");
             lnkSproutAngle.ActiveLinkColor = Color.Black;
-            lnkSproutAngle.AutoSize = true;
             lnkSproutAngle.LinkColor = Color.Black;
-            lnkSproutAngle.Location = new Point(9, 58);
             lnkSproutAngle.Name = "lnkSproutAngle";
-            lnkSproutAngle.Size = new Size(59, 25);
-            lnkSproutAngle.TabIndex = 36;
             lnkSproutAngle.TabStop = true;
-            lnkSproutAngle.Text = "angle:";
-            toolTip1.SetToolTip(lnkSproutAngle, "click to reset to 0");
+            toolTip1.SetToolTip(lnkSproutAngle, resources.GetString("lnkSproutAngle.ToolTip"));
             lnkSproutAngle.VisitedLinkColor = Color.Black;
             lnkSproutAngle.LinkClicked += LnkSproutAngle_LinkClicked;
             // 
             // lblSproutAngle
             // 
-            lblSproutAngle.AutoSize = true;
-            lblSproutAngle.Location = new Point(90, 27);
+            resources.ApplyResources(lblSproutAngle, "lblSproutAngle");
             lblSproutAngle.Name = "lblSproutAngle";
-            lblSproutAngle.Size = new Size(39, 25);
-            lblSproutAngle.TabIndex = 35;
-            lblSproutAngle.Text = " +0";
+            toolTip1.SetToolTip(lblSproutAngle, resources.GetString("lblSproutAngle.ToolTip"));
             // 
             // trkSproutAngle
             // 
-            trkSproutAngle.Location = new Point(68, 63);
+            resources.ApplyResources(trkSproutAngle, "trkSproutAngle");
             trkSproutAngle.Maximum = 20;
-            trkSproutAngle.MaximumSize = new Size(300, 30);
             trkSproutAngle.Minimum = -20;
             trkSproutAngle.Name = "trkSproutAngle";
-            trkSproutAngle.RightToLeftLayout = true;
-            trkSproutAngle.Size = new Size(95, 30);
-            trkSproutAngle.TabIndex = 34;
             trkSproutAngle.TickFrequency = 5;
-            toolTip1.SetToolTip(trkSproutAngle, "adjust angle of resprouted curls");
+            toolTip1.SetToolTip(trkSproutAngle, resources.GetString("trkSproutAngle.ToolTip"));
             trkSproutAngle.ValueChanged += TrkSproutAngle_ValueChanged;
             trkSproutAngle.EnabledChanged += TrkSproutAngle_EnabledChanged;
             // 
             // chkResprout
             // 
-            chkResprout.AutoSize = true;
-            chkResprout.Location = new Point(6, 26);
-            chkResprout.Margin = new Padding(0, 3, 0, 3);
+            resources.ApplyResources(chkResprout, "chkResprout");
             chkResprout.Name = "chkResprout";
-            chkResprout.RightToLeft = RightToLeft.Yes;
-            chkResprout.Size = new Size(59, 29);
-            chkResprout.TabIndex = 31;
-            chkResprout.Text = "on";
-            chkResprout.TextAlign = ContentAlignment.TopRight;
-            chkResprout.TextImageRelation = TextImageRelation.TextAboveImage;
-            toolTip1.SetToolTip(chkResprout, "add new growth to otherwise terminal leaves");
+            toolTip1.SetToolTip(chkResprout, resources.GetString("chkResprout.ToolTip"));
             chkResprout.UseVisualStyleBackColor = true;
             chkResprout.CheckedChanged += ChkResprout_CheckedChanged;
             // 
             // lnkSubSprout
             // 
+            resources.ApplyResources(lnkSubSprout, "lnkSubSprout");
             lnkSubSprout.ActiveLinkColor = Color.Blue;
-            lnkSubSprout.AutoSize = true;
-            lnkSubSprout.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             lnkSubSprout.LinkBehavior = LinkBehavior.NeverUnderline;
-            lnkSubSprout.Location = new Point(73, 40);
             lnkSubSprout.Name = "lnkSubSprout";
-            lnkSubSprout.Size = new Size(20, 28);
-            lnkSubSprout.TabIndex = 37;
             lnkSubSprout.TabStop = true;
-            lnkSubSprout.Text = "-";
-            toolTip1.SetToolTip(lnkSubSprout, "-1");
+            toolTip1.SetToolTip(lnkSubSprout, resources.GetString("lnkSubSprout.ToolTip"));
             lnkSubSprout.VisitedLinkColor = Color.Blue;
             lnkSubSprout.LinkClicked += LnkSubSprout_LinkClicked;
             // 
             // lnkAddSprout
             // 
+            resources.ApplyResources(lnkAddSprout, "lnkAddSprout");
             lnkAddSprout.ActiveLinkColor = Color.Blue;
-            lnkAddSprout.AutoSize = true;
-            lnkAddSprout.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
             lnkAddSprout.LinkBehavior = LinkBehavior.NeverUnderline;
-            lnkAddSprout.Location = new Point(138, 45);
             lnkAddSprout.Name = "lnkAddSprout";
-            lnkAddSprout.Size = new Size(21, 21);
-            lnkAddSprout.TabIndex = 38;
             lnkAddSprout.TabStop = true;
-            lnkAddSprout.Text = "+";
-            toolTip1.SetToolTip(lnkAddSprout, "+1");
+            toolTip1.SetToolTip(lnkAddSprout, resources.GetString("lnkAddSprout.ToolTip"));
             lnkAddSprout.VisitedLinkColor = Color.Blue;
             lnkAddSprout.LinkClicked += LnkAddSprout_LinkClicked;
             // 
             // lnkIDs
             // 
+            resources.ApplyResources(lnkIDs, "lnkIDs");
             lnkIDs.ActiveLinkColor = Color.DimGray;
-            lnkIDs.AutoSize = true;
             lnkIDs.BackColor = Color.Transparent;
             lnkIDs.DisabledLinkColor = Color.Gray;
-            lnkIDs.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point);
             lnkIDs.LinkColor = Color.Silver;
-            lnkIDs.Location = new Point(5, 27);
             lnkIDs.Name = "lnkIDs";
-            lnkIDs.Size = new Size(29, 19);
-            lnkIDs.TabIndex = 27;
             lnkIDs.TabStop = true;
-            lnkIDs.Text = "IDs";
-            toolTip1.SetToolTip(lnkIDs, "debugging: show node IDs");
+            toolTip1.SetToolTip(lnkIDs, resources.GetString("lnkIDs.ToolTip"));
             lnkIDs.LinkClicked += LnkIDs_LinkClicked;
             // 
             // lnkLog
             // 
+            resources.ApplyResources(lnkLog, "lnkLog");
             lnkLog.ActiveLinkColor = Color.DimGray;
-            lnkLog.AutoSize = true;
             lnkLog.BackColor = Color.Transparent;
             lnkLog.DisabledLinkColor = Color.Gray;
-            lnkLog.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point);
             lnkLog.LinkColor = Color.Silver;
-            lnkLog.Location = new Point(5, 5);
             lnkLog.Name = "lnkLog";
-            lnkLog.Size = new Size(33, 19);
-            lnkLog.TabIndex = 28;
             lnkLog.TabStop = true;
-            lnkLog.Text = "log ";
-            toolTip1.SetToolTip(lnkLog, "debugging: create process log");
+            toolTip1.SetToolTip(lnkLog, resources.GetString("lnkLog.ToolTip"));
             lnkLog.LinkClicked += LnkLog_LinkClicked;
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(859, 852);
             Controls.Add(splitContainer1);
             ForeColor = Color.Black;
             Name = "MainForm";
-            Text = "Scroll Generator";
+            toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             splitContainer1.Panel2.PerformLayout();
