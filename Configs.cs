@@ -561,7 +561,11 @@
             }
             else
             {
-                if (DIVOPTION == 2 && LGMAX) { desiredTotl = (float)Math.Tau - 1.8f * endAt; }
+                if (DIVOPTION == 2)
+                {
+                    if (LGMAX) { desiredTotl = (float)Math.Tau - 2f * endAt; }
+                    else { desiredTotl = (float)Math.Tau - 1.8f * endAt; }
+                }
                 if (DIVOPTION == 3) { desiredTotl = (float)Math.Tau - 1.7f * endAt; }
             }
 
