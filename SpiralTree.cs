@@ -228,15 +228,16 @@
             float shiftAngl = 0.05f;
 
             float ctr1X = initCtr.X + ((float)Math.Cos(strtAngl - shiftAngl) * (rad1 + 0.5f * Configs.rootBuffer));
-            //float ctr1Y = initCtr.Y + ((float)Math.Sin(strtAngl - shiftAngl) * (rad1 + 0.5f * Configs.rootBuffer));
+            float ctr1Y = initCtr.Y + ((float)Math.Sin(strtAngl - shiftAngl) * (rad1 + 0.5f * Configs.rootBuffer));
 
             float ctr2X = initCtr.X + ((float)Math.Cos(Trig.ComplementAngle(strtAngl + shiftAngl)) *
                           (rad2 + 0.5f * Configs.rootBuffer));
-            //float ctr2Y = initCtr.Y + ((float)Math.Sin(Trig.ComplementAngle(strtAngl + shiftAngl)) *
-            //             (rad2 + 0.5f * Configs.rootBuffer));
+            float ctr2Y = initCtr.Y + ((float)Math.Sin(Trig.ComplementAngle(strtAngl + shiftAngl)) *
+                         (rad2 + 0.5f * Configs.rootBuffer));
 
-            float ctr1Y = initCtr.Y;
-            float ctr2Y = initCtr.Y;
+            float ctrYavg = Math.Abs(Math.Abs(initCtr.Y - ctr1Y) - Math.Abs(initCtr.Y - ctr2Y)) / 2;
+            ctr2Y -= ctrYavg;
+            ctr1Y -= ctrYavg;
 
             return new List<PointF>() { new PointF(ctr1X, ctr1Y), new PointF(ctr2X, ctr2Y) };
         }

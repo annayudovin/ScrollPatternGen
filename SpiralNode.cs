@@ -518,6 +518,27 @@
             if (inSlot < 0) { inSlot = 0; }
             float origBase = baseAngl;
 
+            bool useSlotBase = Configs.maxLeaves < Configs.slotSizes.Count || Configs.RANDNUM;
+            if (useSlotBase || Configs.shiftFactor != 0)
+            {
+                if (!AngleInSlotRange(Trig.Mod2PI(origBase), inSlot))    //faster decision
+                {
+                    float slotBase = Configs.slotAngles[inSlot];
+                    float maxEndRange = (float)Math.Tau - Configs.minRootBase;
+                    float endRange = Math.Min(ToRelativeAngle(origBase) + Math.Max(0.15f, leafArc), maxEndRange);
+                    float strtRange = Configs.endAt;
+
+                    if (Configs.shiftFactor != 0)
+                    {
+                        slotBase = Trig.Mod2PI(slotBase + Configs.shiftFactor);
+                        if (PrntIdx == -1 && !HasLeaves) { endRange = maxEndRange; }
+                    }
+
+                    if (strtRange < slotBase && slotBase < endRange) { baseAngl = ToAbsoluteAngle(slotBase); }
+                    else if (Configs.shiftFactor != 0) { return -100; }  //when shiftFactor == 0, we keep the original baseAngl
+                }
+            }
+
             if (Configs.GRAD && !Configs.SMTOLG && DoubleTheGap())
             { leafArc = (2 * Configs.nodeHalo) + leafArc; }
 
@@ -525,26 +546,6 @@
             {
                 if (!IsRoot) { leafArc = Configs.nodeHalo + leafArc; }
                 else if (Configs.CanDecreaseLeafArc(IsTwin)) { leafArc = 0.9f * leafArc; }
-            }
-
-            bool useSlotBase = Configs.maxLeaves < Configs.slotSizes.Count || Configs.RANDNUM;
-            if (useSlotBase || Configs.shiftFactor != 0)
-            {
-                if (!AngleInSlotRange(Trig.Mod2PI(origBase - (Clock * leafArc)), inSlot))    //faster decision
-                {
-                    float slotBase = Configs.slotAngles[inSlot];
-                    float endRange = Trig.Mod2PI(ToRelativeAngle(origBase) + Math.Max(0.15f, leafArc));
-                    float strtRange = Configs.endAt;
-
-                    if (Configs.shiftFactor != 0)
-                    {
-                        slotBase = Trig.Mod2PI(slotBase + Configs.shiftFactor);
-                        if (PrntIdx == -1 && !HasLeaves) { endRange = (float)Math.Tau - Configs.minRootBase; }
-                    }
-
-                    if (strtRange < slotBase && slotBase < endRange) { baseAngl = ToAbsoluteAngle(slotBase); }
-                    else if (Configs.shiftFactor != 0) { return -100; }  //when shiftFactor == 0, we keep the original baseAngl
-                }
             }
 
             float nextLeafAngl = Trig.Mod2PI(baseAngl - (Clock * leafArc));
