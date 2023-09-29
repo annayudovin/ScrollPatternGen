@@ -4,8 +4,8 @@ namespace BFSSpiralTree
     {
         public class FlEdge
         {
-            public FlPoint A { get; }
-            public FlPoint B { get; }
+            public PointF A { get; }
+            public PointF B { get; }
             public float CrossProd { get; } = 0;
             public float PartialX { get; } = 0;
             public float PartialY { get; } = 0;
@@ -13,7 +13,7 @@ namespace BFSSpiralTree
             public FlEdge() { }
 
 
-            public FlEdge(FlPoint A, FlPoint B)
+            public FlEdge(PointF A, PointF B)
             {
                 this.A = A;
                 this.B = B;
@@ -23,18 +23,18 @@ namespace BFSSpiralTree
                 PartialY = EdgePartialY(crossP, A, B);
             }
             //for shoelace formula implementation for finding the centroid of a polygon (and, coincidentally, its area)
-            private static float EdgePartialX(float crossProd, FlPoint p1, FlPoint p2) { return crossProd * (p1.X + p2.X); }
-            private static float EdgePartialY(float crossProd, FlPoint p1, FlPoint p2) { return crossProd * (p1.Y + p2.Y); }
-            private static float EdgeCrossProduct(FlPoint p1, FlPoint p2) { return (p1.X * p2.Y) - (p2.X * p1.Y); }
+            private static float EdgePartialX(float crossProd, PointF p1, PointF p2) { return crossProd * (p1.X + p2.X); }
+            private static float EdgePartialY(float crossProd, PointF p1, PointF p2) { return crossProd * (p1.Y + p2.Y); }
+            private static float EdgeCrossProduct(PointF p1, PointF p2) { return (p1.X * p2.Y) - (p2.X * p1.Y); }
 
             //wrapper for minDistance that can be called "on" a given edge
-            public virtual Tuple<float, FlPoint> DistanceToEdge(FlPoint leafCtr)
+            public virtual Tuple<float, PointF> DistanceToEdge(PointF leafCtr)
             {
                 return MinDistance(A, B, leafCtr);
             }
 
             //wrapper for Polygon.crossEdge that can be called "on" a given edge
-            public virtual bool CrossEdge(FlPoint prntCtr, FlPoint leafCtr)
+            public virtual bool CrossEdge(PointF prntCtr, PointF leafCtr)
             {
                 return Polygon.CrossEdge(A, B, prntCtr, leafCtr);
             }
@@ -43,33 +43,33 @@ namespace BFSSpiralTree
 
         public class CircularEdge : FlEdge
         {
-            public FlPoint Ctr { get; }
+            public PointF Ctr { get; }
             public float Rad { get; } = 0;
 
-            public CircularEdge(FlPoint pt, float dist)
+            public CircularEdge(PointF pt, float dist)
             {
                 Ctr = pt;
                 Rad = dist;
             }
 
 
-            public override Tuple<float, FlPoint> DistanceToEdge(FlPoint leafCtr)
+            public override Tuple<float, PointF> DistanceToEdge(PointF leafCtr)
             {
                 return DistToCircumference(Ctr, Rad, leafCtr);
             }
 
 
             //wrapper for minDistance that can be called "on" a given edge
-            public override bool CrossEdge(FlPoint prntCtr, FlPoint leafCtr)
+            public override bool CrossEdge(PointF prntCtr, PointF leafCtr)
             {
                 return CrossCircularEdge(Ctr, Rad, prntCtr, leafCtr);
             }
         }
 
 
-        public List<FlPoint> Vertices { get; set; } = new List<FlPoint>();
+        public List<PointF> Vertices { get; set; } = new List<PointF>();
         public List<FlEdge> Edges { get; set; } = new List<FlEdge>();
-        public FlPoint Centroid { get; } = new FlPoint(0, 0);
+        public PointF Centroid { get; } = new PointF(0, 0);
         public float Area { get; } = 0f;
         public float radius = 0f;
 
@@ -77,10 +77,10 @@ namespace BFSSpiralTree
 
 
         public Polygon(float[][] coords, bool useScale = true)
-            : this(coords.Select(x => new FlPoint(x[0], x[1])).ToList(), useScale) { }
+            : this(coords.Select(x => new PointF(x[0], x[1])).ToList(), useScale) { }
 
 
-        public Polygon(List<FlPoint> vertexLst, bool useScale = true)
+        public Polygon(List<PointF> vertexLst, bool useScale = true)
         {
             if (useScale) { vertexLst = ScaleVertices(vertexLst); }
             if (vertexLst.Count > 2)
@@ -89,8 +89,8 @@ namespace BFSSpiralTree
                 float partialY = 0; //sum is shoelace formula for centroid (w/area-derived coeficcient)
                 Area = 0f;      //sum is shoelace formula for area
 
-                FlPoint lastVrtx = vertexLst[^1];
-                foreach (FlPoint vrtx in vertexLst)
+                PointF lastVrtx = vertexLst[^1];
+                foreach (PointF vrtx in vertexLst)
                 {
                     Vertices.Add(vrtx);
 
@@ -104,7 +104,7 @@ namespace BFSSpiralTree
                 }
                 Area = 0.5f * Area; //finishing shoelace formula for area
                 float areaRatio = 1f / (6f * Area); //coeficcient for shoelace formula for centroid
-                Centroid = new FlPoint(areaRatio * partialX, areaRatio * partialY); //finishing shoelace formula for centroid
+                Centroid = new PointF(areaRatio * partialX, areaRatio * partialY); //finishing shoelace formula for centroid
 
                 //too many edge checks will slow down tree building considerably
                 //convert to a circle around centroid
@@ -114,13 +114,13 @@ namespace BFSSpiralTree
         }
 
 
-        private static List<FlPoint> ScaleVertices(List<FlPoint> vertexLst)
+        private static List<PointF> ScaleVertices(List<PointF> vertexLst)
         {
-            List<FlPoint> scaledList = new();
+            List<PointF> scaledList = new();
 
-            foreach (FlPoint vrtx in vertexLst)
+            foreach (PointF vrtx in vertexLst)
             {
-                scaledList.Add(new FlPoint(vrtx.X * Configs.scale, vrtx.Y * Configs.scale));
+                scaledList.Add(new PointF(vrtx.X * Configs.scale, vrtx.Y * Configs.scale));
             }
             return scaledList;
         }
@@ -131,7 +131,7 @@ namespace BFSSpiralTree
             //find vertex closest to centroid - distance will be our radius
             List<float> ctrDists = new();
 
-            foreach (FlPoint vrtx in Vertices) { ctrDists.Add(Trig.PointDist(Centroid, vrtx)); }
+            foreach (PointF vrtx in Vertices) { ctrDists.Add(Trig.PointDist(Centroid, vrtx)); }
             radius = ctrDists.Min();
 
             //remove all "normal" edges, substitute "circular" one
@@ -163,53 +163,57 @@ namespace BFSSpiralTree
         }
 
 
-        private class FlPointVectr
+        private class FPointVectr
         {
             private float X { get; }
             private float Y { get; }
 
-            private FlPointVectr(FlPoint A, FlPoint B)
+
+            private FPointVectr(PointF A, PointF B)
             {
                 X = B.X - A.X;
                 Y = B.Y - A.Y;
             }
 
-            public static float VectrDotProduct(FlPoint v1strt, FlPoint v1end, FlPoint v2strt, FlPoint v2end)
+
+            public static float VectrDotProduct(PointF v1strt, PointF v1end, PointF v2strt, PointF v2end)
             {
-                FlPointVectr v1 = new(v1strt, v1end);
-                FlPointVectr v2 = new(v2strt, v2end);
+                FPointVectr v1 = new(v1strt, v1end);
+                FPointVectr v2 = new(v2strt, v2end);
 
                 return (v1.X * v2.X) + (v1.Y * v2.Y);
             }
 
-            public static float VectrCrossProduct(FlPoint v1strt, FlPoint v1end, FlPoint v2strt, FlPoint v2end)
+
+            public static float VectrCrossProduct(PointF v1strt, PointF v1end, PointF v2strt, PointF v2end)
             {
-                FlPointVectr v1 = new(v1strt, v1end);
-                FlPointVectr v2 = new(v2strt, v2end);
+                FPointVectr v1 = new(v1strt, v1end);
+                FPointVectr v2 = new(v2strt, v2end);
 
                 return (v1.X * v2.Y) - (v2.X * v1.Y);
             }
         }
 
 
-        public static Tuple<float, FlPoint> DistToCircumference(FlPoint ctr, float rad, FlPoint leafCtr)
+        public static Tuple<float, PointF> DistToCircumference(PointF ctr, float rad, PointF leafCtr)
         {
-            FlPoint circumpoint = GetCircumpoint(ctr, rad, leafCtr);
+            PointF circumpoint = GetCircumpoint(ctr, rad, leafCtr);
             float distToPt = Trig.PointDist(leafCtr, circumpoint);
             return Tuple.Create(distToPt, circumpoint);
         }
 
-        private static FlPoint GetCircumpoint(FlPoint ctr, float rad, FlPoint nodeCtr)
+
+        private static PointF GetCircumpoint(PointF ctr, float rad, PointF nodeCtr)
         {
             float angleFromCtr = Trig.AngleToPoint(ctr, nodeCtr);
 
             float circumpointX = ctr.X + ((float)Math.Cos(angleFromCtr) * rad);
             float circumpointY = ctr.Y + ((float)Math.Sin(angleFromCtr) * rad);
-            return new FlPoint(circumpointX, circumpointY);
+            return new PointF(circumpointX, circumpointY);
         }
 
 
-        public static bool CrossCircularEdge(FlPoint polyCtr, float rad, FlPoint Ctr1, FlPoint Ctr2)
+        public static bool CrossCircularEdge(PointF polyCtr, float rad, PointF Ctr1, PointF Ctr2)
         {
             float distTo1 = Trig.PointDist(polyCtr, Ctr1);
             float distTo2 = Trig.PointDist(polyCtr, Ctr2);
@@ -220,7 +224,7 @@ namespace BFSSpiralTree
         //adapted from https://www.geeksforgeeks.org/check-if-two-given-line-segments-intersect/
         // See https://www.geeksforgeeks.org/orientation-3-ordered-points/ for details of orientation formula.      
         //Checks if line segments 'E1-E2' and 'Ctr1-Ctr2' intersect
-        public static bool CrossEdge(FlPoint E1, FlPoint E2, FlPoint Ctr1, FlPoint Ctr2)
+        public static bool CrossEdge(PointF E1, PointF E2, PointF Ctr1, PointF Ctr2)
         {
             //find the four orientations needed for general case
             int o1 = orientation(E1, E2, Ctr1);
@@ -229,7 +233,7 @@ namespace BFSSpiralTree
             int o4 = orientation(Ctr1, Ctr2, E2);
 
             //find orientation of ordered triplet (P, Q, R).
-            static int orientation(FlPoint P, FlPoint Q, FlPoint R)
+            static int orientation(PointF P, PointF Q, PointF R)
             {
                 float orVal = ((Q.Y - P.Y) * (R.X - Q.X)) - ((Q.X - P.X) * (R.Y - Q.Y));
 
@@ -246,11 +250,11 @@ namespace BFSSpiralTree
         }
 
 
-        public static Tuple<float, FlPoint> MinDistance(FlPoint A, FlPoint B, FlPoint E)
+        public static Tuple<float, PointF> MinDistance(PointF A, PointF B, PointF E)
         {
-            float dotProdAB_BE = FlPointVectr.VectrDotProduct(A, B, B, E);
-            float dotProdAB_AE = FlPointVectr.VectrDotProduct(A, B, A, E);
-            FlPoint closestPt;
+            float dotProdAB_BE = FPointVectr.VectrDotProduct(A, B, B, E);
+            float dotProdAB_AE = FPointVectr.VectrDotProduct(A, B, A, E);
+            PointF closestPt;
 
 
             float minDist;
@@ -274,7 +278,7 @@ namespace BFSSpiralTree
             {
                 // Finding the perpendicular distance
                 float ABdist = Trig.PointDist(A, B);
-                minDist = FlPointVectr.VectrCrossProduct(A, B, A, E) / ABdist;
+                minDist = FPointVectr.VectrCrossProduct(A, B, A, E) / ABdist;
                 closestPt = FindPoint(A, B, E, minDist);
             }
 
@@ -282,7 +286,7 @@ namespace BFSSpiralTree
         }
 
 
-        public static FlPoint FindPoint(FlPoint A, FlPoint B, FlPoint E, float distEtoF)
+        public static PointF FindPoint(PointF A, PointF B, PointF E, float distEtoF)
         {
             // xF = (1 - t) * xA + t * xB
             // yF = (1 - t) * yA + t * yB
@@ -299,7 +303,7 @@ namespace BFSSpiralTree
             float distAtoF = distEtoA * (float)Math.Sin(anglAEF);
             float xF = ((1 - (distAtoF / distAtoB)) * A.X) + (distAtoF / distAtoB * B.X);
             float yF = ((1 - (distAtoF / distAtoB)) * A.Y) + (distAtoF / distAtoB * B.Y);
-            return new FlPoint(xF, yF);
+            return new PointF(xF, yF);
         }
     }
 }

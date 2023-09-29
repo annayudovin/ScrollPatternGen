@@ -5,7 +5,7 @@ namespace BFSSpiralTree
     public partial class MainForm : Form
     {
         private SpiralTree? SpiralTree;
-        private List<FlPoint[]> cachedTreePoints = new();
+        private List<PointF[]> cachedTreePoints = new();
         private Polygon? Boundry;
         private bool showIdxs = false;
         private Color scrollColor = Color.Black;
@@ -88,16 +88,16 @@ namespace BFSSpiralTree
 
             SpiralTree = new SpiralTree(Boundry);
             SpiralTree.Grow();
-            List<FlPoint[]> spiralPtsLst = SpiralTree.PlotSpiralTreePoints();
+            List<PointF[]> spiralPtsLst = SpiralTree.PlotSpiralTreePoints();
+
             cachedTreePoints = spiralPtsLst;
         }
 
 
-        private void DrawIdx(PointF ctr, int nodeIdx)
+        private void DrawIdx(System.Drawing.PointF ctr, int nodeIdx)
         {
             int fontSize = (int)(7 * scale);
             int scldDim = (int)(18 * scale);
-            //Rectangle txtRect = new((int)ctr.X - scldDim/2, (int)ctr.Y - scldDim/2, (int)(scldDim*1.5), scldDim);
             Rectangle txtRect = new((int)ctr.X - scldDim, (int)ctr.Y - (scldDim / 2), scldDim * 2, scldDim);
             string nodeNum = $"{nodeIdx}";
             TextRenderer.DrawText(plotter, nodeNum, new Font("ArialNarrow", fontSize), txtRect, SystemColors.ControlText);
@@ -124,14 +124,9 @@ namespace BFSSpiralTree
             SolidBrush solidBrush = new(mainPanel.BackColor);
             plotter.FillRectangle(solidBrush, 0, 0, mainPanel.Size.Width, mainPanel.Size.Height);
 
-            foreach (FlPoint[] _pArry in cachedTreePoints)
+            foreach (PointF[] _pArry in cachedTreePoints)
             {
-                //convert to PointF format & draw
-                List<PointF> _fPts = new();
-                foreach (FlPoint _p in _pArry) { _fPts.Add(_p.ToPointF()); }
-                PointF[] spiralPtsArry = _fPts.ToArray();
-
-                plotter.DrawCurve(pen, spiralPtsArry);
+                plotter.DrawCurve(pen, _pArry);
             }
 
             if (showIdxs)
@@ -144,20 +139,36 @@ namespace BFSSpiralTree
                     int fontSize = (int)(7 * scale);
                     int scldWd = (int)(80 * scale);
                     int scldHt = (int)(18 * scale);
-                    //TextRenderer.DrawText(plotter, treeCount, new Font("Arial Narrow", fontSize),
-                    //                      new Rectangle(corner.X, corner.Y, scldWd, scldHt), SystemColors.ControlText);
+
                     TextRenderer.DrawText(plotter, treeCount, new Font("Arial", fontSize),
                                           new Rectangle(corner.X, corner.Y, scldWd, scldHt), SystemColors.ControlText);
 
+                    DrawSpiralEnvelopes();
+
                     for (int i = 0; i < SpiralTree.Count; i++)
                     {
-                        DrawIdx(SpiralTree[i].Ctr.ToPointF(), i);
+                        DrawIdx(SpiralTree[i].Ctr, i);
                     }
                 }
             }
 
             Bitmap bmpImage = new(bmpSurface);
             return bmpImage;
+        }
+
+
+        private void DrawSpiralEnvelopes()
+        {
+            if (SpiralTree is not null)
+            {
+                Pen greenPen = new(Color.FromName("MediumTurquoise"), 1);
+                List<PointF[]> outerPtsLst = SpiralTree.PlotTreeEnvelopePoints();
+
+                foreach (PointF[] _pArry in outerPtsLst)
+                {
+                    plotter.DrawCurve(greenPen, _pArry);
+                }
+            }
         }
 
 
@@ -293,7 +304,7 @@ namespace BFSSpiralTree
 
             trkSpread.Value = (int)(2 * Configs.spreadFactor / Configs.nodeHalo);
             string sprdSgn = (Configs.spreadFactor > 0) ? "+" : " ";
-            lblSpread.Text = $"{sprdSgn}{Configs.spreadFactor:F2}";
+            lblSpread.Text = $"{sprdSgn}{Configs.spreadFactor:F3}";
 
             trkShift.Value = (int)(Configs.shiftFactor * 100);
             string shftSgn = (Configs.shiftFactor > 0) ? "+" : " ";
@@ -493,6 +504,7 @@ namespace BFSSpiralTree
             trkSproutAngle.Value = 0;
         }
 
+
         private void LnkAddSprout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         { trkSproutAngle.Value = Math.Min(trkSproutAngle.Value + 1, trkSproutAngle.Maximum); }
         private void LnkSubSprout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -503,7 +515,7 @@ namespace BFSSpiralTree
         {
             Configs.spreadFactor = trkSpread.Value * (Configs.nodeHalo / 2f);
             string sign = (Configs.spreadFactor > 0) ? "+" : (Configs.spreadFactor == 0) ? " " : "";
-            lblSpread.Text = $"{sign}{Configs.spreadFactor:F2}";
+            lblSpread.Text = $"{sign}{Configs.spreadFactor:F3}";
         }
 
 

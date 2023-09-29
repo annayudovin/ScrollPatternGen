@@ -21,6 +21,8 @@
         public static float rootBuffer = 12;      //distance between twin root node radii
         public static float nodeHalo = 0.05f; //angle distance separating tree nodes, similar function to nodeBuffer    
         public static int maxLeaves = 7;
+
+        public static float minRootBase = 0.01f;//more precise values initialized later
         public static float startAt = 0.785f; //more precise values initialized later
         public static float endAt = 0.785f; //more precise values initialized later
         public static float rootAngle = 0f;
@@ -29,8 +31,8 @@
         public static readonly int lowerLim = 20;
 
         private static int availSlotSpaces = 6;     //number of option fractions adjusted to fit, either 5 or 6
-        public static float sproutAngle = 5f / 4f * (float)Math.PI;
-        public static float sproutMaxAngle = 11f / 12f * (float)Math.PI;
+        public static float sproutAngle = 5f / 4f * (float)Math.PI;   //1.25*PI
+        public static float sproutMaxAngle = 11f / 12f * (float)Math.PI;   //0.916...*PI
 
         public static float sproutAdjustment = 0;
         public static float spreadFactor = 0;
@@ -106,7 +108,7 @@
 
         public static Tuple<List<float>, List<float>, List<float>> EvenSplit()
         {
-            float baseFract = ((float)Math.Tau - endAt - ((float)Math.PI / 8f) + spreadFactor) / availSlotSpaces;
+            float baseFract = ((float)Math.Tau - endAt - ((float)Math.PI / 8f) - nodeHalo + spreadFactor) / availSlotSpaces;
             float radMult = (float)Math.Sin(baseFract / 2f) / (1 - (float)Math.Sin(baseFract / 2f));
 
             //maximum number of these that can fit at !LGMAX is 5
@@ -116,16 +118,16 @@
             List<float> slotAngls;
             List<float> slotSizes;
             if (LGMAX)
-            {//initially used:1.919, 2.840, 3.661, 4.382
+            {
                 float slotSize = 1.071f;    //experimentally determined
                 slotSizes = Enumerable.Repeat(slotSize, 4).ToList();
                 slotAngls = new List<float> { 1.262f, 2.333f, 3.404f, 4.475f }; //experimentally determined
             }
             else
-            {//initially used 1.748, 2.499, 3.150, 3.701, 4.152
-                float slotSize = 0.90075f;  //experimentally determined
+            {
+                float slotSize = 0.897f;  //experimentally determined
                 slotSizes = Enumerable.Repeat(slotSize, 5).ToList();
-                slotAngls = new List<float> { 1.157f, 2.058f, 2.958f, 3.859f, 4.760f }; //experimentally determined
+                slotAngls = new List<float> { 1.153f, 2.051f, 2.948f, 3.846f, 4.744f }; //experimentally determined
             }
 
             if (spreadFactor != 0)
@@ -224,52 +226,41 @@
         }
 
 
-        public static List<int> GetSlotList(int maxNumLeaves)
+        public static List<int> GetSlotList(int take)
         {
             int numSlots = slotSizes.Count;
             List<int> slotLst;
 
-            if (maxNumLeaves == 2)
+            if (take == 2)
             {
-                if (slotSizes.Count == 4) { return new List<int> { 1, 2 }; }
-                if (GRAD && DIVOPTION == 1)
+                if (!GRAD) { return LGMAX ? new List<int> { 2, 3 } : new List<int> { 2, 4 }; }
+
+                if (LGMAX) { return SMTOLG ? new List<int> { 1, 2 } : new List<int> { 2, 3 }; }
+                else
                 {
                     if (SMTOLG) { return new List<int> { 1, 3 }; }
-                    else if (LGMAX) { return new List<int> { 2, 4 }; }
-                    else { return new List<int> { 3, 5 }; }
+                    else { return DIVOPTION == 1 ? new List<int> { 3, 5 } : new List<int> { 2, 4 }; }
                 }
-                if (LGMAX && GRAD && !SMTOLG) { return new List<int> { 2, 3 }; }
-                else { return new List<int> { 2, 4 }; }
             }
 
-            int strt = (numSlots - maxNumLeaves) / 2;
-            if (numSlots % 2 == 1) //odd number of slots: 5 and 7
-            {
-                if (maxNumLeaves % 2 == 1) //select odd: take same number from each end
-                {
-                    slotLst = Enumerable.Range(strt, maxNumLeaves).ToList();
-                }
-                else    //select even: leave out smallest-size leaf
-                {
-                    slotLst = Enumerable.Range(strt, maxNumLeaves).ToList();
-                    if (!SMTOLG) { slotLst = slotLst.Select(x => x + 1).ToList(); }
-                }
-                if (SMTOLG && numSlots == 7 && maxNumLeaves < 5) { slotLst = slotLst.Select(x => x - 1).ToList(); }
-                if (!SMTOLG && numSlots == 7 && maxNumLeaves < 5) { slotLst = slotLst.Select(x => x + 1).ToList(); }
-            }
+            //if !GRAD, the maximum number of slots is 5, and take==2 case is already covered
+            if (!GRAD) { return Enumerable.Range(1, take).ToList(); }
 
-            else //even number of slots: 6
+            //for DIVOPTION != 1, aiming the following pattern as the number of leaves decreases:
+            //remove smallest slot, remove largest slot, remove smallest slot
+            //for DIVOPTION == 1, the pattern is to remove the smallest two slots first,
+            //then the largest, then the smallest again, as the number of leaves decreases
+            if (LGMAX) { numSlots += 1; }
+            if (!SMTOLG) { numSlots += 1; }
+            if (DIVOPTION == 1)
             {
-                if (maxNumLeaves % 2 == 0) //select even (i.e. 4): take 1 from each end
-                {
-                    slotLst = Enumerable.Range(1, maxNumLeaves).ToList();
-                }
-                else //select odd: 5 or 3
-                {
-                    slotLst = Enumerable.Range(strt, maxNumLeaves).ToList();
-                    if (!SMTOLG) { slotLst = slotLst.Select(x => x + 1).ToList(); }
-                }
+                //in effect, when DIVOPTION == 1 
+                //numSlots = 6 for SMTOLG, and numSlots = 9 for !SMTOLG
+                if (!SMTOLG) { numSlots += 1; }
+                else { numSlots -= 1; }
             }
+            int strt = (numSlots - take) / 2;
+            slotLst = Enumerable.Range(strt, take).ToList();
 
             return slotLst;
         }
@@ -344,23 +335,36 @@
             slotSizes.Sort();
             slotAngles.Sort();
 
-            if (shiftFactor != 0)
-            {
-                List<float> adjustedSlotAngls = slotAngles.Select(x => x + shiftFactor).ToList();
-                slotAngles = adjustedSlotAngls;
-            }
+            AdjustSlotAngles();
 
-            if (GRAD && SMTOLG) { slotRadMults.Reverse(); }
+            if (GRAD && SMTOLG)
+            {
+                slotRadMults.Reverse();
+                slotSizes.Reverse();
+            }
 
             //initialize list of slots to use when number of leaves varies
             int maxSlots = slotSizes.Count;
-            if (maxLeaves < maxSlots)
-            {
-                useSlots = GetSlotList(maxLeaves);
-                if (maxLeaves <= 3) { AdjustSparseSlots(); }
-            }
+            if (maxLeaves < maxSlots) { useSlots = GetSlotList(maxLeaves); }
+
             else { useSlots = Enumerable.Range(0, maxSlots).ToList(); } //initialize it to all available slots
             useSlots.Reverse();
+        }
+
+
+        public static void AdjustSlotAngles()
+        {
+            if (!GRAD) { return; }
+
+            float adjstr = (float)Math.Tau - slotAngles.Max();
+            if (SMTOLG || !TWIN)
+            {
+                float minLeafArc = 0.1f + (float)Math.Asin(slotRadMults.Min() / (1 + slotRadMults.Min()));
+                adjstr -= 1.5f * minLeafArc;
+            }
+            else { adjstr -= 1.5f * slotSizes.Min(); }
+            List<float> adjustedSlotAngls = slotAngles.Select(x => x + adjstr).ToList();
+            slotAngles = adjustedSlotAngls;
         }
 
 
@@ -375,7 +379,7 @@
                     if (SMTOLG && LGMAX) { startAt = 0; }
                 }
                 else
-                { startAt = (float)Math.Tau / 7f; }
+                { startAt = (float)Math.Tau / 6f; }
             }
         }
 
@@ -483,60 +487,6 @@
         }
 
 
-
-        //fudging the slots/slot sizes to improve look of sparce leaf options (2 & 3)
-        public static void AdjustSparseSlots()
-        {
-            bool spreadSlots = maxLeaves == 3;
-            if (maxLeaves == 2 && GRAD && !SMTOLG && LGMAX && DIVOPTION < 5) { spreadSlots = true; }
-            if (maxLeaves == 2 && !GRAD && LGMAX) { spreadSlots = true; }
-            if (spreadSlots)
-            {
-                int minSlot = useSlots.Min();
-                int maxSlot = useSlots.Max();
-                float divizor = 3;
-                if (GRAD && SMTOLG && !LGMAX && DIVOPTION != 3) { divizor = 2; }
-                if (GRAD && !SMTOLG && maxLeaves == 2 && LGMAX) { divizor = 10; }
-                if (GRAD && SMTOLG && DIVOPTION == 5 && LGMAX) { divizor = -10; }
-                if (!GRAD && maxLeaves == 3 && LGMAX) { divizor = 4; }
-                slotAngles[minSlot] -= slotSizes[minSlot] / divizor;
-                slotAngles[maxSlot] += slotSizes[maxSlot] / divizor;
-            }
-
-            bool shrinkSlots = maxLeaves == 2;
-            if (maxLeaves == 2 && GRAD && !SMTOLG && LGMAX) { shrinkSlots = false; }
-            if (shrinkSlots)
-            {
-                int minSlot = useSlots.Min();
-                int maxSlot = useSlots.Max();
-                slotAngles[minSlot] += slotSizes[minSlot] / 3;
-                slotAngles[maxSlot] -= slotSizes[maxSlot] / 3;
-            }
-
-            bool shiftBack = GRAD && !SMTOLG && maxLeaves <= 3;
-            if (maxLeaves == 2 && !GRAD && LGMAX) { shiftBack = true; }
-            if (shiftBack)
-            {
-                float minSize = slotSizes.Min() / 2;
-                if (DIVOPTION > 3) { minSize += (float)Math.PI / 10; }
-                if (LGMAX) { minSize += (float)Math.PI / 15; }
-                if (!GRAD) { minSize = slotSizes[0] / 4; }
-                foreach (int slt in useSlots) { slotAngles[slt] += minSize; }
-            }
-
-            bool shiftForward = GRAD && SMTOLG && maxLeaves <= 3;
-            if (shiftForward)
-            {
-                float minSize = slotSizes.Min() / 2;
-
-                if (DIVOPTION == 2 && LGMAX) { minSize -= (float)Math.PI / 12; }
-                if (DIVOPTION == 3 && LGMAX) { minSize += (float)Math.PI / 8; }
-                if (maxLeaves == 2 && !LGMAX && DIVOPTION != 1) { minSize = slotSizes.Min(); }
-                foreach (int slt in useSlots) { slotAngles[slt] -= minSize; }
-            }
-        }
-
-
         public static List<float> ProportionFractions(List<float> fracts)
         {
             // add up all fracts
@@ -550,23 +500,34 @@
 
             if (SMTOLG)
             {
-                if (DIVOPTION == 2)
+                if (DIVOPTION == 1) { desiredTotl -= 0.15f; }
+                if (DIVOPTION == 2) { desiredTotl -= 0.25f; }
+                if (DIVOPTION == 3 && !LGMAX) { desiredTotl -= 0.35f; }
+                if (DIVOPTION == 4)
                 {
-                    if (LGMAX) { desiredTotl = (float)Math.Tau - 1.7f * endAt; }
-                    else { desiredTotl = (float)Math.Tau - 1.8f * endAt; }
+                    if (!LGMAX) { desiredTotl -= 0.2f; }
+                    else { desiredTotl -= 0.1f; }
                 }
-                if (DIVOPTION == 3) { desiredTotl = (float)Math.Tau - 1.6f * endAt; }
-                if (DIVOPTION >= 4 && !LGMAX) { desiredTotl -= 0.2f; }
-
+                if (DIVOPTION == 5) { desiredTotl -= 0.075f; }
             }
             else
             {
+                if (DIVOPTION == 1)
+                {
+                    if (!LGMAX) { desiredTotl += 0.1f; }
+                    else { desiredTotl += 0.225f; }
+                }
                 if (DIVOPTION == 2)
                 {
-                    if (LGMAX) { desiredTotl = (float)Math.Tau - 2f * endAt; }
-                    else { desiredTotl = (float)Math.Tau - 1.8f * endAt; }
+                    if (!LGMAX) { desiredTotl += 0.03f; }
+                    else { desiredTotl -= 0.17f; }
                 }
-                if (DIVOPTION == 3) { desiredTotl = (float)Math.Tau - 1.7f * endAt; }
+                if (DIVOPTION == 3)
+                {
+                    if (!LGMAX) { desiredTotl -= 0.23f; }
+                    else { desiredTotl -= 0.17f; }
+                }
+                if (DIVOPTION >= 4) { desiredTotl -= 0.125f; }
             }
 
             int extra = 1;
@@ -588,9 +549,12 @@
         }
 
 
-        public static float RootBaseArc(int rootIdx, float rootDist)
+        //also updates minRootBase
+        public static float RootBaseArc(int rootIdx, float rootDist)    //returns relative arc angle
         {
             float rootBase = startAt;
+            minRootBase = 0.01f;
+
             if (TWIN)
             {
                 float otherRootRad = initRadius;
@@ -600,24 +564,23 @@
                 {
                     float minMult = slotRadMults.Min();
                     float minLeaf = otherRootRad * minMult;
+                    minRootBase = (float)Math.Asin(otherRootRad / rootDist);
                     if (SMTOLG)
                     {
-                        rootBase = (float)Math.Asin(otherRootRad / rootDist);
-                        if (twinRatio == 1 || rootIdx == 0) { rootBase -= nodeHalo; }
-                        else
-                        {
-                            float leafArc = (float)Math.Asin(minLeaf / (otherRootRad + minLeaf));
-                            rootBase += leafArc;
-                        }
+                        float leafArc = (float)Math.Asin(minLeaf / (otherRootRad + minLeaf));
+                        rootBase += leafArc;
+                        minRootBase = rootBase;
                     }
                     else
                     {
-                        rootBase = (float)Math.Asin((otherRootRad + minLeaf + (1.5 * nodeBuffer)) / rootDist);
+                        if (minMult > 0.33) { minLeaf += nodeBuffer; }
+                        rootBase = (float)Math.Asin((otherRootRad + minLeaf) / rootDist);
                     }
                 }
             }
 
-            return rootBase + shiftFactor;
+            minRootBase = 0.5f * minRootBase - 2 * nodeHalo;
+            return rootBase;
         }
 
 
@@ -636,20 +599,17 @@
                 spreadFracts.Add(adjFract + nodeHalo);
             }
 
-            List<float> fractAngls = new();
-            float totl = endAt + 0.0001f - adjFracts.Min();
-
             spreadFracts.Sort();
             adjFracts.Sort();
 
             if (SMTOLG)
             {
-                //Root base for idx#0 && idx#1 is 0.463, when twinRatio is 1 (i.e. max). Math.PI/6.5 = 0.4833
-                //Root base for idx#0 is 0.332 and for idx#1 is 0.575, when twinRatio: 0.6 (i.e. min). Math.PI/9 = 0.3491; Math.PI/5.5 = 0.5712
-                totl = twinRatio < 1 ? (float)Math.PI / 5.5f : (float)Math.PI / 6.5f;
                 spreadFracts.Reverse();
                 adjFracts.Reverse();
             }
+
+            List<float> fractAngls = new();
+            float totl = 0;
 
             foreach (float adjFract in adjFracts)
             {

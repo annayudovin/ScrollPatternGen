@@ -31,8 +31,6 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            mainPanel = new Panel();
-            btnPreview = new Button();
             splitContainer1 = new SplitContainer();
             grpAdjustCurls = new GroupBox();
             lblSpread = new Label();
@@ -64,6 +62,7 @@
             updownMaxLeaves = new DomainUpDown();
             label4 = new Label();
             chkRndLeaves = new CheckBox();
+            btnPreview = new Button();
             groupBox1 = new GroupBox();
             rdioNoRnd = new RadioButton();
             rdioRndLrg = new RadioButton();
@@ -94,6 +93,7 @@
             lnkAddSprout = new LinkLabel();
             lnkIDs = new LinkLabel();
             lnkLog = new LinkLabel();
+            mainPanel = new Panel();
             clrDlgScroll = new ColorDialog();
             toolTip1 = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -117,22 +117,6 @@
             ((System.ComponentModel.ISupportInitialize)trkSproutAngle).BeginInit();
             SuspendLayout();
             // 
-            // mainPanel
-            // 
-            resources.ApplyResources(mainPanel, "mainPanel");
-            mainPanel.BackColor = Color.White;
-            mainPanel.Name = "mainPanel";
-            toolTip1.SetToolTip(mainPanel, resources.GetString("mainPanel.ToolTip"));
-            mainPanel.Paint += MainPanel_Paint;
-            // 
-            // btnPreview
-            // 
-            resources.ApplyResources(btnPreview, "btnPreview");
-            btnPreview.Name = "btnPreview";
-            toolTip1.SetToolTip(btnPreview, resources.GetString("btnPreview.ToolTip"));
-            btnPreview.UseVisualStyleBackColor = true;
-            btnPreview.Click += BtnPreview_Click;
-            // 
             // splitContainer1
             // 
             resources.ApplyResources(splitContainer1, "splitContainer1");
@@ -141,7 +125,6 @@
             // 
             // splitContainer1.Panel1
             // 
-            resources.ApplyResources(splitContainer1.Panel1, "splitContainer1.Panel1");
             splitContainer1.Panel1.Controls.Add(grpAdjustCurls);
             splitContainer1.Panel1.Controls.Add(groupBox9);
             splitContainer1.Panel1.Controls.Add(grpBoxOrigin);
@@ -153,21 +136,16 @@
             splitContainer1.Panel1.Controls.Add(groupBox2);
             splitContainer1.Panel1.Controls.Add(groupBox3);
             splitContainer1.Panel1.Controls.Add(groupBox6);
-            toolTip1.SetToolTip(splitContainer1.Panel1, resources.GetString("splitContainer1.Panel1.ToolTip"));
             // 
             // splitContainer1.Panel2
             // 
-            resources.ApplyResources(splitContainer1.Panel2, "splitContainer1.Panel2");
             splitContainer1.Panel2.Controls.Add(lnkIDs);
             splitContainer1.Panel2.Controls.Add(lnkLog);
             splitContainer1.Panel2.Controls.Add(mainPanel);
-            toolTip1.SetToolTip(splitContainer1.Panel2, resources.GetString("splitContainer1.Panel2.ToolTip"));
             splitContainer1.Panel2.Resize += SplitContainer1_Panel2_Resize;
-            toolTip1.SetToolTip(splitContainer1, resources.GetString("splitContainer1.ToolTip"));
             // 
             // grpAdjustCurls
             // 
-            resources.ApplyResources(grpAdjustCurls, "grpAdjustCurls");
             grpAdjustCurls.Controls.Add(lblSpread);
             grpAdjustCurls.Controls.Add(lblShift);
             grpAdjustCurls.Controls.Add(trkSpread);
@@ -178,23 +156,21 @@
             grpAdjustCurls.Controls.Add(lnkSubShift);
             grpAdjustCurls.Controls.Add(lnkSubSprd);
             grpAdjustCurls.Controls.Add(lnkAddSprd);
+            resources.ApplyResources(grpAdjustCurls, "grpAdjustCurls");
             grpAdjustCurls.Name = "grpAdjustCurls";
             grpAdjustCurls.TabStop = false;
-            toolTip1.SetToolTip(grpAdjustCurls, resources.GetString("grpAdjustCurls.ToolTip"));
             // 
             // lblSpread
             // 
             resources.ApplyResources(lblSpread, "lblSpread");
             lblSpread.BackColor = Color.Transparent;
             lblSpread.Name = "lblSpread";
-            toolTip1.SetToolTip(lblSpread, resources.GetString("lblSpread.ToolTip"));
             // 
             // lblShift
             // 
             resources.ApplyResources(lblShift, "lblShift");
             lblShift.BackColor = Color.Transparent;
             lblShift.Name = "lblShift";
-            toolTip1.SetToolTip(lblShift, resources.GetString("lblShift.ToolTip"));
             // 
             // trkSpread
             // 
@@ -218,8 +194,9 @@
             // 
             // lnkSpread
             // 
-            resources.ApplyResources(lnkSpread, "lnkSpread");
             lnkSpread.ActiveLinkColor = Color.Black;
+            resources.ApplyResources(lnkSpread, "lnkSpread");
+            lnkSpread.BackColor = Color.Transparent;
             lnkSpread.LinkColor = Color.Black;
             lnkSpread.Name = "lnkSpread";
             lnkSpread.TabStop = true;
@@ -229,8 +206,8 @@
             // 
             // lnkShift
             // 
-            resources.ApplyResources(lnkShift, "lnkShift");
             lnkShift.ActiveLinkColor = Color.Black;
+            resources.ApplyResources(lnkShift, "lnkShift");
             lnkShift.LinkColor = Color.Black;
             lnkShift.Name = "lnkShift";
             lnkShift.TabStop = true;
@@ -240,8 +217,8 @@
             // 
             // lnkAddShift
             // 
-            resources.ApplyResources(lnkAddShift, "lnkAddShift");
             lnkAddShift.ActiveLinkColor = Color.Blue;
+            resources.ApplyResources(lnkAddShift, "lnkAddShift");
             lnkAddShift.LinkBehavior = LinkBehavior.NeverUnderline;
             lnkAddShift.Name = "lnkAddShift";
             lnkAddShift.TabStop = true;
@@ -251,8 +228,8 @@
             // 
             // lnkSubShift
             // 
-            resources.ApplyResources(lnkSubShift, "lnkSubShift");
             lnkSubShift.ActiveLinkColor = Color.Blue;
+            resources.ApplyResources(lnkSubShift, "lnkSubShift");
             lnkSubShift.LinkBehavior = LinkBehavior.NeverUnderline;
             lnkSubShift.Name = "lnkSubShift";
             lnkSubShift.TabStop = true;
@@ -262,8 +239,8 @@
             // 
             // lnkSubSprd
             // 
-            resources.ApplyResources(lnkSubSprd, "lnkSubSprd");
             lnkSubSprd.ActiveLinkColor = Color.Blue;
+            resources.ApplyResources(lnkSubSprd, "lnkSubSprd");
             lnkSubSprd.LinkBehavior = LinkBehavior.NeverUnderline;
             lnkSubSprd.Name = "lnkSubSprd";
             lnkSubSprd.TabStop = true;
@@ -273,8 +250,8 @@
             // 
             // lnkAddSprd
             // 
-            resources.ApplyResources(lnkAddSprd, "lnkAddSprd");
             lnkAddSprd.ActiveLinkColor = Color.Blue;
+            resources.ApplyResources(lnkAddSprd, "lnkAddSprd");
             lnkAddSprd.LinkBehavior = LinkBehavior.NeverUnderline;
             lnkAddSprd.Name = "lnkAddSprd";
             lnkAddSprd.TabStop = true;
@@ -284,12 +261,11 @@
             // 
             // groupBox9
             // 
-            resources.ApplyResources(groupBox9, "groupBox9");
             groupBox9.Controls.Add(btnCopy);
             groupBox9.Controls.Add(btnSVG);
+            resources.ApplyResources(groupBox9, "groupBox9");
             groupBox9.Name = "groupBox9";
             groupBox9.TabStop = false;
-            toolTip1.SetToolTip(groupBox9, resources.GetString("groupBox9.ToolTip"));
             // 
             // btnCopy
             // 
@@ -309,7 +285,6 @@
             // 
             // grpBoxOrigin
             // 
-            resources.ApplyResources(grpBoxOrigin, "grpBoxOrigin");
             grpBoxOrigin.Controls.Add(lblAngle);
             grpBoxOrigin.Controls.Add(trkStrtAngle);
             grpBoxOrigin.Controls.Add(chkRandAngl);
@@ -318,16 +293,15 @@
             grpBoxOrigin.Controls.Add(lnkAddStrt);
             grpBoxOrigin.Controls.Add(lnkSubStrt);
             grpBoxOrigin.Controls.Add(chkTwin);
+            resources.ApplyResources(grpBoxOrigin, "grpBoxOrigin");
             grpBoxOrigin.Name = "grpBoxOrigin";
             grpBoxOrigin.TabStop = false;
-            toolTip1.SetToolTip(grpBoxOrigin, resources.GetString("grpBoxOrigin.ToolTip"));
             // 
             // lblAngle
             // 
             resources.ApplyResources(lblAngle, "lblAngle");
             lblAngle.BackColor = Color.Transparent;
             lblAngle.Name = "lblAngle";
-            toolTip1.SetToolTip(lblAngle, resources.GetString("lblAngle.ToolTip"));
             // 
             // trkStrtAngle
             // 
@@ -343,7 +317,6 @@
             // 
             resources.ApplyResources(chkRandAngl, "chkRandAngl");
             chkRandAngl.Name = "chkRandAngl";
-            toolTip1.SetToolTip(chkRandAngl, resources.GetString("chkRandAngl.ToolTip"));
             chkRandAngl.UseVisualStyleBackColor = true;
             chkRandAngl.CheckedChanged += ChkRandAngl_CheckedChanged;
             // 
@@ -351,18 +324,16 @@
             // 
             resources.ApplyResources(lblStrtAngle, "lblStrtAngle");
             lblStrtAngle.Name = "lblStrtAngle";
-            toolTip1.SetToolTip(lblStrtAngle, resources.GetString("lblStrtAngle.ToolTip"));
             // 
             // label3
             // 
             resources.ApplyResources(label3, "label3");
             label3.Name = "label3";
-            toolTip1.SetToolTip(label3, resources.GetString("label3.ToolTip"));
             // 
             // lnkAddStrt
             // 
-            resources.ApplyResources(lnkAddStrt, "lnkAddStrt");
             lnkAddStrt.ActiveLinkColor = Color.Blue;
+            resources.ApplyResources(lnkAddStrt, "lnkAddStrt");
             lnkAddStrt.LinkBehavior = LinkBehavior.NeverUnderline;
             lnkAddStrt.Name = "lnkAddStrt";
             lnkAddStrt.TabStop = true;
@@ -372,8 +343,8 @@
             // 
             // lnkSubStrt
             // 
-            resources.ApplyResources(lnkSubStrt, "lnkSubStrt");
             lnkSubStrt.ActiveLinkColor = Color.Blue;
+            resources.ApplyResources(lnkSubStrt, "lnkSubStrt");
             lnkSubStrt.BackColor = Color.Transparent;
             lnkSubStrt.LinkBehavior = LinkBehavior.NeverUnderline;
             lnkSubStrt.Name = "lnkSubStrt";
@@ -395,12 +366,11 @@
             // 
             // colorBox
             // 
-            resources.ApplyResources(colorBox, "colorBox");
             colorBox.Controls.Add(btnBkgColor);
             colorBox.Controls.Add(btnScrollColor);
+            resources.ApplyResources(colorBox, "colorBox");
             colorBox.Name = "colorBox";
             colorBox.TabStop = false;
-            toolTip1.SetToolTip(colorBox, resources.GetString("colorBox.ToolTip"));
             // 
             // btnBkgColor
             // 
@@ -420,23 +390,22 @@
             // 
             // groupBox5
             // 
-            resources.ApplyResources(groupBox5, "groupBox5");
             groupBox5.Controls.Add(updownMaxLeaves);
             groupBox5.Controls.Add(label4);
             groupBox5.Controls.Add(chkRndLeaves);
+            resources.ApplyResources(groupBox5, "groupBox5");
             groupBox5.Name = "groupBox5";
             groupBox5.TabStop = false;
-            toolTip1.SetToolTip(groupBox5, resources.GetString("groupBox5.ToolTip"));
             // 
             // updownMaxLeaves
             // 
-            resources.ApplyResources(updownMaxLeaves, "updownMaxLeaves");
             updownMaxLeaves.Items.Add(resources.GetString("updownMaxLeaves.Items"));
             updownMaxLeaves.Items.Add(resources.GetString("updownMaxLeaves.Items1"));
             updownMaxLeaves.Items.Add(resources.GetString("updownMaxLeaves.Items2"));
             updownMaxLeaves.Items.Add(resources.GetString("updownMaxLeaves.Items3"));
             updownMaxLeaves.Items.Add(resources.GetString("updownMaxLeaves.Items4"));
             updownMaxLeaves.Items.Add(resources.GetString("updownMaxLeaves.Items5"));
+            resources.ApplyResources(updownMaxLeaves, "updownMaxLeaves");
             updownMaxLeaves.Name = "updownMaxLeaves";
             updownMaxLeaves.ReadOnly = true;
             toolTip1.SetToolTip(updownMaxLeaves, resources.GetString("updownMaxLeaves.ToolTip"));
@@ -446,7 +415,6 @@
             // 
             resources.ApplyResources(label4, "label4");
             label4.Name = "label4";
-            toolTip1.SetToolTip(label4, resources.GetString("label4.ToolTip"));
             // 
             // chkRndLeaves
             // 
@@ -456,15 +424,22 @@
             chkRndLeaves.UseVisualStyleBackColor = true;
             chkRndLeaves.CheckedChanged += ChkRndLeaves_CheckedChanged;
             // 
+            // btnPreview
+            // 
+            resources.ApplyResources(btnPreview, "btnPreview");
+            btnPreview.Name = "btnPreview";
+            toolTip1.SetToolTip(btnPreview, resources.GetString("btnPreview.ToolTip"));
+            btnPreview.UseVisualStyleBackColor = true;
+            btnPreview.Click += BtnPreview_Click;
+            // 
             // groupBox1
             // 
-            resources.ApplyResources(groupBox1, "groupBox1");
             groupBox1.Controls.Add(rdioNoRnd);
             groupBox1.Controls.Add(rdioRndLrg);
             groupBox1.Controls.Add(rdioRndSz);
+            resources.ApplyResources(groupBox1, "groupBox1");
             groupBox1.Name = "groupBox1";
             groupBox1.TabStop = false;
-            toolTip1.SetToolTip(groupBox1, resources.GetString("groupBox1.ToolTip"));
             // 
             // rdioNoRnd
             // 
@@ -472,7 +447,6 @@
             rdioNoRnd.Checked = true;
             rdioNoRnd.Name = "rdioNoRnd";
             rdioNoRnd.TabStop = true;
-            toolTip1.SetToolTip(rdioNoRnd, resources.GetString("rdioNoRnd.ToolTip"));
             rdioNoRnd.UseVisualStyleBackColor = true;
             rdioNoRnd.CheckedChanged += RdioNoRnd_CheckedChanged;
             // 
@@ -494,33 +468,30 @@
             // 
             // groupBox4
             // 
-            resources.ApplyResources(groupBox4, "groupBox4");
             groupBox4.Controls.Add(txtMaxNodes);
             groupBox4.Controls.Add(label2);
             groupBox4.Controls.Add(trkMaxTotal);
             groupBox4.Controls.Add(lnkSubNodes);
             groupBox4.Controls.Add(lnkAddNodes);
+            resources.ApplyResources(groupBox4, "groupBox4");
             groupBox4.Name = "groupBox4";
             groupBox4.TabStop = false;
-            toolTip1.SetToolTip(groupBox4, resources.GetString("groupBox4.ToolTip"));
             // 
             // txtMaxNodes
             // 
             resources.ApplyResources(txtMaxNodes, "txtMaxNodes");
             txtMaxNodes.Name = "txtMaxNodes";
             txtMaxNodes.ReadOnly = true;
-            toolTip1.SetToolTip(txtMaxNodes, resources.GetString("txtMaxNodes.ToolTip"));
             // 
             // label2
             // 
             resources.ApplyResources(label2, "label2");
             label2.Name = "label2";
-            toolTip1.SetToolTip(label2, resources.GetString("label2.ToolTip"));
             // 
             // trkMaxTotal
             // 
-            resources.ApplyResources(trkMaxTotal, "trkMaxTotal");
             trkMaxTotal.LargeChange = 10;
+            resources.ApplyResources(trkMaxTotal, "trkMaxTotal");
             trkMaxTotal.Maximum = 200;
             trkMaxTotal.Name = "trkMaxTotal";
             trkMaxTotal.TickFrequency = 5;
@@ -529,8 +500,8 @@
             // 
             // lnkSubNodes
             // 
-            resources.ApplyResources(lnkSubNodes, "lnkSubNodes");
             lnkSubNodes.ActiveLinkColor = Color.Blue;
+            resources.ApplyResources(lnkSubNodes, "lnkSubNodes");
             lnkSubNodes.BackColor = Color.Transparent;
             lnkSubNodes.LinkBehavior = LinkBehavior.NeverUnderline;
             lnkSubNodes.Name = "lnkSubNodes";
@@ -541,8 +512,8 @@
             // 
             // lnkAddNodes
             // 
-            resources.ApplyResources(lnkAddNodes, "lnkAddNodes");
             lnkAddNodes.ActiveLinkColor = Color.Blue;
+            resources.ApplyResources(lnkAddNodes, "lnkAddNodes");
             lnkAddNodes.BackColor = Color.Transparent;
             lnkAddNodes.LinkBehavior = LinkBehavior.NeverUnderline;
             lnkAddNodes.Name = "lnkAddNodes";
@@ -553,13 +524,12 @@
             // 
             // groupBox2
             // 
-            resources.ApplyResources(groupBox2, "groupBox2");
             groupBox2.Controls.Add(rdioGradStoL);
             groupBox2.Controls.Add(rdioGradLtoS);
             groupBox2.Controls.Add(chkGradSz);
+            resources.ApplyResources(groupBox2, "groupBox2");
             groupBox2.Name = "groupBox2";
             groupBox2.TabStop = false;
-            toolTip1.SetToolTip(groupBox2, resources.GetString("groupBox2.ToolTip"));
             // 
             // rdioGradStoL
             // 
@@ -588,16 +558,15 @@
             // 
             // groupBox3
             // 
-            resources.ApplyResources(groupBox3, "groupBox3");
             groupBox3.Controls.Add(ChkLgMax);
             groupBox3.Controls.Add(rdioOpt5);
             groupBox3.Controls.Add(rdioOpt4);
             groupBox3.Controls.Add(rdioOpt3);
             groupBox3.Controls.Add(rdioOpt2);
             groupBox3.Controls.Add(rdioOpt1);
+            resources.ApplyResources(groupBox3, "groupBox3");
             groupBox3.Name = "groupBox3";
             groupBox3.TabStop = false;
-            toolTip1.SetToolTip(groupBox3, resources.GetString("groupBox3.ToolTip"));
             // 
             // ChkLgMax
             // 
@@ -612,7 +581,6 @@
             resources.ApplyResources(rdioOpt5, "rdioOpt5");
             rdioOpt5.Name = "rdioOpt5";
             rdioOpt5.TabStop = true;
-            toolTip1.SetToolTip(rdioOpt5, resources.GetString("rdioOpt5.ToolTip"));
             rdioOpt5.UseVisualStyleBackColor = true;
             rdioOpt5.CheckedChanged += RdioOpt5_CheckedChanged;
             // 
@@ -621,7 +589,6 @@
             resources.ApplyResources(rdioOpt4, "rdioOpt4");
             rdioOpt4.Name = "rdioOpt4";
             rdioOpt4.TabStop = true;
-            toolTip1.SetToolTip(rdioOpt4, resources.GetString("rdioOpt4.ToolTip"));
             rdioOpt4.UseVisualStyleBackColor = true;
             rdioOpt4.CheckedChanged += RdioOpt4_CheckedChanged;
             // 
@@ -630,7 +597,6 @@
             resources.ApplyResources(rdioOpt3, "rdioOpt3");
             rdioOpt3.Name = "rdioOpt3";
             rdioOpt3.TabStop = true;
-            toolTip1.SetToolTip(rdioOpt3, resources.GetString("rdioOpt3.ToolTip"));
             rdioOpt3.UseVisualStyleBackColor = true;
             rdioOpt3.CheckedChanged += RdioOpt3_CheckedChanged;
             // 
@@ -639,7 +605,6 @@
             resources.ApplyResources(rdioOpt2, "rdioOpt2");
             rdioOpt2.Name = "rdioOpt2";
             rdioOpt2.TabStop = true;
-            toolTip1.SetToolTip(rdioOpt2, resources.GetString("rdioOpt2.ToolTip"));
             rdioOpt2.UseVisualStyleBackColor = true;
             rdioOpt2.CheckedChanged += RdioOpt2_CheckedChanged;
             // 
@@ -648,13 +613,11 @@
             resources.ApplyResources(rdioOpt1, "rdioOpt1");
             rdioOpt1.Name = "rdioOpt1";
             rdioOpt1.TabStop = true;
-            toolTip1.SetToolTip(rdioOpt1, resources.GetString("rdioOpt1.ToolTip"));
             rdioOpt1.UseVisualStyleBackColor = true;
             rdioOpt1.CheckedChanged += RdioOpt1_CheckedChanged;
             // 
             // groupBox6
             // 
-            resources.ApplyResources(groupBox6, "groupBox6");
             groupBox6.Controls.Add(lnkSproutAngle);
             groupBox6.Controls.Add(lblSproutAngle);
             groupBox6.Controls.Add(trkSproutAngle);
@@ -662,14 +625,14 @@
             groupBox6.Controls.Add(lnkSubSprout);
             groupBox6.Controls.Add(lnkAddSprout);
             groupBox6.ForeColor = Color.Black;
+            resources.ApplyResources(groupBox6, "groupBox6");
             groupBox6.Name = "groupBox6";
             groupBox6.TabStop = false;
-            toolTip1.SetToolTip(groupBox6, resources.GetString("groupBox6.ToolTip"));
             // 
             // lnkSproutAngle
             // 
-            resources.ApplyResources(lnkSproutAngle, "lnkSproutAngle");
             lnkSproutAngle.ActiveLinkColor = Color.Black;
+            resources.ApplyResources(lnkSproutAngle, "lnkSproutAngle");
             lnkSproutAngle.LinkColor = Color.Black;
             lnkSproutAngle.Name = "lnkSproutAngle";
             lnkSproutAngle.TabStop = true;
@@ -681,7 +644,6 @@
             // 
             resources.ApplyResources(lblSproutAngle, "lblSproutAngle");
             lblSproutAngle.Name = "lblSproutAngle";
-            toolTip1.SetToolTip(lblSproutAngle, resources.GetString("lblSproutAngle.ToolTip"));
             // 
             // trkSproutAngle
             // 
@@ -704,8 +666,8 @@
             // 
             // lnkSubSprout
             // 
-            resources.ApplyResources(lnkSubSprout, "lnkSubSprout");
             lnkSubSprout.ActiveLinkColor = Color.Blue;
+            resources.ApplyResources(lnkSubSprout, "lnkSubSprout");
             lnkSubSprout.LinkBehavior = LinkBehavior.NeverUnderline;
             lnkSubSprout.Name = "lnkSubSprout";
             lnkSubSprout.TabStop = true;
@@ -715,8 +677,8 @@
             // 
             // lnkAddSprout
             // 
-            resources.ApplyResources(lnkAddSprout, "lnkAddSprout");
             lnkAddSprout.ActiveLinkColor = Color.Blue;
+            resources.ApplyResources(lnkAddSprout, "lnkAddSprout");
             lnkAddSprout.LinkBehavior = LinkBehavior.NeverUnderline;
             lnkAddSprout.Name = "lnkAddSprout";
             lnkAddSprout.TabStop = true;
@@ -726,8 +688,8 @@
             // 
             // lnkIDs
             // 
-            resources.ApplyResources(lnkIDs, "lnkIDs");
             lnkIDs.ActiveLinkColor = Color.DimGray;
+            resources.ApplyResources(lnkIDs, "lnkIDs");
             lnkIDs.BackColor = Color.Transparent;
             lnkIDs.DisabledLinkColor = Color.Gray;
             lnkIDs.LinkColor = Color.Silver;
@@ -738,8 +700,8 @@
             // 
             // lnkLog
             // 
-            resources.ApplyResources(lnkLog, "lnkLog");
             lnkLog.ActiveLinkColor = Color.DimGray;
+            resources.ApplyResources(lnkLog, "lnkLog");
             lnkLog.BackColor = Color.Transparent;
             lnkLog.DisabledLinkColor = Color.Gray;
             lnkLog.LinkColor = Color.Silver;
@@ -748,6 +710,13 @@
             toolTip1.SetToolTip(lnkLog, resources.GetString("lnkLog.ToolTip"));
             lnkLog.LinkClicked += LnkLog_LinkClicked;
             // 
+            // mainPanel
+            // 
+            resources.ApplyResources(mainPanel, "mainPanel");
+            mainPanel.BackColor = Color.White;
+            mainPanel.Name = "mainPanel";
+            mainPanel.Paint += MainPanel_Paint;
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -755,7 +724,6 @@
             Controls.Add(splitContainer1);
             ForeColor = Color.Black;
             Name = "MainForm";
-            toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             splitContainer1.Panel2.PerformLayout();

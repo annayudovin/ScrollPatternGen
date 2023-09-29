@@ -117,170 +117,1905 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;rdioOpt5.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="splitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lnkSubSprout.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
+  <data name="splitContainer1.IsSplitterFixed" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lblStrtAngle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 43</value>
+  <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="&gt;&gt;rdioGradLtoS.Parent" xml:space="preserve">
-    <value>groupBox2</value>
+  <data name="splitContainer1.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>850, 850</value>
   </data>
-  <data name="rdioOpt3.ToolTip" xml:space="preserve">
-    <value />
+  <data name="splitContainer1.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+    <value>Horizontal</value>
   </data>
-  <data name="&gt;&gt;lnkSubStrt.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="lblSpread.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;btnScrollColor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblSpread.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 82</value>
   </data>
-  <data name="&gt;&gt;chkRandAngl.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="lblSpread.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 25</value>
   </data>
+  <data name="lblSpread.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblSpread.Text" xml:space="preserve">
+    <value>+0</value>
+  </data>
+  <data name="&gt;&gt;lblSpread.Name" xml:space="preserve">
+    <value>lblSpread</value>
+  </data>
+  <data name="&gt;&gt;lblSpread.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSpread.Parent" xml:space="preserve">
+    <value>grpAdjustCurls</value>
+  </data>
+  <data name="&gt;&gt;lblSpread.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblShift.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblShift.Location" type="System.Drawing.Point, System.Drawing">
+    <value>58, 31</value>
+  </data>
+  <data name="lblShift.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 25</value>
+  </data>
+  <data name="lblShift.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblShift.Text" xml:space="preserve">
+    <value>+0</value>
+  </data>
+  <data name="&gt;&gt;lblShift.Name" xml:space="preserve">
+    <value>lblShift</value>
+  </data>
+  <data name="&gt;&gt;lblShift.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblShift.Parent" xml:space="preserve">
+    <value>grpAdjustCurls</value>
+  </data>
+  <data name="&gt;&gt;lblShift.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="trkSpread.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 85</value>
+  </data>
+  <data name="trkSpread.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>300, 30</value>
+  </data>
+  <data name="trkSpread.RightToLeftLayout" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="trkSpread.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 30</value>
+  </data>
+  <data name="trkSpread.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>171, 17</value>
+  </metadata>
   <data name="trkSpread.ToolTip" xml:space="preserve">
     <value>change the size and spacing of leaf curls</value>
   </data>
-  <data name="lblStrtAngle.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;trkSpread.Name" xml:space="preserve">
+    <value>trkSpread</value>
   </data>
-  <data name="&gt;&gt;groupBox9.Name" xml:space="preserve">
-    <value>groupBox9</value>
+  <data name="&gt;&gt;trkSpread.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblAngle.Parent" xml:space="preserve">
-    <value>grpBoxOrigin</value>
+  <data name="&gt;&gt;trkSpread.Parent" xml:space="preserve">
+    <value>grpAdjustCurls</value>
   </data>
-  <data name="btnSVG.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="groupBox5.Text" xml:space="preserve">
-    <value>leaf number</value>
-  </data>
-  <data name="lnkSubShift.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="&gt;&gt;lblSproutAngle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ChkLgMax.Text" xml:space="preserve">
-    <value>larger max</value>
-  </data>
-  <data name="lnkAddShift.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8pt</value>
-  </data>
-  <data name="rdioOpt1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lnkLog.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
-  <data name="lnkAddSprd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 69</value>
-  </data>
-  <data name="chkRndLeaves.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;groupBox6.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="lnkSubSprout.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="updownMaxLeaves.Items" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;btnBkgColor.Parent" xml:space="preserve">
-    <value>colorBox</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;lblStrtAngle.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="rdioRndSz.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;trkSpread.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;groupBox9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="trkShift.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 36</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>or</value>
+  <data name="trkShift.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>300, 30</value>
   </data>
-  <data name="lnkSubNodes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 8</value>
+  <data name="trkShift.RightToLeftLayout" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="trkShift.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 30</value>
+  </data>
+  <data name="trkShift.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
   </data>
   <data name="trkShift.ToolTip" xml:space="preserve">
     <value>adjust location of leaf curls on parent</value>
   </data>
-  <data name="&gt;&gt;lnkIDs.Type" xml:space="preserve">
+  <data name="&gt;&gt;trkShift.Name" xml:space="preserve">
+    <value>trkShift</value>
+  </data>
+  <data name="&gt;&gt;trkShift.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;trkShift.Parent" xml:space="preserve">
+    <value>grpAdjustCurls</value>
+  </data>
+  <data name="&gt;&gt;trkShift.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lnkSpread.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lnkSpread.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 81</value>
+  </data>
+  <data name="lnkSpread.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 25</value>
+  </data>
+  <data name="lnkSpread.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="lnkSpread.Text" xml:space="preserve">
+    <value>spread:</value>
+  </data>
+  <data name="lnkSpread.ToolTip" xml:space="preserve">
+    <value>click to reset to 0</value>
+  </data>
+  <data name="&gt;&gt;lnkSpread.Name" xml:space="preserve">
+    <value>lnkSpread</value>
+  </data>
+  <data name="&gt;&gt;lnkSpread.Type" xml:space="preserve">
     <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lnkAddSprout.Type" xml:space="preserve">
+  <data name="&gt;&gt;lnkSpread.Parent" xml:space="preserve">
+    <value>grpAdjustCurls</value>
+  </data>
+  <data name="&gt;&gt;lnkSpread.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lnkShift.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lnkShift.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 31</value>
+  </data>
+  <data name="lnkShift.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 25</value>
+  </data>
+  <data name="lnkShift.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="lnkShift.Text" xml:space="preserve">
+    <value>shift:</value>
+  </data>
+  <data name="lnkShift.ToolTip" xml:space="preserve">
+    <value>click to reset to 0</value>
+  </data>
+  <data name="&gt;&gt;lnkShift.Name" xml:space="preserve">
+    <value>lnkShift</value>
+  </data>
+  <data name="&gt;&gt;lnkShift.Type" xml:space="preserve">
     <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="updownMaxLeaves.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="groupBox3.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lnkAddShift.Text" xml:space="preserve">
-    <value>+</value>
-  </data>
-  <data name="&gt;&gt;lnkAddSprd.Name" xml:space="preserve">
-    <value>lnkAddSprd</value>
-  </data>
-  <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="rdioRndLrg.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 29</value>
-  </data>
-  <data name="&gt;&gt;lnkSubSprd.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;btnScrollColor.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;rdioRndLrg.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblStrtAngle.Text" xml:space="preserve">
-    <value>angle(* ):</value>
-  </data>
-  <data name="&gt;&gt;ChkLgMax.Name" xml:space="preserve">
-    <value>ChkLgMax</value>
+  <data name="&gt;&gt;lnkShift.Parent" xml:space="preserve">
+    <value>grpAdjustCurls</value>
   </data>
   <data name="&gt;&gt;lnkShift.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="lnkAddShift.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lnkAddShift.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8pt</value>
+  </data>
+  <data name="lnkAddShift.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 19</value>
+  </data>
+  <data name="lnkAddShift.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="lnkAddShift.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="lnkAddShift.Text" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="lnkAddShift.ToolTip" xml:space="preserve">
+    <value>+1</value>
+  </data>
+  <data name="&gt;&gt;lnkAddShift.Name" xml:space="preserve">
+    <value>lnkAddShift</value>
+  </data>
+  <data name="&gt;&gt;lnkAddShift.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lnkAddShift.Parent" xml:space="preserve">
+    <value>grpAdjustCurls</value>
+  </data>
+  <data name="&gt;&gt;lnkAddShift.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lnkSubShift.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lnkSubShift.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10pt</value>
+  </data>
+  <data name="lnkSubShift.Location" type="System.Drawing.Point, System.Drawing">
+    <value>118, 14</value>
+  </data>
+  <data name="lnkSubShift.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 28</value>
+  </data>
+  <data name="lnkSubShift.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="lnkSubShift.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="lnkSubShift.ToolTip" xml:space="preserve">
+    <value>-1</value>
+  </data>
+  <data name="&gt;&gt;lnkSubShift.Name" xml:space="preserve">
+    <value>lnkSubShift</value>
+  </data>
+  <data name="&gt;&gt;lnkSubShift.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lnkSubShift.Parent" xml:space="preserve">
+    <value>grpAdjustCurls</value>
+  </data>
+  <data name="&gt;&gt;lnkSubShift.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lnkSubSprd.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lnkSubSprd.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10pt</value>
+  </data>
+  <data name="lnkSubSprd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>118, 63</value>
+  </data>
+  <data name="lnkSubSprd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 28</value>
+  </data>
+  <data name="lnkSubSprd.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="lnkSubSprd.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="lnkSubSprd.ToolTip" xml:space="preserve">
+    <value>-1</value>
+  </data>
+  <data name="&gt;&gt;lnkSubSprd.Name" xml:space="preserve">
+    <value>lnkSubSprd</value>
+  </data>
+  <data name="&gt;&gt;lnkSubSprd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lnkSubSprd.Parent" xml:space="preserve">
+    <value>grpAdjustCurls</value>
+  </data>
+  <data name="&gt;&gt;lnkSubSprd.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lnkAddSprd.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lnkAddSprd.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8pt</value>
+  </data>
+  <data name="lnkAddSprd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>197, 69</value>
+  </data>
+  <data name="lnkAddSprd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="lnkAddSprd.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="lnkAddSprd.Text" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="lnkAddSprd.ToolTip" xml:space="preserve">
+    <value>+1</value>
+  </data>
+  <data name="&gt;&gt;lnkAddSprd.Name" xml:space="preserve">
+    <value>lnkAddSprd</value>
+  </data>
+  <data name="&gt;&gt;lnkAddSprd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lnkAddSprd.Parent" xml:space="preserve">
+    <value>grpAdjustCurls</value>
+  </data>
+  <data name="&gt;&gt;lnkAddSprd.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="grpAdjustCurls.Location" type="System.Drawing.Point, System.Drawing">
+    <value>619, 1</value>
+  </data>
+  <data name="grpAdjustCurls.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 131</value>
+  </data>
+  <data name="grpAdjustCurls.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="grpAdjustCurls.Text" xml:space="preserve">
+    <value>adjust look:</value>
+  </data>
+  <data name="&gt;&gt;grpAdjustCurls.Name" xml:space="preserve">
+    <value>grpAdjustCurls</value>
+  </data>
+  <data name="&gt;&gt;grpAdjustCurls.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpAdjustCurls.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;grpAdjustCurls.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnCopy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 28</value>
+  </data>
+  <data name="btnCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 34</value>
+  </data>
+  <data name="btnCopy.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="btnCopy.Text" xml:space="preserve">
+    <value>copy</value>
+  </data>
+  <data name="btnCopy.ToolTip" xml:space="preserve">
+    <value>place current image on clipboard</value>
+  </data>
+  <data name="&gt;&gt;btnCopy.Name" xml:space="preserve">
+    <value>btnCopy</value>
+  </data>
+  <data name="&gt;&gt;btnCopy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCopy.Parent" xml:space="preserve">
+    <value>groupBox9</value>
+  </data>
+  <data name="&gt;&gt;btnCopy.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnSVG.Location" type="System.Drawing.Point, System.Drawing">
+    <value>71, 27</value>
+  </data>
+  <data name="btnSVG.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 34</value>
+  </data>
+  <data name="btnSVG.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="btnSVG.Text" xml:space="preserve">
+    <value>svg</value>
+  </data>
+  <data name="btnSVG.ToolTip" xml:space="preserve">
+    <value>save a vector file of current image</value>
+  </data>
+  <data name="&gt;&gt;btnSVG.Name" xml:space="preserve">
+    <value>btnSVG</value>
+  </data>
+  <data name="&gt;&gt;btnSVG.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSVG.Parent" xml:space="preserve">
+    <value>groupBox9</value>
+  </data>
+  <data name="&gt;&gt;btnSVG.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>704, 130</value>
+  </data>
+  <data name="groupBox9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 65</value>
+  </data>
+  <data name="groupBox9.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>image</value>
+  </data>
+  <data name="&gt;&gt;groupBox9.Name" xml:space="preserve">
+    <value>groupBox9</value>
+  </data>
+  <data name="&gt;&gt;groupBox9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox9.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox9.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblAngle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAngle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>96, 44</value>
+  </data>
+  <data name="lblAngle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 25</value>
+  </data>
+  <data name="lblAngle.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="lblAngle.Text" xml:space="preserve">
+    <value>0.00</value>
+  </data>
+  <data name="&gt;&gt;lblAngle.Name" xml:space="preserve">
+    <value>lblAngle</value>
+  </data>
+  <data name="&gt;&gt;lblAngle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAngle.Parent" xml:space="preserve">
+    <value>grpBoxOrigin</value>
+  </data>
+  <data name="&gt;&gt;lblAngle.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="trkStrtAngle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 77</value>
+  </data>
+  <data name="trkStrtAngle.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>300, 30</value>
+  </data>
+  <data name="trkStrtAngle.RightToLeftLayout" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="trkStrtAngle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 30</value>
+  </data>
+  <data name="trkStrtAngle.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="trkStrtAngle.ToolTip" xml:space="preserve">
+    <value>adjust angle of first curl</value>
+  </data>
+  <data name="&gt;&gt;trkStrtAngle.Name" xml:space="preserve">
+    <value>trkStrtAngle</value>
+  </data>
+  <data name="&gt;&gt;trkStrtAngle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;trkStrtAngle.Parent" xml:space="preserve">
+    <value>grpBoxOrigin</value>
+  </data>
+  <data name="&gt;&gt;trkStrtAngle.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="chkRandAngl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkRandAngl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>42, 109</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="chkRandAngl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="chkRandAngl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 29</value>
+  </data>
+  <data name="chkRandAngl.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="chkRandAngl.Text" xml:space="preserve">
+    <value>random</value>
+  </data>
+  <data name="chkRandAngl.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="&gt;&gt;chkRandAngl.Name" xml:space="preserve">
+    <value>chkRandAngl</value>
+  </data>
+  <data name="&gt;&gt;chkRandAngl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkRandAngl.Parent" xml:space="preserve">
+    <value>grpBoxOrigin</value>
+  </data>
+  <data name="&gt;&gt;chkRandAngl.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblStrtAngle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblStrtAngle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 43</value>
+  </data>
+  <data name="lblStrtAngle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 25</value>
+  </data>
+  <data name="lblStrtAngle.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="lblStrtAngle.Text" xml:space="preserve">
+    <value>angle(* ):</value>
+  </data>
+  <data name="&gt;&gt;lblStrtAngle.Name" xml:space="preserve">
+    <value>lblStrtAngle</value>
+  </data>
+  <data name="&gt;&gt;lblStrtAngle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblStrtAngle.Parent" xml:space="preserve">
+    <value>grpBoxOrigin</value>
+  </data>
+  <data name="&gt;&gt;lblStrtAngle.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 110</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 25</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>or</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>grpBoxOrigin</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lnkAddStrt.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lnkAddStrt.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8pt</value>
+  </data>
+  <data name="lnkAddStrt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>137, 60</value>
+  </data>
+  <data name="lnkAddStrt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="lnkAddStrt.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="lnkAddStrt.Text" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="lnkAddStrt.ToolTip" xml:space="preserve">
+    <value>+1</value>
+  </data>
+  <data name="&gt;&gt;lnkAddStrt.Name" xml:space="preserve">
+    <value>lnkAddStrt</value>
+  </data>
+  <data name="&gt;&gt;lnkAddStrt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lnkAddStrt.Parent" xml:space="preserve">
+    <value>grpBoxOrigin</value>
+  </data>
+  <data name="&gt;&gt;lnkAddStrt.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lnkSubStrt.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lnkSubStrt.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10pt</value>
+  </data>
+  <data name="lnkSubStrt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 53</value>
+  </data>
+  <data name="lnkSubStrt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 28</value>
+  </data>
+  <data name="lnkSubStrt.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="lnkSubStrt.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="lnkSubStrt.ToolTip" xml:space="preserve">
+    <value>-1</value>
+  </data>
+  <data name="&gt;&gt;lnkSubStrt.Name" xml:space="preserve">
+    <value>lnkSubStrt</value>
+  </data>
+  <data name="&gt;&gt;lnkSubStrt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lnkSubStrt.Parent" xml:space="preserve">
+    <value>grpBoxOrigin</value>
+  </data>
+  <data name="&gt;&gt;lnkSubStrt.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="chkTwin.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="chkTwin.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkTwin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>57, 12</value>
+  </data>
+  <data name="chkTwin.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="chkTwin.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Yes</value>
+  </data>
+  <data name="chkTwin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 29</value>
+  </data>
+  <data name="chkTwin.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="chkTwin.Text" xml:space="preserve">
+    <value>twin curl</value>
+  </data>
+  <data name="chkTwin.ToolTip" xml:space="preserve">
+    <value>start curl: single or double</value>
+  </data>
+  <data name="&gt;&gt;chkTwin.Name" xml:space="preserve">
+    <value>chkTwin</value>
+  </data>
   <data name="&gt;&gt;chkTwin.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lnkSubSprout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>73, 40</value>
+  <data name="&gt;&gt;chkTwin.Parent" xml:space="preserve">
+    <value>grpBoxOrigin</value>
   </data>
-  <data name="trkSproutAngle.RightToLeftLayout" type="System.Boolean, mscorlib">
+  <data name="&gt;&gt;chkTwin.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="grpBoxOrigin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>450, 1</value>
+  </data>
+  <data name="grpBoxOrigin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 140</value>
+  </data>
+  <data name="grpBoxOrigin.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="grpBoxOrigin.Text" xml:space="preserve">
+    <value>origin</value>
+  </data>
+  <data name="&gt;&gt;grpBoxOrigin.Name" xml:space="preserve">
+    <value>grpBoxOrigin</value>
+  </data>
+  <data name="&gt;&gt;grpBoxOrigin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpBoxOrigin.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;grpBoxOrigin.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnBkgColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 29</value>
+  </data>
+  <data name="btnBkgColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 33</value>
+  </data>
+  <data name="btnBkgColor.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="btnBkgColor.Text" xml:space="preserve">
+    <value>panel</value>
+  </data>
+  <data name="btnBkgColor.ToolTip" xml:space="preserve">
+    <value>change background color</value>
+  </data>
+  <data name="&gt;&gt;btnBkgColor.Name" xml:space="preserve">
+    <value>btnBkgColor</value>
+  </data>
+  <data name="&gt;&gt;btnBkgColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnBkgColor.Parent" xml:space="preserve">
+    <value>colorBox</value>
+  </data>
+  <data name="&gt;&gt;btnBkgColor.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnScrollColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 68</value>
+  </data>
+  <data name="btnScrollColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 33</value>
+  </data>
+  <data name="btnScrollColor.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="btnScrollColor.Text" xml:space="preserve">
+    <value>scroll</value>
+  </data>
+  <data name="btnScrollColor.ToolTip" xml:space="preserve">
+    <value>change ornament color</value>
+  </data>
+  <data name="&gt;&gt;btnScrollColor.Name" xml:space="preserve">
+    <value>btnScrollColor</value>
+  </data>
+  <data name="&gt;&gt;btnScrollColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnScrollColor.Parent" xml:space="preserve">
+    <value>colorBox</value>
+  </data>
+  <data name="&gt;&gt;btnScrollColor.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="colorBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>620, 130</value>
+  </data>
+  <data name="colorBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 105</value>
+  </data>
+  <data name="colorBox.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="colorBox.Text" xml:space="preserve">
+    <value>colors</value>
+  </data>
+  <data name="&gt;&gt;colorBox.Name" xml:space="preserve">
+    <value>colorBox</value>
+  </data>
+  <data name="&gt;&gt;colorBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colorBox.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;colorBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="updownMaxLeaves.Items" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="updownMaxLeaves.Items1" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="updownMaxLeaves.Items2" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="updownMaxLeaves.Items3" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="updownMaxLeaves.Items4" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="updownMaxLeaves.Items5" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="updownMaxLeaves.Location" type="System.Drawing.Point, System.Drawing">
+    <value>139, 22</value>
+  </data>
+  <data name="updownMaxLeaves.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 31</value>
+  </data>
+  <data name="updownMaxLeaves.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="updownMaxLeaves.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="updownMaxLeaves.ToolTip" xml:space="preserve">
+    <value>maximum number of leaves on a node</value>
+  </data>
+  <data name="&gt;&gt;updownMaxLeaves.Name" xml:space="preserve">
+    <value>updownMaxLeaves</value>
+  </data>
+  <data name="&gt;&gt;updownMaxLeaves.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DomainUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;updownMaxLeaves.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;updownMaxLeaves.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>106, 25</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 25</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>or</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="chkRndLeaves.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkRndLeaves.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 24</value>
+  </data>
+  <data name="chkRndLeaves.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 29</value>
+  </data>
+  <data name="chkRndLeaves.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="chkRndLeaves.Text" xml:space="preserve">
+    <value>random</value>
   </data>
   <data name="chkRndLeaves.ToolTip" xml:space="preserve">
     <value>randomly change maximum number of leaves on each node</value>
   </data>
-  <data name="splitContainer1.Panel2.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;chkRndLeaves.Name" xml:space="preserve">
+    <value>chkRndLeaves</value>
+  </data>
+  <data name="&gt;&gt;chkRndLeaves.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkRndLeaves.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;chkRndLeaves.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="groupBox5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 68</value>
+  </data>
+  <data name="groupBox5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 59</value>
+  </data>
+  <data name="groupBox5.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>leaf number</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Name" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>708, 199</value>
+  </data>
+  <data name="btnPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 34</value>
+  </data>
+  <data name="btnPreview.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btnPreview.Text" xml:space="preserve">
+    <value>preview</value>
+  </data>
+  <data name="btnPreview.ToolTip" xml:space="preserve">
+    <value>refresh image with new options</value>
+  </data>
+  <data name="&gt;&gt;btnPreview.Name" xml:space="preserve">
+    <value>btnPreview</value>
+  </data>
+  <data name="&gt;&gt;btnPreview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPreview.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;btnPreview.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="rdioNoRnd.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdioNoRnd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 26</value>
+  </data>
+  <data name="rdioNoRnd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 29</value>
+  </data>
+  <data name="rdioNoRnd.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rdioNoRnd.Text" xml:space="preserve">
+    <value>none</value>
+  </data>
+  <data name="&gt;&gt;rdioNoRnd.Name" xml:space="preserve">
+    <value>rdioNoRnd</value>
+  </data>
+  <data name="&gt;&gt;rdioNoRnd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdioNoRnd.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;rdioNoRnd.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rdioRndLrg.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdioRndLrg.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 26</value>
+  </data>
+  <data name="rdioRndLrg.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 29</value>
+  </data>
+  <data name="rdioRndLrg.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="rdioRndLrg.Text" xml:space="preserve">
+    <value>some</value>
+  </data>
+  <data name="rdioRndLrg.ToolTip" xml:space="preserve">
+    <value>larger than normal leaves will sometimes be drawn</value>
+  </data>
+  <data name="&gt;&gt;rdioRndLrg.Name" xml:space="preserve">
+    <value>rdioRndLrg</value>
+  </data>
+  <data name="&gt;&gt;rdioRndLrg.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdioRndLrg.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;rdioRndLrg.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="rdioRndSz.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdioRndSz.Location" type="System.Drawing.Point, System.Drawing">
+    <value>167, 26</value>
+  </data>
+  <data name="rdioRndSz.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 29</value>
+  </data>
+  <data name="rdioRndSz.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="rdioRndSz.Text" xml:space="preserve">
+    <value>lots</value>
+  </data>
+  <data name="rdioRndSz.ToolTip" xml:space="preserve">
+    <value>made to look as random as possible</value>
+  </data>
+  <data name="&gt;&gt;rdioRndSz.Name" xml:space="preserve">
+    <value>rdioRndSz</value>
+  </data>
+  <data name="&gt;&gt;rdioRndSz.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdioRndSz.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;rdioRndSz.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>211, 68</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 59</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>leaf size randomness</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="txtMaxNodes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>64, 25</value>
+  </data>
+  <data name="txtMaxNodes.MaxLength" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="txtMaxNodes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 31</value>
+  </data>
+  <data name="txtMaxNodes.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;txtMaxNodes.Name" xml:space="preserve">
+    <value>txtMaxNodes</value>
+  </data>
+  <data name="&gt;&gt;txtMaxNodes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtMaxNodes.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;txtMaxNodes.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 28</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 25</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>MAX:</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="trkMaxTotal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>108, 29</value>
+  </data>
+  <data name="trkMaxTotal.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>400, 30</value>
+  </data>
+  <data name="trkMaxTotal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>319, 30</value>
+  </data>
+  <data name="trkMaxTotal.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="trkMaxTotal.ToolTip" xml:space="preserve">
+    <value>change total number of nodes/curls</value>
+  </data>
+  <data name="&gt;&gt;trkMaxTotal.Name" xml:space="preserve">
+    <value>trkMaxTotal</value>
+  </data>
+  <data name="&gt;&gt;trkMaxTotal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;trkMaxTotal.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;trkMaxTotal.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lnkSubNodes.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lnkSubNodes.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10pt</value>
+  </data>
+  <data name="lnkSubNodes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 8</value>
+  </data>
+  <data name="lnkSubNodes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 28</value>
+  </data>
+  <data name="lnkSubNodes.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="lnkSubNodes.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="lnkSubNodes.ToolTip" xml:space="preserve">
+    <value>-1</value>
+  </data>
+  <data name="&gt;&gt;lnkSubNodes.Name" xml:space="preserve">
+    <value>lnkSubNodes</value>
+  </data>
+  <data name="&gt;&gt;lnkSubNodes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lnkSubNodes.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;lnkSubNodes.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lnkAddNodes.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lnkAddNodes.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8pt</value>
+  </data>
+  <data name="lnkAddNodes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>402, 13</value>
+  </data>
+  <data name="lnkAddNodes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="lnkAddNodes.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="lnkAddNodes.Text" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="lnkAddNodes.ToolTip" xml:space="preserve">
+    <value>+1</value>
+  </data>
+  <data name="&gt;&gt;lnkAddNodes.Name" xml:space="preserve">
+    <value>lnkAddNodes</value>
+  </data>
+  <data name="&gt;&gt;lnkAddNodes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lnkAddNodes.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;lnkAddNodes.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 2</value>
+  </data>
+  <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>439, 66</value>
+  </data>
+  <data name="groupBox4.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>overall number of nodes</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.Name" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="rdioGradStoL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdioGradStoL.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="rdioGradStoL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>281, 25</value>
+  </data>
+  <data name="rdioGradStoL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 29</value>
+  </data>
+  <data name="rdioGradStoL.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="rdioGradStoL.Text" xml:space="preserve">
+    <value>small-to-large</value>
+  </data>
+  <data name="rdioGradStoL.ToolTip" xml:space="preserve">
+    <value>start growing with smallest leaf</value>
+  </data>
+  <data name="&gt;&gt;rdioGradStoL.Name" xml:space="preserve">
+    <value>rdioGradStoL</value>
+  </data>
+  <data name="&gt;&gt;rdioGradStoL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdioGradStoL.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;rdioGradStoL.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rdioGradLtoS.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdioGradLtoS.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="rdioGradLtoS.Location" type="System.Drawing.Point, System.Drawing">
+    <value>125, 24</value>
+  </data>
+  <data name="rdioGradLtoS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 29</value>
+  </data>
+  <data name="rdioGradLtoS.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="rdioGradLtoS.Text" xml:space="preserve">
+    <value>large-to-small</value>
+  </data>
+  <data name="rdioGradLtoS.ToolTip" xml:space="preserve">
+    <value>start growing with largest leaf</value>
+  </data>
+  <data name="&gt;&gt;rdioGradLtoS.Name" xml:space="preserve">
+    <value>rdioGradLtoS</value>
+  </data>
+  <data name="&gt;&gt;rdioGradLtoS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdioGradLtoS.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;rdioGradLtoS.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="chkGradSz.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkGradSz.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 24</value>
+  </data>
+  <data name="chkGradSz.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 29</value>
+  </data>
+  <data name="chkGradSz.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="chkGradSz.Text" xml:space="preserve">
+    <value>dissimilar</value>
+  </data>
+  <data name="chkGradSz.ToolTip" xml:space="preserve">
+    <value>same size leaves on each node</value>
+  </data>
+  <data name="&gt;&gt;chkGradSz.Name" xml:space="preserve">
+    <value>chkGradSz</value>
+  </data>
+  <data name="&gt;&gt;chkGradSz.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkGradSz.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;chkGradSz.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 123</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>439, 59</value>
+  </data>
+  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>leaf size variation</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="ChkLgMax.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ChkLgMax.Location" type="System.Drawing.Point, System.Drawing">
+    <value>308, 25</value>
+  </data>
+  <data name="ChkLgMax.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 29</value>
+  </data>
+  <data name="ChkLgMax.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="ChkLgMax.Text" xml:space="preserve">
+    <value>larger max</value>
+  </data>
+  <data name="ChkLgMax.ToolTip" xml:space="preserve">
+    <value>draw fewer, but larger leaves</value>
+  </data>
+  <data name="&gt;&gt;ChkLgMax.Name" xml:space="preserve">
+    <value>ChkLgMax</value>
+  </data>
+  <data name="&gt;&gt;ChkLgMax.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ChkLgMax.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;ChkLgMax.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rdioOpt5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdioOpt5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 24</value>
+  </data>
+  <data name="rdioOpt5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 29</value>
+  </data>
+  <data name="rdioOpt5.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="rdioOpt5.Text" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;rdioOpt5.Name" xml:space="preserve">
+    <value>rdioOpt5</value>
+  </data>
+  <data name="&gt;&gt;rdioOpt5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdioOpt5.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;rdioOpt5.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="rdioOpt4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdioOpt4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>180, 24</value>
+  </data>
+  <data name="rdioOpt4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 29</value>
+  </data>
+  <data name="rdioOpt4.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="rdioOpt4.Text" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;rdioOpt4.Name" xml:space="preserve">
+    <value>rdioOpt4</value>
+  </data>
+  <data name="&gt;&gt;rdioOpt4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdioOpt4.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;rdioOpt4.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="rdioOpt3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdioOpt3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>125, 24</value>
+  </data>
+  <data name="rdioOpt3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 29</value>
+  </data>
+  <data name="rdioOpt3.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="rdioOpt3.Text" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;rdioOpt3.Name" xml:space="preserve">
+    <value>rdioOpt3</value>
+  </data>
+  <data name="&gt;&gt;rdioOpt3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdioOpt3.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;rdioOpt3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="rdioOpt2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdioOpt2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>68, 24</value>
+  </data>
+  <data name="rdioOpt2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 29</value>
+  </data>
+  <data name="rdioOpt2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="rdioOpt2.Text" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;rdioOpt2.Name" xml:space="preserve">
+    <value>rdioOpt2</value>
+  </data>
+  <data name="&gt;&gt;rdioOpt2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdioOpt2.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;rdioOpt2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="rdioOpt1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdioOpt1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 24</value>
+  </data>
+  <data name="rdioOpt1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 29</value>
+  </data>
+  <data name="rdioOpt1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rdioOpt1.Text" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;rdioOpt1.Name" xml:space="preserve">
+    <value>rdioOpt1</value>
+  </data>
+  <data name="&gt;&gt;rdioOpt1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdioOpt1.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;rdioOpt1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 176</value>
+  </data>
+  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>439, 59</value>
+  </data>
+  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>variation options</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="lnkSproutAngle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lnkSproutAngle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 58</value>
+  </data>
+  <data name="lnkSproutAngle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 25</value>
+  </data>
+  <data name="lnkSproutAngle.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="lnkSproutAngle.Text" xml:space="preserve">
+    <value>angle:</value>
+  </data>
+  <data name="lnkSproutAngle.ToolTip" xml:space="preserve">
+    <value>click to reset to 0</value>
+  </data>
+  <data name="&gt;&gt;lnkSproutAngle.Name" xml:space="preserve">
+    <value>lnkSproutAngle</value>
+  </data>
+  <data name="&gt;&gt;lnkSproutAngle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lnkSproutAngle.Parent" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;lnkSproutAngle.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblSproutAngle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSproutAngle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 27</value>
+  </data>
+  <data name="lblSproutAngle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 25</value>
+  </data>
+  <data name="lblSproutAngle.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="lblSproutAngle.Text" xml:space="preserve">
+    <value> +0</value>
+  </data>
+  <data name="&gt;&gt;lblSproutAngle.Name" xml:space="preserve">
+    <value>lblSproutAngle</value>
+  </data>
+  <data name="&gt;&gt;lblSproutAngle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSproutAngle.Parent" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;lblSproutAngle.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="trkSproutAngle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>68, 63</value>
+  </data>
+  <data name="trkSproutAngle.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>300, 30</value>
+  </data>
+  <data name="trkSproutAngle.RightToLeftLayout" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="trkSproutAngle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 30</value>
+  </data>
+  <data name="trkSproutAngle.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="trkSproutAngle.ToolTip" xml:space="preserve">
+    <value>adjust angle of resprouted curls</value>
+  </data>
+  <data name="&gt;&gt;trkSproutAngle.Name" xml:space="preserve">
+    <value>trkSproutAngle</value>
+  </data>
+  <data name="&gt;&gt;trkSproutAngle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;trkSproutAngle.Parent" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;trkSproutAngle.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="chkResprout.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkResprout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 26</value>
+  </data>
+  <data name="chkResprout.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 0, 3</value>
+  </data>
+  <data name="chkResprout.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Yes</value>
+  </data>
+  <data name="chkResprout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 29</value>
+  </data>
+  <data name="chkResprout.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="chkResprout.Text" xml:space="preserve">
+    <value>on</value>
+  </data>
+  <data name="chkResprout.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="chkResprout.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>TextAboveImage</value>
+  </data>
+  <data name="chkResprout.ToolTip" xml:space="preserve">
+    <value>add new growth to otherwise terminal leaves</value>
+  </data>
+  <data name="&gt;&gt;chkResprout.Name" xml:space="preserve">
+    <value>chkResprout</value>
+  </data>
+  <data name="&gt;&gt;chkResprout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkResprout.Parent" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;chkResprout.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lnkSubSprout.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lnkSubSprout.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10pt</value>
+  </data>
+  <data name="lnkSubSprout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>73, 40</value>
+  </data>
+  <data name="lnkSubSprout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 28</value>
+  </data>
+  <data name="lnkSubSprout.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="lnkSubSprout.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="lnkSubSprout.ToolTip" xml:space="preserve">
+    <value>-1</value>
+  </data>
+  <data name="&gt;&gt;lnkSubSprout.Name" xml:space="preserve">
+    <value>lnkSubSprout</value>
+  </data>
+  <data name="&gt;&gt;lnkSubSprout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lnkSubSprout.Parent" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;lnkSubSprout.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lnkAddSprout.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lnkAddSprout.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8pt</value>
+  </data>
+  <data name="lnkAddSprout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 45</value>
+  </data>
+  <data name="lnkAddSprout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="lnkAddSprout.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="lnkAddSprout.Text" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="lnkAddSprout.ToolTip" xml:space="preserve">
+    <value>+1</value>
+  </data>
+  <data name="&gt;&gt;lnkAddSprout.Name" xml:space="preserve">
+    <value>lnkAddSprout</value>
+  </data>
+  <data name="&gt;&gt;lnkAddSprout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lnkAddSprout.Parent" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;lnkAddSprout.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="groupBox6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>450, 137</value>
+  </data>
+  <data name="groupBox6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 98</value>
+  </data>
+  <data name="groupBox6.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>resprout</value>
+  </data>
+  <data name="&gt;&gt;groupBox6.Name" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;groupBox6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox6.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox6.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Parent" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lnkIDs.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lnkIDs.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri Light, 8pt</value>
+  </data>
+  <data name="lnkIDs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 27</value>
+  </data>
+  <data name="lnkIDs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 19</value>
+  </data>
+  <data name="lnkIDs.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="lnkIDs.Text" xml:space="preserve">
+    <value>IDs</value>
+  </data>
+  <data name="lnkIDs.ToolTip" xml:space="preserve">
+    <value>debugging: show node IDs</value>
+  </data>
+  <data name="&gt;&gt;lnkIDs.Name" xml:space="preserve">
+    <value>lnkIDs</value>
+  </data>
+  <data name="&gt;&gt;lnkIDs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lnkIDs.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;lnkIDs.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lnkLog.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lnkLog.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri Light, 8pt</value>
+  </data>
+  <data name="lnkLog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 5</value>
+  </data>
+  <data name="lnkLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 19</value>
+  </data>
+  <data name="lnkLog.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="lnkLog.Text" xml:space="preserve">
+    <value>log </value>
+  </data>
+  <data name="lnkLog.ToolTip" xml:space="preserve">
+    <value>debugging: create process log</value>
+  </data>
+  <data name="&gt;&gt;lnkLog.Name" xml:space="preserve">
+    <value>lnkLog</value>
+  </data>
+  <data name="&gt;&gt;lnkLog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lnkLog.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;lnkLog.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="mainPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom</value>
+  </data>
+  <data name="mainPanel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="mainPanel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Light, 8pt</value>
+  </data>
+  <data name="mainPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 3</value>
+  </data>
+  <data name="mainPanel.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>500, 500</value>
+  </data>
+  <data name="mainPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>600, 601</value>
+  </data>
+  <data name="mainPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;mainPanel.Name" xml:space="preserve">
+    <value>mainPanel</value>
+  </data>
+  <data name="&gt;&gt;mainPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mainPanel.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;mainPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Parent" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>859, 852</value>
+  </data>
+  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
+    <value>241</value>
+  </data>
+  <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Name" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="clrDlgScroll.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>50</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>10, 25</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>859, 852</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1496,1853 +3231,25 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
   </data>
-  <data name="&gt;&gt;lnkSpread.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;lnkSubNodes.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;chkRndLeaves.Name" xml:space="preserve">
-    <value>chkRndLeaves</value>
-  </data>
-  <data name="trkShift.RightToLeftLayout" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="grpAdjustCurls.Text" xml:space="preserve">
-    <value>adjust look:</value>
-  </data>
-  <data name="&gt;&gt;lnkSubShift.Parent" xml:space="preserve">
-    <value>grpAdjustCurls</value>
-  </data>
-  <data name="&gt;&gt;trkSproutAngle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ChkLgMax.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="&gt;&gt;ChkLgMax.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="rdioRndSz.Text" xml:space="preserve">
-    <value>lots</value>
-  </data>
-  <data name="grpBoxOrigin.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="&gt;&gt;lnkSubNodes.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="trkSpread.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>300, 30</value>
-  </data>
-  <data name="btnScrollColor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 33</value>
-  </data>
-  <data name="&gt;&gt;rdioOpt1.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="chkRandAngl.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lnkSubSprout.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10pt</value>
-  </data>
-  <data name="&gt;&gt;trkSproutAngle.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="mainPanel.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="chkResprout.Text" xml:space="preserve">
-    <value>on</value>
-  </data>
-  <data name="btnPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 34</value>
-  </data>
-  <data name="&gt;&gt;btnPreview.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 25</value>
-  </data>
-  <data name="&gt;&gt;rdioOpt4.Name" xml:space="preserve">
-    <value>rdioOpt4</value>
-  </data>
-  <data name="&gt;&gt;rdioGradStoL.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="groupBox5.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="lblSpread.Location" type="System.Drawing.Point, System.Drawing">
-    <value>61, 82</value>
-  </data>
-  <data name="lblAngle.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;lblStrtAngle.Parent" xml:space="preserve">
-    <value>grpBoxOrigin</value>
-  </data>
-  <data name="&gt;&gt;lblSproutAngle.Parent" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="rdioNoRnd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 29</value>
-  </data>
-  <data name="&gt;&gt;grpAdjustCurls.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="rdioNoRnd.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;lblSpread.Name" xml:space="preserve">
-    <value>lblSpread</value>
-  </data>
-  <data name="&gt;&gt;chkResprout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lnkShift.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="groupBox6.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
-  </data>
-  <data name="grpAdjustCurls.ToolTip" xml:space="preserve">
-    <value />
+  <data name="$this.Text" xml:space="preserve">
+    <value>Scroll Generator</value>
   </data>
   <data name="&gt;&gt;clrDlgScroll.Name" xml:space="preserve">
     <value>clrDlgScroll</value>
   </data>
-  <data name="&gt;&gt;rdioRndLrg.Name" xml:space="preserve">
-    <value>rdioRndLrg</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;groupBox6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lnkSubSprd.Parent" xml:space="preserve">
-    <value>grpAdjustCurls</value>
-  </data>
-  <data name="&gt;&gt;chkResprout.Parent" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="lnkSubSprd.TabIndex" type="System.Int32, mscorlib">
-    <value>38</value>
-  </data>
-  <data name="colorBox.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="&gt;&gt;rdioNoRnd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rdioGradStoL.Name" xml:space="preserve">
-    <value>rdioGradStoL</value>
-  </data>
-  <data name="btnSVG.ToolTip" xml:space="preserve">
-    <value>save a vector file of current image</value>
-  </data>
-  <data name="trkShift.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 30</value>
-  </data>
-  <data name="&gt;&gt;lnkAddNodes.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;rdioOpt1.Name" xml:space="preserve">
-    <value>rdioOpt1</value>
-  </data>
-  <data name="lnkAddStrt.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8pt</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="trkShift.TabIndex" type="System.Int32, mscorlib">
-    <value>35</value>
-  </data>
-  <data name="&gt;&gt;lnkAddShift.Parent" xml:space="preserve">
-    <value>grpAdjustCurls</value>
-  </data>
-  <data name="&gt;&gt;lnkSubStrt.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rdioOpt3.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="trkSpread.RightToLeftLayout" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkGradSz.ToolTip" xml:space="preserve">
-    <value>same size leaves on each node</value>
-  </data>
-  <data name="&gt;&gt;rdioOpt2.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 25</value>
-  </data>
-  <data name="chkResprout.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>TextAboveImage</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 110</value>
-  </data>
-  <data name="lnkSproutAngle.Text" xml:space="preserve">
-    <value>angle:</value>
-  </data>
-  <data name="trkStrtAngle.ToolTip" xml:space="preserve">
-    <value>adjust angle of first curl</value>
-  </data>
-  <data name="&gt;&gt;trkSpread.Name" xml:space="preserve">
-    <value>trkSpread</value>
-  </data>
-  <data name="splitContainer1.Panel1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;chkGradSz.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="rdioOpt1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 24</value>
-  </data>
-  <data name="&gt;&gt;rdioGradLtoS.Name" xml:space="preserve">
-    <value>rdioGradLtoS</value>
-  </data>
-  <data name="groupBox6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>450, 137</value>
-  </data>
-  <data name="&gt;&gt;lnkAddNodes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="rdioGradStoL.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lnkSubSprout.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="&gt;&gt;lnkSproutAngle.Name" xml:space="preserve">
-    <value>lnkSproutAngle</value>
-  </data>
-  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>241</value>
-  </data>
-  <data name="&gt;&gt;grpAdjustCurls.Name" xml:space="preserve">
-    <value>grpAdjustCurls</value>
-  </data>
-  <data name="btnSVG.Text" xml:space="preserve">
-    <value>svg</value>
-  </data>
-  <data name="&gt;&gt;btnSVG.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rdioOpt3.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="rdioNoRnd.Text" xml:space="preserve">
-    <value>none</value>
-  </data>
-  <data name="rdioOpt4.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>groupBox5</value>
-  </data>
-  <data name="mainPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 3</value>
-  </data>
-  <data name="btnScrollColor.ToolTip" xml:space="preserve">
-    <value>change ornament color</value>
-  </data>
-  <data name="&gt;&gt;rdioOpt2.Name" xml:space="preserve">
-    <value>rdioOpt2</value>
-  </data>
-  <data name="rdioGradLtoS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 24</value>
-  </data>
-  <data name="&gt;&gt;lnkShift.Parent" xml:space="preserve">
-    <value>grpAdjustCurls</value>
-  </data>
-  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>MAX:</value>
-  </data>
-  <data name="&gt;&gt;lblShift.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="splitContainer1.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
-    <value>Horizontal</value>
-  </data>
-  <data name="&gt;&gt;lnkAddNodes.Name" xml:space="preserve">
-    <value>lnkAddNodes</value>
-  </data>
-  <data name="lnkSubStrt.ToolTip" xml:space="preserve">
-    <value>-1</value>
-  </data>
-  <data name="txtMaxNodes.MaxLength" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="lnkSubStrt.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10pt</value>
-  </data>
-  <data name="&gt;&gt;btnScrollColor.Parent" xml:space="preserve">
-    <value>colorBox</value>
-  </data>
-  <data name="rdioRndLrg.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblStrtAngle.Name" xml:space="preserve">
-    <value>lblStrtAngle</value>
-  </data>
   <data name="&gt;&gt;clrDlgScroll.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColorDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="trkSproutAngle.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>300, 30</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lnkLog.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="chkTwin.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="groupBox6.Text" xml:space="preserve">
-    <value>resprout</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="&gt;&gt;colorBox.Name" xml:space="preserve">
-    <value>colorBox</value>
-  </data>
-  <data name="chkTwin.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="lnkAddSprout.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8pt</value>
-  </data>
-  <data name="&gt;&gt;lnkSubNodes.Name" xml:space="preserve">
-    <value>lnkSubNodes</value>
-  </data>
-  <data name="&gt;&gt;rdioNoRnd.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="rdioOpt2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>68, 24</value>
-  </data>
-  <data name="&gt;&gt;lblShift.Name" xml:space="preserve">
-    <value>lblShift</value>
-  </data>
-  <data name="&gt;&gt;rdioOpt5.Name" xml:space="preserve">
-    <value>rdioOpt5</value>
-  </data>
-  <data name="trkSproutAngle.ToolTip" xml:space="preserve">
-    <value>adjust angle of resprouted curls</value>
-  </data>
-  <data name="grpAdjustCurls.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
-  </data>
-  <data name="&gt;&gt;chkResprout.Name" xml:space="preserve">
-    <value>chkResprout</value>
-  </data>
-  <data name="lnkAddSprd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 21</value>
-  </data>
-  <data name="&gt;&gt;lnkSubStrt.Parent" xml:space="preserve">
-    <value>grpBoxOrigin</value>
-  </data>
-  <data name="lnkShift.ToolTip" xml:space="preserve">
-    <value>click to reset to 0</value>
-  </data>
-  <data name="lnkAddSprout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 21</value>
-  </data>
-  <data name="rdioOpt4.Text" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="updownMaxLeaves.Items4" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="rdioGradLtoS.ToolTip" xml:space="preserve">
-    <value>start growing with largest leaf</value>
-  </data>
-  <data name="lnkAddSprout.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;groupBox6.Name" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="chkResprout.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>10, 25</value>
-  </data>
-  <data name="&gt;&gt;lnkAddSprout.Name" xml:space="preserve">
-    <value>lnkAddSprout</value>
-  </data>
-  <data name="rdioOpt5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 29</value>
-  </data>
-  <data name="trkMaxTotal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>108, 29</value>
-  </data>
-  <data name="rdioGradLtoS.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;rdioOpt2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lnkAddStrt.TabIndex" type="System.Int32, mscorlib">
-    <value>40</value>
-  </data>
-  <data name="btnScrollColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 68</value>
-  </data>
-  <data name="lblSpread.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 25</value>
-  </data>
-  <data name="lnkSubSprd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 28</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.Parent" xml:space="preserve">
-    <value>splitContainer1</value>
-  </data>
-  <data name="lnkSubSprd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 63</value>
-  </data>
-  <data name="&gt;&gt;mainPanel.Name" xml:space="preserve">
-    <value>mainPanel</value>
-  </data>
-  <data name="grpAdjustCurls.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 131</value>
-  </data>
-  <data name="btnPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>708, 199</value>
-  </data>
-  <data name="&gt;&gt;chkTwin.Parent" xml:space="preserve">
-    <value>grpBoxOrigin</value>
-  </data>
-  <data name="splitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="rdioOpt4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;btnPreview.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="&gt;&gt;groupBox5.Name" xml:space="preserve">
-    <value>groupBox5</value>
-  </data>
-  <data name="updownMaxLeaves.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 31</value>
-  </data>
-  <data name="&gt;&gt;rdioRndLrg.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;rdioOpt5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkRndLeaves.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>grpBoxOrigin</value>
-  </data>
-  <data name="lblSproutAngle.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="rdioGradStoL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 29</value>
-  </data>
-  <data name="trkMaxTotal.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lnkSubSprd.Name" xml:space="preserve">
-    <value>lnkSubSprd</value>
-  </data>
-  <data name="&gt;&gt;chkRndLeaves.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lnkAddSprd.ToolTip" xml:space="preserve">
-    <value>+1</value>
-  </data>
-  <data name="lnkSubShift.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 14</value>
-  </data>
-  <data name="ChkLgMax.ToolTip" xml:space="preserve">
-    <value>draw fewer, but larger leaves</value>
-  </data>
-  <data name="&gt;&gt;lnkSubSprd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblSpread.Text" xml:space="preserve">
-    <value>+0</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="rdioOpt3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 29</value>
-  </data>
-  <data name="rdioNoRnd.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblSpread.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ChkLgMax.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="updownMaxLeaves.Location" type="System.Drawing.Point, System.Drawing">
-    <value>139, 22</value>
-  </data>
-  <data name="&gt;&gt;trkSproutAngle.Name" xml:space="preserve">
-    <value>trkSproutAngle</value>
-  </data>
-  <data name="lblSproutAngle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>90, 27</value>
-  </data>
-  <data name="&gt;&gt;trkMaxTotal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="trkMaxTotal.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>400, 30</value>
-  </data>
-  <data name="lnkAddShift.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 28</value>
-  </data>
-  <data name="rdioOpt4.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lnkAddSprout.Text" xml:space="preserve">
-    <value>+</value>
-  </data>
-  <data name="btnPreview.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="updownMaxLeaves.Items5" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="rdioRndLrg.Text" xml:space="preserve">
-    <value>some</value>
-  </data>
-  <data name="lnkSubNodes.ToolTip" xml:space="preserve">
-    <value>-1</value>
-  </data>
-  <data name="lnkShift.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rdioGradStoL.ToolTip" xml:space="preserve">
-    <value>start growing with smallest leaf</value>
-  </data>
-  <data name="&gt;&gt;lnkSubShift.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;updownMaxLeaves.Parent" xml:space="preserve">
-    <value>groupBox5</value>
-  </data>
-  <data name="lnkAddStrt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>137, 60</value>
-  </data>
-  <data name="lnkAddSprd.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8pt</value>
-  </data>
-  <data name="trkStrtAngle.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>300, 30</value>
-  </data>
-  <data name="&gt;&gt;lnkSubNodes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txtMaxNodes.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;splitContainer1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="ChkLgMax.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;trkSpread.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="rdioGradStoL.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;rdioOpt4.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="colorBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 105</value>
-  </data>
-  <data name="chkResprout.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="lnkAddStrt.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rdioOpt5.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;lblSpread.Parent" xml:space="preserve">
-    <value>grpAdjustCurls</value>
-  </data>
-  <data name="&gt;&gt;trkStrtAngle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ChkLgMax.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 29</value>
-  </data>
-  <data name="&gt;&gt;lblSproutAngle.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lnkLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 5</value>
-  </data>
-  <data name="&gt;&gt;lnkSubStrt.Name" xml:space="preserve">
-    <value>lnkSubStrt</value>
-  </data>
-  <data name="&gt;&gt;lnkLog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;trkShift.Name" xml:space="preserve">
-    <value>trkShift</value>
-  </data>
-  <data name="trkMaxTotal.ToolTip" xml:space="preserve">
-    <value>change total number of nodes/curls</value>
-  </data>
-  <data name="&gt;&gt;txtMaxNodes.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lnkAddShift.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="btnBkgColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 29</value>
-  </data>
-  <data name="rdioOpt4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 24</value>
-  </data>
-  <data name="btnScrollColor.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="chkRandAngl.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="rdioOpt2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;btnSVG.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 25</value>
-  </data>
-  <data name="rdioOpt2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupBox9.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;grpBoxOrigin.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;chkGradSz.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblShift.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="chkGradSz.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 24</value>
-  </data>
-  <data name="rdioOpt5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 24</value>
-  </data>
-  <data name="rdioRndSz.ToolTip" xml:space="preserve">
-    <value>made to look as random as possible</value>
-  </data>
-  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 176</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>leaf size variation</value>
-  </data>
-  <data name="lnkLog.ToolTip" xml:space="preserve">
-    <value>debugging: create process log</value>
-  </data>
-  <data name="lnkSpread.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 25</value>
-  </data>
-  <data name="rdioGradLtoS.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="chkResprout.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="trkSproutAngle.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
-  </data>
-  <data name="lblShift.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 25</value>
-  </data>
-  <data name="rdioOpt5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;lnkIDs.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="chkTwin.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Yes</value>
-  </data>
-  <data name="chkResprout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 29</value>
-  </data>
-  <data name="grpBoxOrigin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 140</value>
-  </data>
-  <data name="lblStrtAngle.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
-  </data>
-  <data name="&gt;&gt;txtMaxNodes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="updownMaxLeaves.Items3" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="updownMaxLeaves.Items2" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="lnkShift.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 25</value>
-  </data>
-  <data name="&gt;&gt;chkRandAngl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>variation options</value>
-  </data>
-  <data name="&gt;&gt;rdioNoRnd.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblShift.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;chkGradSz.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="ChkLgMax.Location" type="System.Drawing.Point, System.Drawing">
-    <value>308, 25</value>
-  </data>
-  <data name="&gt;&gt;btnCopy.Name" xml:space="preserve">
-    <value>btnCopy</value>
-  </data>
-  <data name="lnkAddSprout.ToolTip" xml:space="preserve">
-    <value>+1</value>
-  </data>
-  <data name="updownMaxLeaves.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="rdioOpt2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 29</value>
-  </data>
-  <data name="&gt;&gt;lnkSproutAngle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="rdioGradLtoS.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 29</value>
-  </data>
-  <data name="&gt;&gt;grpAdjustCurls.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;trkSpread.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lnkSpread.ToolTip" xml:space="preserve">
-    <value>click to reset to 0</value>
-  </data>
-  <data name="btnPreview.Text" xml:space="preserve">
-    <value>preview</value>
-  </data>
-  <data name="&gt;&gt;grpAdjustCurls.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lnkSpread.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 81</value>
-  </data>
-  <data name="txtMaxNodes.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 68</value>
-  </data>
-  <data name="lnkSubShift.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="chkRndLeaves.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;groupBox9.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="trkShift.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 36</value>
-  </data>
-  <data name="txtMaxNodes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 31</value>
-  </data>
-  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>859, 852</value>
-  </data>
-  <data name="mainPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>600, 601</value>
-  </data>
-  <data name="groupBox6.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;rdioGradStoL.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lnkAddStrt.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="chkTwin.ToolTip" xml:space="preserve">
-    <value>start curl: single or double</value>
-  </data>
-  <data name="&gt;&gt;lblAngle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lnkLog.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="rdioGradStoL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>281, 25</value>
-  </data>
-  <data name="&gt;&gt;lnkSpread.Parent" xml:space="preserve">
-    <value>grpAdjustCurls</value>
-  </data>
-  <data name="trkSpread.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 85</value>
-  </data>
-  <data name="rdioRndSz.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 26</value>
-  </data>
-  <data name="btnSVG.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 34</value>
-  </data>
-  <data name="&gt;&gt;trkSproutAngle.Parent" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 59</value>
-  </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lnkSubStrt.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rdioOpt5.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;lnkSubShift.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;groupBox4.Name" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;lnkAddNodes.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="btnCopy.ToolTip" xml:space="preserve">
-    <value>place current image on clipboard</value>
-  </data>
-  <data name="updownMaxLeaves.ToolTip" xml:space="preserve">
-    <value>maximum number of leaves on a node</value>
-  </data>
-  <data name="chkRndLeaves.Text" xml:space="preserve">
-    <value>random</value>
-  </data>
-  <data name="&gt;&gt;rdioOpt5.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="colorBox.Text" xml:space="preserve">
-    <value>colors</value>
-  </data>
-  <data name="chkGradSz.Text" xml:space="preserve">
-    <value>dissimilar</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel1.Parent" xml:space="preserve">
-    <value>splitContainer1</value>
-  </data>
-  <data name="groupBox9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>704, 130</value>
-  </data>
-  <data name="btnPreview.ToolTip" xml:space="preserve">
-    <value>refresh image with new options</value>
-  </data>
-  <data name="rdioOpt4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 29</value>
-  </data>
-  <data name="lnkLog.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri Light, 8pt</value>
-  </data>
-  <data name="mainPanel.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>500, 500</value>
-  </data>
-  <data name="lnkSubStrt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 53</value>
-  </data>
-  <data name="lblSpread.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;lblShift.Parent" xml:space="preserve">
-    <value>grpAdjustCurls</value>
-  </data>
-  <data name="lblShift.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;rdioGradLtoS.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblAngle.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ChkLgMax.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;lnkAddShift.Name" xml:space="preserve">
-    <value>lnkAddShift</value>
-  </data>
-  <data name="groupBox1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;lnkAddSprd.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;updownMaxLeaves.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DomainUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="chkTwin.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lnkAddNodes.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8pt</value>
-  </data>
-  <data name="chkGradSz.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="chkRandAngl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 29</value>
-  </data>
-  <data name="lnkSproutAngle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 58</value>
-  </data>
-  <data name="&gt;&gt;btnPreview.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rdioOpt4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblShift.Text" xml:space="preserve">
-    <value>+0</value>
-  </data>
-  <data name="chkGradSz.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Name" xml:space="preserve">
-    <value>splitContainer1</value>
-  </data>
-  <data name="lnkSproutAngle.ToolTip" xml:space="preserve">
-    <value>click to reset to 0</value>
-  </data>
-  <data name="trkStrtAngle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 77</value>
-  </data>
-  <data name="&gt;&gt;lblSpread.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;trkStrtAngle.Name" xml:space="preserve">
-    <value>trkStrtAngle</value>
-  </data>
-  <data name="&gt;&gt;lnkAddStrt.Parent" xml:space="preserve">
-    <value>grpBoxOrigin</value>
-  </data>
-  <data name="groupBox6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 98</value>
-  </data>
-  <data name="rdioRndLrg.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 26</value>
-  </data>
-  <data name="lnkSubSprd.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10pt</value>
-  </data>
-  <data name="&gt;&gt;lnkAddSprout.Parent" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="lnkAddShift.ToolTip" xml:space="preserve">
-    <value>+1</value>
-  </data>
-  <data name="colorBox.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lnkLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 19</value>
-  </data>
-  <data name="&gt;&gt;lblSproutAngle.Name" xml:space="preserve">
-    <value>lblSproutAngle</value>
-  </data>
-  <data name="&gt;&gt;lnkLog.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lnkSproutAngle.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;chkRandAngl.Parent" xml:space="preserve">
-    <value>grpBoxOrigin</value>
-  </data>
-  <data name="lnkSubSprd.ToolTip" xml:space="preserve">
-    <value>-1</value>
-  </data>
-  <data name="trkShift.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>300, 30</value>
-  </data>
-  <data name="chkRndLeaves.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 24</value>
-  </data>
-  <data name="&gt;&gt;grpBoxOrigin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblSproutAngle.TabIndex" type="System.Int32, mscorlib">
-    <value>35</value>
-  </data>
-  <data name="updownMaxLeaves.Items1" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="chkResprout.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Yes</value>
-  </data>
-  <data name="&gt;&gt;btnBkgColor.Name" xml:space="preserve">
-    <value>btnBkgColor</value>
-  </data>
-  <data name="groupBox4.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="lnkSubSprout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 28</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label4.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>859, 852</value>
-  </data>
-  <data name="groupBox5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 59</value>
-  </data>
-  <data name="&gt;&gt;groupBox4.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="rdioOpt1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="btnBkgColor.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="grpAdjustCurls.Location" type="System.Drawing.Point, System.Drawing">
-    <value>619, 1</value>
-  </data>
-  <data name="&gt;&gt;btnPreview.Name" xml:space="preserve">
-    <value>btnPreview</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblSpread.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>MainForm</value>
-  </data>
-  <data name="lnkSubSprd.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="splitContainer1.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>850, 850</value>
-  </data>
-  <data name="lnkIDs.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="lnkSubStrt.TabIndex" type="System.Int32, mscorlib">
-    <value>39</value>
-  </data>
-  <data name="lnkAddSprd.Text" xml:space="preserve">
-    <value>+</value>
-  </data>
-  <data name="rdioOpt2.Text" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lnkShift.Text" xml:space="preserve">
-    <value>shift:</value>
-  </data>
-  <data name="lnkAddNodes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>402, 13</value>
-  </data>
-  <data name="groupBox9.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
-  </data>
-  <data name="&gt;&gt;lnkLog.Name" xml:space="preserve">
-    <value>lnkLog</value>
-  </data>
-  <data name="mainPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom</value>
-  </data>
-  <data name="lblShift.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;chkGradSz.Name" xml:space="preserve">
-    <value>chkGradSz</value>
-  </data>
-  <data name="lblShift.Location" type="System.Drawing.Point, System.Drawing">
-    <value>59, 31</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;rdioGradStoL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="groupBox5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 68</value>
-  </data>
-  <data name="rdioOpt3.Text" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="label3.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;mainPanel.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;btnBkgColor.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lnkAddNodes.TabIndex" type="System.Int32, mscorlib">
-    <value>40</value>
-  </data>
-  <data name="lnkAddSprd.TabIndex" type="System.Int32, mscorlib">
-    <value>39</value>
-  </data>
-  <data name="rdioOpt1.Text" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lnkAddShift.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
-  </data>
-  <data name="&gt;&gt;chkTwin.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="chkRandAngl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 109</value>
-  </data>
-  <data name="lnkSubNodes.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>106, 25</value>
-  </data>
-  <data name="lnkSubNodes.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;trkShift.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="trkStrtAngle.RightToLeftLayout" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;trkSpread.Parent" xml:space="preserve">
-    <value>grpAdjustCurls</value>
-  </data>
-  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>439, 59</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="&gt;&gt;btnSVG.Name" xml:space="preserve">
-    <value>btnSVG</value>
-  </data>
-  <data name="lnkIDs.ToolTip" xml:space="preserve">
-    <value>debugging: show node IDs</value>
-  </data>
-  <data name="lnkAddSprout.TabIndex" type="System.Int32, mscorlib">
-    <value>38</value>
-  </data>
-  <data name="lnkIDs.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri Light, 8pt</value>
-  </data>
-  <data name="lblAngle.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;updownMaxLeaves.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;chkRndLeaves.Parent" xml:space="preserve">
-    <value>groupBox5</value>
-  </data>
-  <data name="lnkAddNodes.ToolTip" xml:space="preserve">
-    <value>+1</value>
-  </data>
-  <data name="chkGradSz.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 29</value>
-  </data>
-  <data name="groupBox2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="chkTwin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>57, 12</value>
-  </data>
-  <data name="&gt;&gt;rdioRndSz.Name" xml:space="preserve">
-    <value>rdioRndSz</value>
-  </data>
-  <data name="&gt;&gt;btnCopy.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lnkSubSprout.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="btnScrollColor.Text" xml:space="preserve">
-    <value>scroll</value>
-  </data>
-  <data name="&gt;&gt;lnkSproutAngle.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lnkShift.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 31</value>
-  </data>
-  <data name="&gt;&gt;lnkSubSprout.Name" xml:space="preserve">
-    <value>lnkSubSprout</value>
-  </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 123</value>
-  </data>
-  <data name="lnkSubShift.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkRndLeaves.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 29</value>
-  </data>
-  <data name="rdioOpt1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 29</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="chkTwin.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="lnkSubNodes.TabIndex" type="System.Int32, mscorlib">
-    <value>39</value>
-  </data>
-  <data name="mainPanel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Light, 8pt</value>
-  </data>
-  <data name="&gt;&gt;txtMaxNodes.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;lnkAddStrt.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;rdioNoRnd.Name" xml:space="preserve">
-    <value>rdioNoRnd</value>
-  </data>
-  <data name="&gt;&gt;btnCopy.Parent" xml:space="preserve">
-    <value>groupBox9</value>
-  </data>
-  <data name="lnkSubStrt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 28</value>
-  </data>
-  <data name="&gt;&gt;lnkSproutAngle.Parent" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="lnkShift.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="&gt;&gt;trkMaxTotal.Name" xml:space="preserve">
-    <value>trkMaxTotal</value>
-  </data>
-  <data name="&gt;&gt;rdioRndLrg.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lnkSubShift.Name" xml:space="preserve">
-    <value>lnkSubShift</value>
-  </data>
-  <data name="&gt;&gt;chkTwin.Name" xml:space="preserve">
-    <value>chkTwin</value>
-  </data>
-  <data name="btnCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 28</value>
-  </data>
-  <data name="lblSproutAngle.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lnkSpread.Text" xml:space="preserve">
-    <value>spread:</value>
-  </data>
-  <data name="&gt;&gt;chkResprout.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lnkSubNodes.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10pt</value>
-  </data>
-  <data name="chkRandAngl.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblAngle.Text" xml:space="preserve">
-    <value>0.00</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lnkIDs.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lnkSubShift.ToolTip" xml:space="preserve">
-    <value>-1</value>
-  </data>
-  <data name="&gt;&gt;lnkSubSprout.Parent" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="&gt;&gt;mainPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblStrtAngle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lnkSpread.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lnkSpread.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
-  </data>
-  <data name="grpBoxOrigin.Text" xml:space="preserve">
-    <value>origin</value>
-  </data>
-  <data name="chkTwin.Text" xml:space="preserve">
-    <value>twin curl</value>
-  </data>
-  <data name="rdioRndLrg.ToolTip" xml:space="preserve">
-    <value>larger than normal leaves will sometimes be drawn</value>
-  </data>
-  <data name="btnBkgColor.ToolTip" xml:space="preserve">
-    <value>change background color</value>
-  </data>
-  <data name="mainPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;grpBoxOrigin.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="&gt;&gt;trkShift.Parent" xml:space="preserve">
-    <value>grpAdjustCurls</value>
-  </data>
-  <data name="mainPanel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="lnkAddStrt.Text" xml:space="preserve">
-    <value>+</value>
-  </data>
-  <data name="rdioGradStoL.Text" xml:space="preserve">
-    <value>small-to-large</value>
-  </data>
-  <data name="rdioOpt1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="rdioGradLtoS.Text" xml:space="preserve">
-    <value>large-to-small</value>
-  </data>
-  <data name="lnkAddStrt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 21</value>
-  </data>
-  <data name="rdioOpt5.Text" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="lnkSproutAngle.TabIndex" type="System.Int32, mscorlib">
-    <value>36</value>
-  </data>
-  <data name="lnkSubShift.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10pt</value>
-  </data>
-  <data name="lnkIDs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 27</value>
-  </data>
-  <data name="&gt;&gt;btnScrollColor.Name" xml:space="preserve">
-    <value>btnScrollColor</value>
-  </data>
-  <data name="txtMaxNodes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 25</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="trkSproutAngle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>68, 63</value>
-  </data>
-  <data name="groupBox5.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;btnCopy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="rdioGradStoL.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="trkStrtAngle.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="lnkIDs.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rdioNoRnd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 26</value>
-  </data>
-  <data name="groupBox9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 65</value>
-  </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lnkAddShift.Location" type="System.Drawing.Point, System.Drawing">
-    <value>194, 19</value>
-  </data>
-  <data name="lblAngle.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lnkAddNodes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 21</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>439, 59</value>
-  </data>
-  <data name="lnkAddShift.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 21</value>
-  </data>
-  <data name="lnkAddNodes.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;trkShift.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rdioOpt1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;colorBox.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="&gt;&gt;btnBkgColor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;updownMaxLeaves.Name" xml:space="preserve">
-    <value>updownMaxLeaves</value>
-  </data>
-  <data name="lblStrtAngle.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;rdioRndSz.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnBkgColor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 33</value>
-  </data>
-  <data name="&gt;&gt;groupBox4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rdioOpt1.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="trkSproutAngle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 30</value>
-  </data>
-  <data name="chkTwin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 29</value>
-  </data>
-  <data name="&gt;&gt;mainPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="btnSVG.Location" type="System.Drawing.Point, System.Drawing">
-    <value>71, 27</value>
-  </data>
-  <data name="&gt;&gt;colorBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox6.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;lnkAddSprd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lnkAddShift.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rdioRndSz.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="rdioRndSz.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 29</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Scroll Generator</value>
-  </data>
-  <data name="&gt;&gt;lnkSpread.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="grpBoxOrigin.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupBox4.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;rdioOpt3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="rdioOpt3.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lnkAddSprd.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rdioRndLrg.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblAngle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 44</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;groupBox5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="trkSpread.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 30</value>
-  </data>
-  <data name="&gt;&gt;trkMaxTotal.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="rdioOpt3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 2</value>
-  </data>
-  <data name="rdioRndSz.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;rdioOpt4.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="chkRandAngl.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>leaf size randomness</value>
-  </data>
-  <data name="&gt;&gt;txtMaxNodes.Name" xml:space="preserve">
-    <value>txtMaxNodes</value>
-  </data>
-  <data name="lblSproutAngle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 25</value>
-  </data>
-  <data name="lnkSubSprout.ToolTip" xml:space="preserve">
-    <value>-1</value>
-  </data>
-  <data name="&gt;&gt;trkStrtAngle.Parent" xml:space="preserve">
-    <value>grpBoxOrigin</value>
-  </data>
-  <data name="&gt;&gt;colorBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="colorBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>620, 130</value>
-  </data>
-  <data name="&gt;&gt;trkMaxTotal.Parent" xml:space="preserve">
-    <value>groupBox4</value>
-  </data>
-  <data name="lnkSproutAngle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 25</value>
-  </data>
-  <data name="lblStrtAngle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 25</value>
-  </data>
-  <data name="&gt;&gt;rdioRndSz.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grpBoxOrigin.Name" xml:space="preserve">
-    <value>grpBoxOrigin</value>
-  </data>
-  <data name="grpBoxOrigin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>450, 1</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;rdioGradLtoS.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lnkShift.Name" xml:space="preserve">
-    <value>lnkShift</value>
-  </data>
-  <data name="lnkAddStrt.ToolTip" xml:space="preserve">
-    <value>+1</value>
-  </data>
-  <data name="lnkIDs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 19</value>
-  </data>
-  <data name="lnkAddSprout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 45</value>
-  </data>
-  <data name="&gt;&gt;lnkAddStrt.Name" xml:space="preserve">
-    <value>lnkAddStrt</value>
-  </data>
-  <data name="trkMaxTotal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>319, 30</value>
-  </data>
-  <data name="lnkSubSprd.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="&gt;&gt;trkStrtAngle.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lnkSubNodes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 28</value>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>overall number of nodes</value>
-  </data>
-  <data name="lnkAddNodes.Text" xml:space="preserve">
-    <value>+</value>
-  </data>
-  <data name="&gt;&gt;lnkSubSprout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="chkResprout.ToolTip" xml:space="preserve">
-    <value>add new growth to otherwise terminal leaves</value>
-  </data>
-  <data name="&gt;&gt;lnkAddSprd.Parent" xml:space="preserve">
-    <value>grpAdjustCurls</value>
-  </data>
-  <data name="trkSpread.TabIndex" type="System.Int32, mscorlib">
-    <value>36</value>
-  </data>
-  <data name="&gt;&gt;lnkSpread.Name" xml:space="preserve">
-    <value>lnkSpread</value>
-  </data>
-  <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
     <value>toolTip1</value>
   </data>
-  <data name="trkStrtAngle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 30</value>
+  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>MainForm</value>
   </data>
-  <data name="btnCopy.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblAngle.Name" xml:space="preserve">
-    <value>lblAngle</value>
-  </data>
-  <data name="&gt;&gt;lnkAddSprout.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="btnCopy.Text" xml:space="preserve">
-    <value>copy</value>
-  </data>
-  <data name="splitContainer1.IsSplitterFixed" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lnkIDs.Text" xml:space="preserve">
-    <value>IDs</value>
-  </data>
-  <data name="&gt;&gt;chkRandAngl.Name" xml:space="preserve">
-    <value>chkRandAngl</value>
-  </data>
-  <data name="&gt;&gt;lnkIDs.Name" xml:space="preserve">
-    <value>lnkIDs</value>
-  </data>
-  <data name="btnCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 34</value>
-  </data>
-  <data name="rdioNoRnd.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblAngle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 25</value>
-  </data>
-  <data name="rdioOpt3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 24</value>
-  </data>
-  <data name="splitContainer1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lnkSubStrt.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="lblSproutAngle.Text" xml:space="preserve">
-    <value> +0</value>
-  </data>
-  <data name="&gt;&gt;rdioOpt3.Name" xml:space="preserve">
-    <value>rdioOpt3</value>
-  </data>
-  <data name="chkRandAngl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="chkRandAngl.Text" xml:space="preserve">
-    <value>random</value>
-  </data>
-  <data name="&gt;&gt;btnSVG.Parent" xml:space="preserve">
-    <value>groupBox9</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="chkResprout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 26</value>
-  </data>
-  <data name="&gt;&gt;rdioOpt2.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="rdioOpt2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>or</value>
-  </data>
-  <data name="groupBox9.Text" xml:space="preserve">
-    <value>image</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lnkSubShift.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 28</value>
-  </data>
-  <data name="chkResprout.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 0, 3</value>
-  </data>
-  <data name="&gt;&gt;groupBox5.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="lnkLog.Text" xml:space="preserve">
-    <value>log </value>
-  </data>
-  <data name="rdioGradLtoS.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btnBkgColor.Text" xml:space="preserve">
-    <value>panel</value>
-  </data>
-  <data name="&gt;&gt;groupBox9.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="&gt;&gt;lblSpread.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>439, 66</value>
-  </data>
-  <metadata name="clrDlgScroll.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>171, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>50</value>
-  </metadata>
 </root>

@@ -1,16 +1,9 @@
 ﻿namespace BFSSpiralTree
 {
-    public readonly record struct FlPoint(float X, float Y)
-    {
-        public readonly Point ToPoint() { return new Point((int)Math.Round(X), (int)Math.Round(Y)); }
-        public readonly PointF ToPointF() { return new PointF(X, Y); }
-    };
-
-
     public class SpiralNode
     {
         public int PrntIdx { get; }
-        public FlPoint Ctr { get; set; }
+        public PointF Ctr { get; set; }
         public float Rad { get; set; }
         public float StrtAngl { get; set; }
         public float EndAngl { get; set; }
@@ -22,8 +15,9 @@
         public bool HasLeaves => LeafCount() > 0;
         public bool IsTwin { get; }
         public bool IsRoot => PrntIdx == -1;
-        public FlPoint SprlCtr { get; set; }
-        public FlPoint StrtPt { get; set; }
+        public PointF SprlCtr { get; set; }
+        public PointF EnvelopeCtr { get; set; }
+        public PointF StrtPt { get; set; }
         public int Slot { get; set; }
         public float Lift { get; set; }
         public List<int> LeafIdxs { get; set; } = new List<int>();
@@ -34,7 +28,7 @@
         //public List<int> TmpNhbrIdxs { get; set; } = new List<int>();     //for testing fit check only
         //public List<float> TmpNhbrDists { get; set; } = new List<float>();    //for testing fit check only
         public List<float> EdgeDists { get; set; } = new List<float>();
-        public List<FlPoint> EdgePoints { get; set; } = new List<FlPoint>();
+        public List<PointF> EdgePoints { get; set; } = new List<PointF>();
 
         public int LeafCount()
         {
@@ -46,14 +40,24 @@
             return LeafIdxs.Count > 0 ? LeafIdxs[^1] : -1;
         }
 
-        public float LastLeafAngle()    //return first open instead of "invalid"?
+
+        public float LastLeafAngle()    //returns absolute angle
+        {   //return first open instead of "invalid"?
+            return LeafAngls.Count > 0 ? LeafAngls[^1] : ToAbsRemainingAngle(Configs.startAt);
+        }
+
+
+        public int ClosestNhbrIdx()
         {
-            return LeafAngls.Count > 0 ? LeafAngls[^1] : ToAbsoluteAngle(Configs.startAt + Configs.shiftFactor);
+            if (NhbrDists.Count == 0) { return -1; }
+            float minNhbrDist = NhbrDists.Min();
+            int lowestDistIdx = NhbrDists.FindIndex(x => x == minNhbrDist);
+            return NhbrIdxs[lowestDistIdx];
         }
 
 
         //for root node(s) only
-        public SpiralNode(FlPoint ctr, float radius, float angle, bool isTwin = false)
+        public SpiralNode(PointF ctr, float radius, float angle, bool isTwin = false)
         {
             PrntIdx = -1;
             Ctr = ctr;
@@ -67,6 +71,7 @@
             IsTwin = isTwin;
             EndAngl = Trig.Mod2PI(StrtAngl + (Clock * Configs.endAt));
             SprlCtr = InitSprlCtr();
+            EnvelopeCtr = InitEnvelopeCtr();
             StrtPt = InitRootStrtPt();
         }
 
@@ -74,7 +79,7 @@
         public SpiralNode(int prntIdx, int prntClock, float ctrX, float ctrY, float radius, float angle, int slot = 0, float lift = 0)
         {
             PrntIdx = prntIdx;
-            Ctr = new FlPoint(ctrX, ctrY);
+            Ctr = new PointF(ctrX, ctrY);
             Rad = radius;
             StrtAngl = angle;
             Clock = prntIdx == -1 ? 1 : -1 * prntClock;
@@ -85,6 +90,7 @@
             IsTwin = false;
             EndAngl = Trig.Mod2PI(StrtAngl + (Clock * Configs.endAt));
             SprlCtr = InitSprlCtr();
+            EnvelopeCtr = InitEnvelopeCtr();
             if (prntIdx == -1) { StrtPt = InitRootStrtPt(); }
         }
 
@@ -92,7 +98,7 @@
         public SpiralNode(SpiralNode orig) //creates a copy of the original
         {
             PrntIdx = orig.PrntIdx;
-            Ctr = new FlPoint(orig.Ctr.X, orig.Ctr.Y);
+            Ctr = new PointF(orig.Ctr.X, orig.Ctr.Y);
             Rad = orig.Rad;
             StrtAngl = orig.StrtAngl;
             Clock = orig.Clock;
@@ -102,8 +108,8 @@
             Blocked = false;
             IsTwin = false;
             EndAngl = orig.EndAngl;
-            SprlCtr = new FlPoint(orig.SprlCtr.X, orig.SprlCtr.Y);
-            StrtPt = new FlPoint(orig.StrtPt.X, orig.StrtPt.Y);
+            SprlCtr = new PointF(orig.SprlCtr.X, orig.SprlCtr.Y);
+            StrtPt = new PointF(orig.StrtPt.X, orig.StrtPt.Y);
             //no leaves yet, skip
 
             NhbrIdxs = new List<int>();
@@ -112,7 +118,7 @@
             NhbrDists.AddRange(orig.NhbrDists);
 
             EdgeDists = new List<float>();
-            EdgePoints = new List<FlPoint>();
+            EdgePoints = new List<PointF>();
             EdgeDists.AddRange(orig.EdgeDists);
             EdgePoints.AddRange(orig.EdgePoints);
         }
@@ -142,8 +148,13 @@
 
             for (int idx = 0; idx < EdgeDists.Count; idx++)
             {
-                if (conflictOnly && EdgeDists[idx] != 0) { continue; };
-                nodePrint += $"edge idx#{idx} distance: {EdgeDists[idx]}; point: {EdgePoints[idx]:F3}\n";
+                float edgeDist = EdgeDists[idx];
+                if (conflictOnly)
+                {
+                    if (EdgeDists[idx] != 0) { continue; }
+                    else { edgeDist = Trig.PointDist(Ctr, EdgePoints[idx]); }
+                }
+                nodePrint += $"edge idx#{idx} distance: {edgeDist}; point: {EdgePoints[idx]:F3}\n";
             }
 
             return nodePrint;
@@ -176,19 +187,29 @@
         }
 
 
-        public FlPoint InitSprlCtr()
+        public PointF InitEnvelopeCtr()
+        {
+            float shiftAng = Trig.Mod2PI(StrtAngl + Clock * 2.75f);
+            float shiftX = Ctr.X + (float)Math.Cos(shiftAng) * (float)(Math.PI / 12f) * Rad;
+            float shiftY = Ctr.Y + (float)Math.Sin(shiftAng) * (float)(Math.PI / 12f) * Rad;
+
+            return new PointF(shiftX, shiftY);
+        }
+
+
+        public PointF InitSprlCtr()
         {
             float shiftAng = Clock * 3 * (float)Math.PI / 4;
             float newAng = Trig.Mod2PI(StrtAngl + shiftAng);
 
-            float shiftX = Ctr.X + ((float)Math.Cos(newAng) * (Rad / (float)Math.Tau));
-            float shiftY = Ctr.Y + ((float)Math.Sin(newAng) * (Rad / (float)Math.Tau));
+            float shiftX = Ctr.X + (float)Math.Cos(newAng) * (Rad / (float)Math.Tau);
+            float shiftY = Ctr.Y + (float)Math.Sin(newAng) * (Rad / (float)Math.Tau);
 
-            return new FlPoint(shiftX, shiftY);
+            return new PointF(shiftX, shiftY);
         }
 
 
-        public FlPoint InitRootStrtPt()
+        public PointF InitRootStrtPt()
         {
             float scl = 0.099f;
             float angl = (2 * (float)Math.Tau) - 0.1f;
@@ -197,10 +218,10 @@
             float x = SprlCtr.X + (sclRad * angl * (float)Math.Cos(angl + StrtAngl));
             float y = SprlCtr.Y + (sclRad * angl * (float)Math.Sin(angl + StrtAngl));
 
-            return new FlPoint(x, y);
+            return new PointF(x, y);
         }
 
-        private void Recenter(FlPoint prntCtr, float prntRad, float newAngleFromPrnt = -100f, float newRad = 0f)
+        private void Recenter(PointF prntCtr, float prntRad, float newAngleFromPrnt = -100f, float newRad = 0f)
         {
             if (newRad > 0)
             {
@@ -214,11 +235,12 @@
                 EndAngl = Trig.Mod2PI(StrtAngl + (Clock * Configs.endAt));
             }
 
-            float ctrX = prntCtr.X + ((float)Math.Cos(newAngleFromPrnt) * (prntRad + Rad + Lift));
-            float ctrY = prntCtr.Y + ((float)Math.Sin(newAngleFromPrnt) * (prntRad + Rad + Lift));
-            Ctr = new FlPoint(ctrX, ctrY);
+            float ctrX = prntCtr.X + (float)Math.Cos(newAngleFromPrnt) * (prntRad + Rad + Lift);
+            float ctrY = prntCtr.Y + (float)Math.Sin(newAngleFromPrnt) * (prntRad + Rad + Lift);
+            Ctr = new PointF(ctrX, ctrY);
 
             SprlCtr = InitSprlCtr();
+            EnvelopeCtr = InitEnvelopeCtr();
         }
 
 
@@ -267,39 +289,48 @@
             float x = SprlCtr.X + (scl * (angl + adj) * (float)Math.Cos((Clock * angl) + (Clock * adj) + StrtAngl));
             float y = SprlCtr.Y + (scl * (angl + adj) * (float)Math.Sin((Clock * angl) + (Clock * adj) + StrtAngl));
 
-            leafNode.StrtPt = new FlPoint(x, y);
+            leafNode.StrtPt = new PointF(x, y);
         }
 
 
+        //flips all angles pertaining to negative clock nodes to be like positive
+        //when need to preserve directionality, use: Trig.Mod2PI(testAngl - StrtAngl);
         public float ToRelativeAngle(float angle)
         {
-            float relativeArc = Trig.Mod2PI((Clock * angle) - (Clock * StrtAngl));
-            return relativeArc;
+            float relativeAngl = Trig.Mod2PI((Clock * angle) - (Clock * StrtAngl));
+            return relativeAngl;
+        }
+
+
+        public float ToAbsRemainingAngle(float angle)
+        {
+            float absoluteAngl = Trig.Mod2PI(StrtAngl - (Clock * angle));
+            return absoluteAngl;
         }
 
 
         public float ToAbsoluteAngle(float angle)
         {
-            float absoluteArc = Trig.Mod2PI(StrtAngl + (Clock * angle));
-            return absoluteArc;
+            float absoluteAngl = Trig.Mod2PI(StrtAngl + (Clock * angle));
+            return absoluteAngl;
         }
 
 
-        public float BaseAngle(float prntRad)
+        public float BaseAngle(float prntRad)   //returns absolute angle
         {
             if (!IsRoot)
             {
                 float parentArc = (float)Math.Asin(prntRad / (prntRad + Rad)); //half of parent projection onto node
-                return StrtAngl - (Clock * parentArc);
+                return ToAbsRemainingAngle(parentArc);
             }
             else { return -100; }
         }
 
 
-        public float RootBaseAngle(int rootIdx, float rootDist)
+        public float RootBaseAngle(int rootIdx, float rootDist)     //returns absolute angle
         {
-            float rootBase = Configs.TWIN ? Configs.RootBaseArc(rootIdx, rootDist) : Configs.startAt + Configs.shiftFactor;
-            return Trig.Mod2PI(StrtAngl - (Clock * rootBase));
+            float rootBase = Configs.TWIN ? Configs.RootBaseArc(rootIdx, rootDist) : Configs.startAt;
+            return ToAbsRemainingAngle(rootBase);
         }
 
 
@@ -329,52 +360,52 @@
         }
 
 
-        //fairly rough approximation, not like calcNodeLift
+        //outlines the "outer envelope" of the spiral for closer fit (as opposed to using the node radius)
+        //all defined ranges and approximation functions experimentally determined
+        //EnvelopeCtr property exists specifically to provide a pre-computed center for one of the ranges
         public float RadAtAngle(float approachAngl)
         {
-            //range (experimentally determined) where the spiral "protrudes" above the edge of
-            //the base circle used by BFSTree to pack leaves
-            float[] liftUseRange = new float[2] { 17f / 24f * (float)Math.PI, 5f / 4f * (float)Math.PI };
+            //range (at the top of the spiral) where it "bulges out" and the outer
+            //radius creates a bump on top of the base fitting circle
+            float[] liftUseRange = new float[2] { 0.65f * (float)Math.PI, 1.3f * (float)Math.PI };
             if (AngleInArc(approachAngl, liftUseRange[0], liftUseRange[1]))
             {
-                //for smaller nodes, using Math.Ceiling will make a proportionally larger difference
-                //which is the goal, as they will generate a smaller correction and get too close 
-                return (float)Math.Ceiling(Rad * 1.08f);
-            } //1.08f is experimentally determined
-
-            //range (experimentally determined) where the spiral "curls in" and outer radius grows
-            //much smaller than the base circle used by BFSTree to pack leaves
-            float[] closerFitRange = new float[2] { 1f / 8f * (float)Math.PI, 5f / 8f * (float)Math.PI };
-            if (AngleInArc(approachAngl, closerFitRange[0], closerFitRange[1]))
-            {
-                float _x = SprlCtr.X + ((float)Math.Cos(approachAngl) * (8f / 10f * Rad));
-                float _y = SprlCtr.Y + ((float)Math.Sin(approachAngl) * (8f / 10f * Rad));
-                return Trig.PointDist(Ctr.X, Ctr.Y, _x, _y);
+                float hiX = Ctr.X - (float)Math.Cos(StrtAngl) * 0.25f * Rad;
+                float hiY = Ctr.Y - (float)Math.Sin(StrtAngl) * 0.25f * Rad;
+                float _x = hiX + (float)Math.Cos(approachAngl) * 0.83f * Rad;
+                float _y = hiY + (float)Math.Sin(approachAngl) * 0.83f * Rad;
+                float atAngl = Trig.PointDist(Ctr.X, Ctr.Y, _x, _y);
+                return atAngl;
             }
-            //else
-            return Rad;
 
-            bool AngleInArc(float testAngl, float scanFrom, float scanTo)
+            bool singleCurlRoot = !Configs.TWIN && PrntIdx == -1;
+            if (!singleCurlRoot)
             {
-                //provided range is already relative, no need to convert that
-                //except for orienting to clock direction
-                float newTest = ToRelativeAngle(testAngl);
-
-                if (Clock > 0)
+                //range where the spiral "curls in" and outer radius grows
+                //much smaller than the base circle used by BFSTree to pack leaves
+                float[] closerFitRange = new float[2] { 0.001f, 0.651f * (float)Math.PI };
+                if (AngleInArc(approachAngl, closerFitRange[0], closerFitRange[1]))
                 {
-                    return scanFrom < newTest && newTest < scanTo;
-                }
-                else
-                {
-                    scanFrom = Trig.Mod2PI(-scanFrom);
-                    scanTo = Trig.Mod2PI(-scanTo);
-                    newTest = Trig.Mod2PI(-newTest);
-                    return scanFrom > newTest && newTest > scanTo;
+                    float _x = EnvelopeCtr.X + (float)Math.Cos(approachAngl) * (0.75f * Rad);
+                    float _y = EnvelopeCtr.Y + (float)Math.Sin(approachAngl) * (0.75f * Rad);
+                    return Trig.PointDist(Ctr.X, Ctr.Y, _x, _y);
                 }
             }
+            //range (at the base of the spiral, opposite closerFitRange) where it
+            //again grows beyond the bounds of the fitting cirle and terminates in a
+            //"stalk" attaching it to parent
+            float[] spiralStalkRange = new float[2] { 1.75f * (float)Math.PI, (float)Math.Tau - 0.0001f };
+            if (AngleInArc(approachAngl, spiralStalkRange[0], spiralStalkRange[1]))
+            {
+                float _x = SprlCtr.X + (float)Math.Cos(approachAngl) * (1.175f * Rad);
+                float _y = SprlCtr.Y + (float)Math.Sin(approachAngl) * (1.175f * Rad);
+                return (float)Math.Ceiling(Trig.PointDist(Ctr.X, Ctr.Y, _x, _y));
+            }
+            return (float)Math.Ceiling(Rad);
         }
 
-        public static float GetSkinDistToPt(SpiralNode newLeaf, FlPoint edgePt)
+
+        public static float GetSkinDistToPt(SpiralNode newLeaf, PointF edgePt)
         {
             float distBetween = Trig.PointDist(newLeaf.Ctr, edgePt);
             float anglToLeaf = Trig.AngleToPoint(newLeaf.Ctr, edgePt);
@@ -440,44 +471,55 @@
             return prntLift + leafLift;
         }
 
+
         public bool AngleInSproutRange(float testAngl)
         {
-            float scanFrom = Configs.sproutAngle;
-            float limitAngl = Configs.sproutMaxAngle;
-            float newTest = Trig.Mod2PI(testAngl - StrtAngl);
-            int direction = -1 * Clock;
-
-            return scanFrom * direction < newTest * direction && newTest * direction < limitAngl * direction;
+            float scanFrom = Configs.sproutMaxAngle;
+            float scanTo = Configs.sproutAngle;
+            return AngleInArc(testAngl, scanFrom, scanTo);
         }
+
+
+        public bool AngleInSlotRange(float testAngl, int slot)      //testAngle is absolute
+        {
+            float scanFrom = Configs.endAt;  //when slot==0
+            if (slot > 0) { scanFrom = Configs.slotAngles[slot - 1]; }
+
+            float scanTo = Configs.slotAngles[slot] + (0.5f * Configs.slotSizes[slot]);
+            if (Configs.shiftFactor != 0)
+            {
+                scanFrom = Trig.Mod2PI(scanFrom + Configs.shiftFactor);
+                scanTo = Trig.Mod2PI(scanTo + Configs.shiftFactor);
+            }
+            return AngleInArc(testAngl, scanFrom, scanTo);
+        }
+
+
+        public bool AngleInArc(float testAngl, float scanFrom, float scanTo)
+        {
+            //provided range is already relative, no need to convert that
+            float relTest = ToRelativeAngle(testAngl);
+            return scanFrom < relTest && relTest < scanTo;
+        }
+
 
         public bool AngleInGrowthRange(float scanFrom, float testAngl)
         {
-            float newScanFrom = Trig.Mod2PI(scanFrom - StrtAngl);
-            float newTest = Trig.Mod2PI(testAngl - StrtAngl);
-            float newEnd = Trig.Mod2PI(EndAngl - StrtAngl);
-            int direction = -1 * Clock;
-
-            return newScanFrom * direction < newTest * direction && newTest * direction < newEnd * direction;
+            float relTest = ToRelativeAngle(testAngl);
+            float startRange = Configs.endAt;
+            float endRange = ToRelativeAngle(scanFrom);
+            return startRange < relTest && relTest < endRange;
         }
 
 
-        public float NextLeafAngle(float leafRad, float baseAngl, int inSlot = -1)
+
+        public float NextLeafAngle(float leafArc, float baseAngl, int inSlot = -1)  //baseAngl is absolute
         {
-
-            if ((Configs.maxLeaves < Configs.slotSizes.Count || Configs.RANDNUM)
-                || (Configs.shiftFactor != 0 && !HasLeaves))
-            {
-                if (inSlot < 0) { inSlot = 0; }
-                float newBase = AngleFromSlotList(baseAngl, inSlot);
-                if (newBase != -100) { baseAngl = newBase; }
-            }
-
-            float leafArc = Trig.CalcLeafArcSpan(Rad, leafRad); //minimum arc necessary to fit leaf
+            if (inSlot < 0) { inSlot = 0; }
+            float origBase = baseAngl;
 
             if (Configs.GRAD && !Configs.SMTOLG && DoubleTheGap())
             { leafArc = (2 * Configs.nodeHalo) + leafArc; }
-
-            if (!HasRoomFor(leafArc * 1.75f)) { return -100; } //.Full check is included
 
             if (LeafCount() == 0)
             {
@@ -485,50 +527,64 @@
                 else if (Configs.CanDecreaseLeafArc(IsTwin)) { leafArc = 0.9f * leafArc; }
             }
 
-            float nextLeafAngl = Trig.Mod2PI(baseAngl - (Clock * leafArc));
-            return nextLeafAngl;
-        }
-
-
-        private float AngleFromSlotList(float baseAngl, int currSlot)
-        {
-            if (currSlot < 0) { return -100; }
-
-            float baseSlotAngl = Configs.slotAngles[currSlot] + (0.5f * Configs.slotSizes[currSlot]);
-            if (Configs.SMTOLG)
+            bool useSlotBase = Configs.maxLeaves < Configs.slotSizes.Count || Configs.RANDNUM;
+            if (useSlotBase || Configs.shiftFactor != 0)
             {
-                baseSlotAngl += 0.5f * Configs.slotSizes.Min();
+                if (!AngleInSlotRange(Trig.Mod2PI(origBase - (Clock * leafArc)), inSlot))    //faster decision
+                {
+                    float slotBase = Configs.slotAngles[inSlot];
+                    float endRange = Trig.Mod2PI(ToRelativeAngle(origBase) + Math.Max(0.15f, leafArc));
+                    float strtRange = Configs.endAt;
+
+                    if (Configs.shiftFactor != 0)
+                    {
+                        slotBase = Trig.Mod2PI(slotBase + Configs.shiftFactor);
+                        if (PrntIdx == -1 && !HasLeaves) { endRange = (float)Math.Tau - Configs.minRootBase; }
+                    }
+
+                    if (strtRange < slotBase && slotBase < endRange) { baseAngl = ToAbsoluteAngle(slotBase); }
+                    else if (Configs.shiftFactor != 0) { return -100; }  //when shiftFactor == 0, we keep the original baseAngl
+                }
             }
-            float slotAngl = Trig.Mod2PI((Clock * baseSlotAngl) + StrtAngl);
 
-            return AngleInGrowthRange(baseAngl, slotAngl) ? slotAngl : -100;
+            float nextLeafAngl = Trig.Mod2PI(baseAngl - (Clock * leafArc));
+            return nextLeafAngl;    //returns absolute angle
         }
 
 
-        public int CorrectedSlot(float atAngl, float leafRad)
+        public int CorrectedSlot(float atAngl, int origSlot)
         {
-            float leafArc = Trig.CalcLeafArcSpan(Rad, leafRad);
-            float tstAngl = ToRelativeAngle(atAngl) + (Clock * leafArc);
-            int leafSlot = Configs.FindNextSlot(tstAngl);
-            return leafSlot;
+            if (AngleInSlotRange(atAngl, origSlot)) { return origSlot; }
+            else
+            {
+                for (int slt = 0; slt < Configs.slotAngles.Count; slt++)
+                {
+                    if (AngleInSlotRange(atAngl, slt)) { return slt; }
+                }
+            }
+            return origSlot;
         }
 
 
-        public int NextLeafSlot(float atAngl = -100, int maxNumLeaves = 0)
+        public int NextLeafSlot(float atAngl = -100, int maxNumLeaves = 0)  //atAngl is absolute
         {
             if (atAngl == -100) { return Configs.slotSizes.Count - 1; }
 
             if (Configs.RANDNUM)
             {
-                return PickSlotFromList(maxNumLeaves, Configs.slotSizes.Count);
-            }
-            if (Configs.maxLeaves < Configs.slotSizes.Count)
-            {
-                return Configs.useSlots.Max();
+                return NextSlotFromList(maxNumLeaves, Configs.slotSizes.Count);
             }
 
-            float tstAngl = Trig.Mod2PI((Clock * atAngl) - (Clock * StrtAngl));
+            float tstAngl;
+            tstAngl = ToRelativeAngle(atAngl);
             int nextSlot = Configs.FindNextSlot(tstAngl);
+
+            if (Configs.maxLeaves < Configs.slotSizes.Count)
+            {
+                int listSlot = Configs.useSlots.Max();
+                if (listSlot < nextSlot) { return listSlot; }
+            }
+
             return nextSlot;
         }
 
@@ -537,18 +593,22 @@
         {
             if (Configs.maxLeaves < Configs.slotSizes.Count || Configs.RANDNUM)
             {
-                return PickSlotFromList(maxNumLeaves, currSlot);
+                return NextSlotFromList(maxNumLeaves, currSlot);
             }
-
+            //else:
             int nextSlot = 0;
             if (currSlot > 0) { nextSlot = currSlot - 1; }
             return nextSlot;
         }
 
 
-        private int PickSlotFromList(int maxNumLeaves, int currSlot)
+        private int NextSlotFromList(int maxNumLeaves, int currSlot)
         {
-            if (LeafCount() == 0 && !Configs.RANDNUM) { return Configs.useSlots.Max(); } //good even for RANDNUM
+            if (LeafCount() == 0 && !Configs.RANDNUM)
+            {
+                //it's our first time trying to get a slot for first leaf - answer is good even for RANDNUM
+                if (currSlot != Configs.useSlots.Max()) { return Configs.useSlots.Max(); }
+            }
             if (currSlot == 0) { return 0; } //it's not getting any smaller!
             if (maxNumLeaves == 0) { maxNumLeaves = Configs.slotSizes.Count; }
 
@@ -567,17 +627,13 @@
 
         public float ReslotAngl(int currSlot, bool decrement = true)
         {
-            if (!decrement && currSlot >= 0)
-            {
-                float slotAngl = Configs.slotAngles[currSlot];
-                return Trig.Mod2PI((Clock * slotAngl) + StrtAngl);
-            }
-            if (decrement && currSlot > 0)
-            {
-                float slotAngl = Configs.slotAngles[currSlot - 1];
-                return Trig.Mod2PI((Clock * slotAngl) + StrtAngl);
-            }
-            else { return -100; }
+            int nextSlot = !decrement ? currSlot : currSlot - 1;
+            if (nextSlot < 0) { return -100; }
+
+            float slotAngl = Configs.slotAngles[nextSlot];
+            if (Configs.shiftFactor != 0) { slotAngl += Configs.shiftFactor; }
+
+            return ToAbsoluteAngle(slotAngl);
         }
 
 
@@ -605,13 +661,13 @@
             NhbrIdxs = new List<int>();
             NhbrDists = new List<float>();
             EdgeDists = new List<float>();
-            EdgePoints = new List<FlPoint>();
+            EdgePoints = new List<PointF>();
             EdgeDists.AddRange(prntNode.EdgeDists);
             EdgePoints.AddRange(prntNode.EdgePoints);
         }
 
 
-        public static float SibConflictAngle(SpiralNode idxNode, SpiralNode problemSib)
+        public static float SibConflictAngle(SpiralNode idxNode, SpiralNode problemSib) //returns absolute angle
         {
             float sibDist = Trig.PointDist(idxNode.Ctr, problemSib.Ctr);
             float anglToSib = Trig.AngleToPoint(idxNode.Ctr, problemSib.Ctr);
@@ -623,14 +679,33 @@
                 float firstOpen = anglToSib - (idxNode.Clock * lastSibArc);
                 return firstOpen;
             }
-            else
-            {
-                return -100;
-            }
+            else { return -100; }
         }
 
 
-        public FlPoint[] PlotSpiralFlPoints()
+        public PointF[] PlotNodeEnvelopePoints()
+        {
+            float x;
+            float y;
+            float theta = 0f;
+            float maxTheta = (float)Math.Tau;
+            float incr = 0.1f;
+
+            List<PointF> outerPoints = new();
+            while (theta < maxTheta)
+            {
+                float approachAngl = ToAbsRemainingAngle(theta);
+                x = Ctr.X + (float)Math.Cos(approachAngl) * (RadAtAngle(approachAngl));
+                y = Ctr.Y + (float)Math.Sin(approachAngl) * (RadAtAngle(approachAngl));
+                theta += incr;
+                outerPoints.Add(new PointF(x, y));
+            }
+
+            return outerPoints.ToArray();
+        }
+
+
+        public PointF[] PlotSpiralPoints()
         {
             float x;
             float y;
@@ -638,18 +713,18 @@
             float maxTheta = (2f * (float)Math.Tau) - 0.1f;
             float incr = 0.1f;
             float scl = 0.099f * Rad;
-            FlPoint anchr = StrtPt;
+            PointF anchr = StrtPt;
 
-            List<FlPoint> spiralPoints = new();
+            List<PointF> spiralPoints = new();
             while (theta < maxTheta)
             {
                 x = SprlCtr.X + (scl * theta * (float)Math.Cos((Clock * theta) + StrtAngl));
                 y = SprlCtr.Y + (scl * theta * (float)Math.Sin((Clock * theta) + StrtAngl));
 
                 theta += incr;
-                spiralPoints.Add(new FlPoint(x, y));
+                spiralPoints.Add(new PointF(x, y));
             }
-            spiralPoints.Add(new FlPoint(anchr.X, anchr.Y));
+            spiralPoints.Add(new PointF(anchr.X, anchr.Y));
             return spiralPoints.ToArray();
         }
     }
