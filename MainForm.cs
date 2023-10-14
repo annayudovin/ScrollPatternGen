@@ -49,6 +49,7 @@ namespace BFSSpiralTree
             int wd = (int)(mainPanel.Size.Width * scale);
             bmpSurface = new Bitmap(wd, ht);
             plotter = Graphics.FromImage(bmpSurface);
+            plotter.SmoothingMode = SmoothingMode.AntiAlias;
 
             CreateTree();
             if (resetLogTrue)
@@ -117,12 +118,13 @@ namespace BFSSpiralTree
 
         private Bitmap RenderTree()
         {
-            RefreshGraphics();
+            //RefreshGraphics();
             float penWidth = 1.7f;
             if (showIdxs) { penWidth = 1.5f; }
             Pen pen = new(scrollColor, penWidth);
-            SolidBrush solidBrush = new(mainPanel.BackColor);
-            plotter.FillRectangle(solidBrush, 0, 0, mainPanel.Size.Width, mainPanel.Size.Height);
+            //SolidBrush solidBrush = new(mainPanel.BackColor);
+            //plotter.FillRectangle(solidBrush, 0, 0, mainPanel.Size.Width, mainPanel.Size.Height);
+			plotter.Clear(mainPanel.BackColor);
 
             foreach (PointF[] _pArry in cachedTreePoints)
             {

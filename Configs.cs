@@ -31,8 +31,8 @@
         public static readonly int lowerLim = 20;
 
         private static int availSlotSpaces = 6;     //number of option fractions adjusted to fit, either 5 or 6
-        public static float sproutAngle = 5f / 4f * (float)Math.PI;   //1.25*PI
-        public static float sproutMaxAngle = 11f / 12f * (float)Math.PI;   //0.916...*PI
+        public static float sproutAngle = 5f / 4f * (float)Math.PI;   //1.25*PI, or approx. 225 degrees
+        public static float sproutMaxAngle = (float)Math.PI;
 
         public static float sproutAdjustment = 0;
         public static float spreadFactor = 0;
@@ -41,6 +41,7 @@
         public static bool LGMAX = false;     //LargerMax interface option, controls availSlotSpaces
         public static int DIVOPTION = 1;    //fraction collection
         public static bool TWIN = true;     //root curl
+        public static bool RANDTWIN = false; //random twinRatio
         public static bool RANDANG = false; //root curl angle
         public static bool RANDLRG = false; //random large curl
         public static bool MORERND = false; //extra guess for large curl
@@ -271,7 +272,7 @@
         public static void InitAll(Random? rnd = null)
         {
             rnd ??= new Random();       //if rnd is null, create a new Random object
-            twinRatio = RANDLRG || RANDSZ ? Random(0.6f, 1f, rnd) : 1f;
+            twinRatio = RANDTWIN || RANDSZ ? Random(0.6f, 1f, rnd) : twinRatio;
 
             availSlotSpaces = LGMAX ? 5 : 6;
 
@@ -459,10 +460,11 @@
             if (RANDLRG)
             {
                 int lrgSlot = rnd.Next(0, slotSizes.Count); //guess current slot 
-                if (lrgSlot == leafSlot)
-                {
-                    { return Random(initRadius * 0.5f, initRadius * 0.9f, rnd); }
-                }
+                int coin = 1;
+                //reduce the frequency of extra-large nodes when leaf number is large
+                if (slotSizes.Count > 3){ coin = rnd.Next(0, 2); }  //or flip a coin 
+                
+                if (lrgSlot == leafSlot && coin > 0){ return Random(initRadius * 0.5f, initRadius * 0.9f, rnd); }
                 //else: if didn't guess, proceed to other options as normally
             }
 

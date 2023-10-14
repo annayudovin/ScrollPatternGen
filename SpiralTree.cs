@@ -16,6 +16,11 @@
         public int Count => Nodes.Count;
 
 
+        public SpiralTree()
+        {
+            _rnd = new Random();
+        }
+
         public SpiralTree(Polygon container, float initRad = 0)
         {
             _rnd = new Random();
@@ -111,6 +116,65 @@
             }
 
             return spiralFlPtsLst;
+        }
+
+
+        //produces complement Hue and Value, at the same Saturation
+        public List<int[]> GetRGBRandomComplement()
+        {
+            int H = _rnd.Next(0, 100);
+            int S = _rnd.Next(0, 100);
+            int V = _rnd.Next(0, 100);
+            //increase value contrast
+            if (Math.Abs(V - 50) <= 20) { V = V > 50? V + 15 : V - 15; }
+
+            int[] color = HsvToRgb(H, S, V);
+            int[] colorHSV = { H, S, V };   //for debugging only
+
+            H = (H + 50) % 100;
+            V = (V + 50) % 100;
+            //increase value contrast
+            if (Math.Abs(V - 50) <= 20) { V = V > 50 ? V + 15 : V - 15; }
+
+            int[] complement = HsvToRgb(H, S, V);
+            int[] complementHSV = { H, S, V };  //for debugging only
+
+            return new List<int[]> { color, complement, colorHSV, complementHSV };
+        }
+
+
+        //ranges for each of h, s, and v is 0-100
+        //translation from javascript function found at https://gist.github.com/mjackson/5311256
+        private int[] HsvToRgb(int _h, int _s, int _v)
+        {
+            float h = _h / 100f;
+            float s = _s / 100f;
+            float v = _v / 100f;
+            float r = 0;
+            float g = 0;
+            float b = 0;
+
+            float i = (float)Math.Floor(h * 6);
+            float f = h * 6 - i;
+            float p = v * (1 - s);
+            float q = v * (1 - f * s);
+            float t = v * (1 - (1 - f) * s);
+
+            switch (i % 6)
+            {
+                case 0: r = v; g = t; b = p; break;
+                case 1: r = q; g = v; b = p; break;
+                case 2: r = p; g = v; b = t; break;
+                case 3: r = p; g = q; b = v; break;
+                case 4: r = t; g = p; b = v; break;
+                case 5: r = v; g = p; b = q; break;
+            }
+            r *= 255;
+            g *= 255;
+            b *= 255;
+
+            int[] _rgb = { (int)r, (int)g, (int)b };
+            return _rgb;
         }
 
 
@@ -226,14 +290,15 @@
         {
             float rad2 = rad1 * twinScale;
             float shiftAngl = 0.05f;
+            float halfDist = 0.5f * Configs.rootBuffer;
 
-            float ctr1X = initCtr.X + ((float)Math.Cos(strtAngl - shiftAngl) * (rad1 + 0.5f * Configs.rootBuffer));
-            float ctr1Y = initCtr.Y + ((float)Math.Sin(strtAngl - shiftAngl) * (rad1 + 0.5f * Configs.rootBuffer));
+            float ctr1X = initCtr.X + ((float)Math.Cos(strtAngl - shiftAngl) * (rad1 + halfDist));
+            float ctr1Y = initCtr.Y + ((float)Math.Sin(strtAngl - shiftAngl) * (rad1 + halfDist));
 
             float ctr2X = initCtr.X + ((float)Math.Cos(Trig.ComplementAngle(strtAngl + shiftAngl)) *
-                          (rad2 + 0.5f * Configs.rootBuffer));
+                          (rad2 + halfDist * twinScale));
             float ctr2Y = initCtr.Y + ((float)Math.Sin(Trig.ComplementAngle(strtAngl + shiftAngl)) *
-                         (rad2 + 0.5f * Configs.rootBuffer));
+                         (rad2 + halfDist * twinScale));
 
             float ctrYavg = Math.Abs(Math.Abs(initCtr.Y - ctr1Y) - Math.Abs(initCtr.Y - ctr2Y)) / 2;
             ctr2Y -= ctrYavg;
@@ -260,7 +325,7 @@
             SpiralNode twin = new(ctr2, rad * twinScale, Trig.ComplementAngle(strtAngl), true);
             if (CheckEdgeFit(twin)) { Nodes.Add(twin); }
 
-            //average the two roots' start points, for smoother transition
+            //average the two roots' start points, for solid transition
             float avgX = (root.StrtPt.X + twin.StrtPt.X) / 2;
             float avgY = (root.StrtPt.Y + twin.StrtPt.Y) / 2;
 
@@ -993,34 +1058,34 @@
                 IEnumerable<(int idx, float rad, int slt)> slotFltr = goodStumpLst.Where(x => x.slt == targetSlot);
                 IEnumerable<(int idx, float rad)> frmtFltr = slotFltr.Select(x => (x.idx, x.rad));
                 stumpList = frmtFltr.ToList();
-                if (stumpList.Count > 0) { break; }
+               
                 targetSlot++;
-            }
-
-            //sort in descending order
-            stumpList.Sort((a, b) => a.rad > b.rad ? -1 : a.rad < b.rad ? 1 : 0);
-            foreach ((int idx, float rad) in stumpList)
-            {
-                float mult = Configs.childProportion;
-                if (rad < Configs.minRadius / 2) { mult += 0.05f; }
-                float lfRad = mult * (rad * Configs.initRadius) / Configs.minRadius;
-                SpiralNode stump = Nodes[idx];
-
-                float strtAngl = stump.ToAbsoluteAngle(Configs.sproutAngle + (0.1f * growSlot));
-                bool success = GrowLeaf(stump, idx, lfRad, strtAngl, growSlot, true);
-                if (success)
+            
+                //sort in descending order
+                stumpList.Sort((a, b) => a.rad > b.rad ? -1 : a.rad < b.rad ? 1 : 0);
+                foreach ((int idx, float rad) in stumpList)
                 {
-                    nodesLeft--;
-                    if (nodesLeft == 0) { return; }
+                    float mult = Configs.childProportion;
+                    if (rad < Configs.minRadius / 2) { mult += 0.05f; }
+                    float lfRad = mult * (rad * Configs.initRadius) / Configs.minRadius;
+                    SpiralNode stump = Nodes[idx];
 
-                    int leafIdx = Nodes.Count - 1;
-                    if (Nodes[leafIdx].CanGrow) { Develop(leafIdx, true); }
-                    else { continue; }
+                    float strtAngl = stump.ToAbsoluteAngle(Configs.sproutAngle + (0.1f * growSlot));
+                    bool success = GrowLeaf(stump, idx, lfRad, strtAngl, growSlot, true);
+                    if (success)
+                    {
+                        nodesLeft--;
+                        if (nodesLeft == 0) { return; }
 
-                    nodesLeft = Configs.maxNodes - Nodes.Count;
-                    if (nodesLeft == 0) { return; }
+                        int leafIdx = Nodes.Count - 1;
+                        if (Nodes[leafIdx].CanGrow) { Develop(leafIdx, true); }
+                        else { continue; }
+
+                        nodesLeft = Configs.maxNodes - Nodes.Count;
+                        if (nodesLeft == 0) { return; }
+                    }
+                    else { stump.Blocked = true; }
                 }
-                else { stump.Blocked = true; }
             }
         }
 
@@ -1104,10 +1169,12 @@
                 if (Configs.LOG)
                 { AddToLog($"\nTree loop #{loopCount} full nodes: {sterileCount} tree length: {Nodes.Count}\n"); }
 
-                if (sterileCount >= Nodes.Count - 1 && Configs.GROWTINY)
+                if (sterileCount > 0 && sterileCount >= Nodes.Count - 1 && Configs.GROWTINY)
                 {
                     SproutStumps();
-                    nodesLeft = Configs.maxNodes - Nodes.Count;
+                    if (nodesLeft == Configs.maxNodes - Nodes.Count) { break; }
+                    else { nodesLeft = Configs.maxNodes - Nodes.Count; }
+                   
                     if (nodesLeft == 0) { break; }
                 }
                 sterileCount = 0;
@@ -1116,7 +1183,7 @@
                 {
                     if (Configs.GROWTINY)
                     {
-                        if (!Nodes.Any(x => x.TooSmall && !x.HasLeaves && !x.Blocked)) { break; }
+                        if (Nodes.Count(x => x.TooSmall && !x.HasLeaves && !x.Blocked) == 0) { break; }
                     }
                     else { break; }
                 }
