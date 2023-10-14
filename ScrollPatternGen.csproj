@@ -8,27 +8,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <StartupObject>BFSSpiralTree.Program</StartupObject>
     <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
-    <ApplicationIcon>smallw_scld.ico</ApplicationIcon>
-    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
-    <Company>$(ScrollPatternGen)</Company>
-    <Authors>$(ScrollPatternGen)</Authors>
-    <Version>$(default)</Version>
-    <Title>Scroll Pattern Generator</Title>
-    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-	<PublishSingleFile>true</PublishSingleFile>
-	<SelfContained>true</SelfContained>
-	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DebugType>none</DebugType>
     <Optimize>False</Optimize>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DebugType>none</DebugType>
-    <Optimize>True</Optimize>
-  </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="c# trans bkp\**" />
@@ -44,21 +29,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="smallw_scld.ico">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Update="Properties\Settings.Designer.cs">
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -71,21 +45,6 @@
 
   <ItemGroup>
     <Folder Include="Properties\DataSources\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="LICENSE.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Update="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Update="small_scld.ico">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>
